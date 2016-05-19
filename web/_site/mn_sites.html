@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>MN sites (1-hr AQI)</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="flat_table.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">AQI Watch</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse navbar-left">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Map</a></li>
+        <li><a href="exceed.html">High sites (1-hr)</a></li>
+        <li><a href="mn_sites.html">MN sites (1-hr)</a></li>
+        <li><a href="nearby_sites.html">Nearby sites (1-hr)</a></li>
+        <li><a href="nowcast.html">EPA NowCast</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">MN sites (1-hr AQI)</h1>
+
+</div>
+
+
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Site Name
+</th>
+<th style="text-align:center;">
+Agency
+</th>
+<th style="text-align:center;">
+AqsID
+</th>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Concentration (ug/m3)
+</th>
+<th style="text-align:center;">
+1-hr AQI
+</th>
+<th style="text-align:center;">
+Date
+</th>
+<th style="text-align:center;">
+Sampling Hour
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Fargo NW
+</td>
+<td style="text-align:center;">
+North Dakota Department of Health
+</td>
+<td style="text-align:center;">
+380171004
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+15.9
+</td>
+<td style="text-align:center;">
+59
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+6:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Brainerd
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270353204
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+15.0
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Lakeville - Near Roa
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270370480
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+11.0
+</td>
+<td style="text-align:center;">
+46
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Paul - Downtown
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271230868
+</td>
+<td style="text-align:center;">
+PM10
+</td>
+<td style="text-align:center;">
+50.0
+</td>
+<td style="text-align:center;">
+46
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Detroit Lakes
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270052013
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+42.0
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+West Duluth
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271377554
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+9.0
+</td>
+<td style="text-align:center;">
+38
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Ely
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270750005
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+40.0
+</td>
+<td style="text-align:center;">
+37
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Mille Lacs
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270953051
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+39.0
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Fond du Lac
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270177417
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+8.0
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+6:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Minneapolis-Near Roa
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270530962
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+8.0
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Cloud
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271453052
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+8.0
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Michael
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271713201
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+8.0
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Stanton
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270495302
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+35.0
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Blaine
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270031002
+</td>
+<td style="text-align:center;">
+PM10
+</td>
+<td style="text-align:center;">
+34.0
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Marshall
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270834210
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+33.0
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+East Bethel
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270031001
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+31.0
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Minneapolis-Phillips
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270530963
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+7.0
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Paul-Harding H.S
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271230871
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+7.0
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+7:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+St. Anthony Park
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271231908
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+7.0
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Shakopee
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271390505
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+30.0
+</td>
+<td style="text-align:center;">
+28
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Rochester
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271095008
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+29.0
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+LACROSSE DOT
+</td>
+<td style="text-align:center;">
+Wisconsin Dept. of Natural Resources
+</td>
+<td style="text-align:center;">
+550630012
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+6.0
+</td>
+<td style="text-align:center;">
+25
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+7:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Red Lake Nation
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270072304
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Grand Portage
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270317810
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Marine on St. Croix
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271636016
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+19.0
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Apple Valley
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+270370470
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+4.0
+</td>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Virginia
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271377001
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+4.0
+</td>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+6:00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Duluth-WDSE
+</td>
+<td style="text-align:center;">
+MPCA
+</td>
+<td style="text-align:center;">
+271377550
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+12.0
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+05/19/2016
+</td>
+<td style="text-align:center;">
+8:00
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="gray">
+<h2 id="missing-parameters-for-minnesota">Missing parameters for Minnesota</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+State
+</th>
+<th style="text-align:center;">
+Site Name
+</th>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+AqsID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+MN
+</td>
+<td style="text-align:center;">
+Voyageurs NP
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+271370034
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

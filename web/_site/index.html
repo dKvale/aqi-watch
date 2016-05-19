@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>1-hr AQI</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/htmlwidgets-0.6/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-0.7.3/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-0.7.3/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-1.0.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.0.27/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-1.0.1/leaflet-providers-plugin.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="flat_table.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">AQI Watch</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse navbar-left">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Map</a></li>
+        <li><a href="exceed.html">High sites (1-hr)</a></li>
+        <li><a href="mn_sites.html">MN sites (1-hr)</a></li>
+        <li><a href="nearby_sites.html">Nearby sites (1-hr)</a></li>
+        <li><a href="nowcast.html">EPA NowCast</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">1-hr AQI</h1>
+
+</div>
+
+
+<div id="pm2.5-ozone-pm10" class="section level3">
+<h3>(PM2.5, Ozone, PM10)</h3>
+<hr>
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+<div style="margin-left: 4px;">
+<p><em>Last updated - May 19, 2016 09:16 CDT</em></p>
+</div>
+<div style="margin-right: 2%;">
+<div id="htmlwidget-9712" style="width:99%;height:499.2px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9712">{"x":{"setView":[[46.2,-95.2],6,[]],"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addCircleMarkers","args":[["41.832199","45.2039","46.8183","46.0481","46.6144","42.51831","44.761398","44.7383","47.5212","47.6011","44.155636","43.0034","42.7783","45.168","48.152822","45.296","41.668098","47.878159","47.9721","41.6992","46.949699","42.743099","42.5047","48.641899","47.2986","43.7781","44.7072","43.1811","42.2806","41.2853","44.348604","43.81523","43.9947","49.9319","41.910599","44.789398","47.1858","43.557613","44.53","49.8422","40.970001","40.693298","45.400799","44.9536","44.9594","44.973096","46.8253","47.320301","43.746944","43.3431","43.4981","42.58","45.1425","44.4572","44.373786","43.3144","43.6878","44.471901","44.4428","41.6031","46.713694","44.9653","45.55","45.2108","44.087397","43.0611","44.3069","43.665","41.8829","44.1386","43.54792","46.2056","47.9464","46.743889","42.751518","42.930569","48.3794","46.8511","49.6639","45.2378","45.5639","44.5167","42.692131","43.4356","49.9489","45.2066","43.123299","44.706123","44.9507","43.46611","42.5014","41.658195","43.0178","41.97677","41.9767","41.467201","46.3944","44.89965","46.933601","43.1008","43.0203","41.4014","41.529999","41.512032","41.823101","41.875"],["-95.928101","-90.6","-92.0892","-89.6536","-90.6986","-89.06347","-91.413002","-93.2372","-92.5393","-103.2642","-103.315765","-88.8283","-87.805","-92.7651","-103.639583","-87.886","-95.9431","-95.029172","-89.6908","-90.521896","-103.514397","-92.5131","-87.8111","-102.402199","-101.7669","-91.225","-89.7697","-87.9006","-91.5269","-93.5839","-96.807299","-87.79194","-92.4497","-96.8631","-91.651901","-93.512497","-101.4281","-103.483658","-87.9089","-99.9189","-95.044998","-92.006104","-93.201103","-93.2581","-93.0356","-93.199879","-100.7681","-102.526398","-101.941109","-87.9208","-87.81","-88.4992","-93.2139","-95.835","-100.287269","-89.1089","-88.4219","-93.013298","-87.5061","-93.643303","-92.511722","-93.2551","-94.1333","-93.6686","-103.273777","-87.9125","-88.3956","-87.7161","-93.6879","-87.6161","-96.700768","-93.7589","-91.4953","-92.166946","-96.707208","-87.932106","-89.29","-95.8467","-93.7211","-86.9936","-88.81","-87.9939","-90.696373","-89.6803","-97.3964","-90.5969","-94.693298","-93.285803","-93.0985","-88.621109","-92.315804","-91.503471","-87.9333","-91.68766","-91.6878","-90.688301","-94.1433","-97.128802","-96.854698","-89.3572","-88.215","-91.0684","-90.587502","-90.624016","-90.211899","-90.177498"],[4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.7,4.7,4.8,4.9,5,5,5,5,5,5.1,5.1,5.1,5.1,5.2,5.3,5.3,5.3,5.3,5.3,5.3,5.4,5.4,5.4,5.4,5.4,5.4,5.4,5.4,5.5,5.5,5.5,5.5,5.5,5.6,5.6,5.6,5.6,5.6,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.8,5.8,5.9,6,6.1,6.2,6.2,6.2,6.2,6.2,6.4,6.4,6.4,6.5,6.5,6.5,6.6,6.6,6.8,6.8,6.8,6.8,7.1,7.1,7.1,7.3,7.4,7.5,7.5,7.6,7.7,7.8,7.8,7.9,7.9,9.1,9.5,9.6],null,null,{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":true,"color":"gray","weight":2,"opacity":0.5,"fill":true,"fillColor":["#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#00e400","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00","#ffff00"],"fillOpacity":0.65,"dashArray":null},null,null,["<b style='font-size: 150%;'>Pisgah, Forestry Off\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 8\u003c/br> Concentration: 9\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>PERKINSTOWN\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 8\u003c/br> Concentration: 2\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Duluth-WDSE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 11\u003c/br> Concentration: 12\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>TROUT LAKE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 13\u003c/br> Concentration: 14\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>BAD RIVER TRIBAL SCH\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 14\u003c/br> Concentration: 15\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Beloit-Converse\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 15\u003c/br> Concentration: 16\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Eau Claire\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 16\u003c/br> Concentration: 17\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Apple Valley\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 4\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Virginia\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 4\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>TRNP-NU\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 18\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Black Hawk\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 18\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Jefferson-Laatsch\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 18\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Racine-Payne and Dol\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 17\u003c/br> Concentration: 18\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Marine on St. Croix\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 18\u003c/br> Concentration: 19\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Williston\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 18\u003c/br> Concentration: 4.3\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Kenosha-Water Tower\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 19\u003c/br> Concentration: 21\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Pisgah, Harrison Cou\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 20\u003c/br> Concentration: 22\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Red Lake Nation\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 21\u003c/br> Concentration: 5\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Grand Portage\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 21\u003c/br> Concentration: 5\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Scott County Park\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 22\u003c/br> Concentration: 24\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Theodore Roosevelt N\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 22\u003c/br> Concentration: 24\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Waverly, Airport\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 23\u003c/br> Concentration: 25\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>CHIWAUKEE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 24\u003c/br> Concentration: 26\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Lostwood NWR\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 25\u003c/br> Concentration: 27\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Beulah North\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 25\u003c/br> Concentration: 27\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>LACROSSE DOT\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 25\u003c/br> Concentration: 6\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>LAKE DUBAY\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 25\u003c/br> Concentration: 27\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>BAYSIDE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 25\u003c/br> Concentration: 27\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>COGGON\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 26\u003c/br> Concentration: 28\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Lake Ahquabi\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 26\u003c/br> Concentration: 28\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Research Farm\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 26\u003c/br> Concentration: 28\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Sheboygan-Haven\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 26\u003c/br> Concentration: 28\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Rochester\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 27\u003c/br> Concentration: 29\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>WINNIPEG-SCOTIA-ST.\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 6.7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>KIRKWOOD\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 30\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Shakopee\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 30\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Hannover\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 30\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>WIND CAVE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 30\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>GREEN BAY UW\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 28\u003c/br> Concentration: 30\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Brandon\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 31\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Viking Lake State Pa\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Lake Sugema\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>East Bethel\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 31\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Minneapolis-Phillips\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>St. Paul-Harding H.S\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>St. Anthony Park\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 7\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Bismarck Residential\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 29\u003c/br> Concentration: 31\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Dunn Center\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 30\u003c/br> Concentration: 7.2\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Badlands\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 30\u003c/br> Concentration: 32\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>GRAFTON\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 30\u003c/br> Concentration: 32\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>HARRINGTON BCH\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 30\u003c/br> Concentration: 32\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>LAKE GENEVA\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 30\u003c/br> Concentration: 32\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Blaine\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 31\u003c/br> Concentration: 34\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Marshall\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 31\u003c/br> Concentration: 33\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Pierre\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 31\u003c/br> Concentration: 7.5\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>COLUMBUS\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 31\u003c/br> Concentration: 33\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>FOND DU LAC\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 31\u003c/br> Concentration: 34\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Stanton\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 32\u003c/br> Concentration: 35\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>KEWAUNEE\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 32\u003c/br> Concentration: 35\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>CARPENTER\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Fond du Lac\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Minneapolis-Near Roa\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>St. Cloud\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>St. Michael\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Credit Union\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 7.9\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>MILWAUKEE SER DNR\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>APPLETON AAL\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 8\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>SHEBOYGAN\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 33\u003c/br> Concentration: 36\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>SLATER\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 34\u003c/br> Concentration: 37\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>MANITOWOC\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 34\u003c/br> Concentration: 37\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Sioux Falls\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 35\u003c/br> Concentration: 8.5\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Mille Lacs\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 36\u003c/br> Concentration: 39\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Ely\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 37\u003c/br> Concentration: 40\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>West Duluth\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 38\u003c/br> Concentration: 9\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>UC1\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 38\u003c/br> Concentration: 9\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Milwaukee College Av\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 38\u003c/br> Concentration: 9\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>THUNDER-BAY\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 38\u003c/br> Concentration: 9.1\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Detroit Lakes\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 39\u003c/br> Concentration: 42\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Experimental Lakes\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 41\u003c/br> Concentration: 44\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>NEWPORT\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 41\u003c/br> Concentration: 44\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>POTAWATOMI\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 41\u003c/br> Concentration: 44\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>GREEN BAY E HIGH\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 42\u003c/br> Concentration: 10\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Potosi\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 42\u003c/br> Concentration: 10\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Devils Lake\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 42\u003c/br> Concentration: 10\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Winnipeg_Ellens\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 43\u003c/br> Concentration: 46\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Perkinstown\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 44\u003c/br> Concentration: 47\u003c/br> Parameter: OZONE\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Emmetsburg, ILCC\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 46\u003c/br> Concentration: 11\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Lakeville - Near Roa\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 46\u003c/br> Concentration: 11\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>St. Paul - Downtown\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 46\u003c/br> Concentration: 50\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Horicon Wildlife Are\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 46\u003c/br> Concentration: 11\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Waterloo, Water Towe\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 51\u003c/br> Concentration: 12\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Iowa City, Hoover Sc\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 51\u003c/br> Concentration: 12\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>MILWAUKEE 16TH ST\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 51\u003c/br> Concentration: 12\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>PUBLIC HEALTH 4\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 53\u003c/br> Concentration: 13\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>PUBLIC HEALTH\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 55\u003c/br> Concentration: 14\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Buffalo\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 56\u003c/br> Concentration: 65\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Brainerd\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 57\u003c/br> Concentration: 15\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 8:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Watertown\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 58\u003c/br> Concentration: 70\u003c/br> Parameter: PM10\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Fargo NW\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 59\u003c/br> Concentration: 15.9\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 6:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>MADISON EAST\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 61\u003c/br> Concentration: 17\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>WAUKESHA - CLEVELAND\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 61\u003c/br> Concentration: 17\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Muscatine, High Scho\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 63\u003c/br> Concentration: 18\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Davenport, 10th & Vi\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 63\u003c/br> Concentration: 18\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Davenport, Hayes Sch\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 82\u003c/br> Concentration: 27\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Clinton, Chancy Park\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 91\u003c/br> Concentration: 31\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016","<b style='font-size: 150%;'>Clinton, Rainbow Par\u003c/b>\u003c/br>\u003c/br> 1-hr AQI: 93\u003c/br> Concentration: 32\u003c/br> Parameter: PM25\u003c/br> Sampling Hour: 7:00\u003c/br> Date: 05/19/2016"]]}],"limits":{"lat":[1,106],"lng":[1,106]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<p><br> The <strong>1-hr AQI</strong> shows the value that would result from a monitor’s current concentration persisting for the entire AQI averaging period.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

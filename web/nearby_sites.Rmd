@@ -1,0 +1,44 @@
+---
+title: "Nearby sites (1-hr AQI)"
+---
+
+<hr> 
+
+```{r kable3, message=F, echo=F, results='asis', warning=F}
+library(knitr)
+
+options(warn = -1)
+
+data <- filter(aqi_rank, !grepl("Minnesota", Agency),  !AqsID %in% border_sites)
+
+data <- data[ , c(1:4,8,5,7,9)]
+
+names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration (ug/m3)", "1-hr AQI")
+
+kable(data[ , c(4,5,3,6:8,1:2)], 'html', align = 'c')
+
+if(nrow(data) < 1) {
+  cat(" *The table is currently empty. ")
+} 
+```
+<br>
+
+<div class = "gray">
+## Missing parameters for nearby sites
+```{r miss_nearby, message=F, echo=F, results='asis', warning=F}
+
+missing_sites <- filter(site_params, substring(AqsID, 1, 2) != '27' & !AqsID %in% border_sites)
+
+missing_sites <- missing_sites[!missing_sites$Site_Param %in% aqi$Site_Param, ]
+
+aqi$Site_Param <- NULL
+
+kable(arrange(missing_sites[ , c(1,4,3,2)], `Site Name`), 'html', align = 'c')
+
+if(length(missing_mn) < 1) {
+  cat(" *There were no missing sites or parameters.")
+} 
+```
+</div>
+
+

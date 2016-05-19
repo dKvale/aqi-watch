@@ -1,0 +1,17 @@
+---
+title: "EPA NowCast"
+---
+
+<hr> 
+
+## NowCast map
+
+[<img src="http://files.airnowtech.org/airnow/today/cur_aqi_usa.jpg" alt="Current AQI map for the U.S." width="60%" style="margin-left:1%; margin-right:1%; margin-bottom:2%;"/>](https://www.airnow.gov/index.cfm?action=airnow.local_state&stateid=24&mapcenter=0&tabs=1)  
+  
+<br>
+
+## NowCast values  
+
+[_Smogwatch, Sonoma Technology_](http://www.smogwatch.com/minn/realtimedata.cfm)
+
+<br>

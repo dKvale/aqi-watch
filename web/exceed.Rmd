@@ -1,0 +1,47 @@
+---
+title: "High sites (1-hr AQI)"
+---
+
+<hr> 
+
+##### Current air monitors reporting concentrations above a 1-hr AQI of 85.
+
+<div class = "orange">
+```{r kable, message=F, echo=F, results='asis', warning=F}
+library(knitr)
+library(dplyr)
+
+
+data <- filter(aqi_rank, AQI_Value >= 85) 
+
+data <- data[ , c(1:4,8,5,7,9)]
+
+names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration (ug/m3)", "1-hr AQI")
+
+kable(data[ , c(4,5,3,6:8,1:2)], 'html', align = 'c')
+
+if(nrow(data) < 1) {
+  cat(" *The table is currently empty.  All sites are reporting concentrations below a 1-hr AQI of 85.")
+} 
+
+```
+</div>
+
+<br> <hr>
+
+<div class = "gray">
+## Missing parameters
+```{r miss_high, message=F, echo=F, results='asis', warning=F}
+
+aqi$Site_Param <- paste(aqi$AqsID, aqi$Parameter, sep="_") 
+
+missing_sites <- site_params[!site_params$Site_Param %in% aqi$Site_Param, ]
+
+kable(arrange(missing_sites[ , c(1,4,3,2)], AqsID), 'html', align = 'c')
+
+if(length(missing_sites) < 1) {
+  cat(" *There were no missing sites or parameters.")
+} 
+```
+</div>
+

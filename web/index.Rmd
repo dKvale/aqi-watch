@@ -1,0 +1,65 @@
+---
+title: "1-hr AQI"
+---
+
+
+### (PM2.5, Ozone, PM10)
+<hr>  
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+<div style = "margin-left: 4px;"> 
+ _Last updated - `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
+</div>
+
+<div style = "margin-right: 2%;">   
+```{r leafMap, message=F, echo=F, warning=F,  fig.height = 5.2}
+library(leaflet)
+
+options(warn = -1)
+
+legend_colors <- c('#00e400', '#ffff00', '#ff7e00', '#ff0000', '#99004c', '#7e0023')
+
+breaks <- c(0, 50, 100, 150, 200, 300, 700)
+
+data <- aqi_rank 
+
+data$aqi_color <- cut(data$AQI_Value, 
+                      breaks = breaks, 
+                      labels = legend_colors,
+                      include.lowest = T)
+
+data <- mutate(data, 
+               Popup = paste0("<b style='font-size: 150%;'>", 
+                              `Site Name`, "</b></br>", 
+                              #"</br> AQS-ID: ", AqsID,
+                              "</br> 1-hr AQI: ", AQI_Value,
+                              "</br> Concentration: ", Concentration,
+                              "</br> Parameter: ", Parameter,
+                              "</br> Sampling Hour: ", Time,
+                              "</br> Date: ", Date))
+
+data <- left_join(data, locations[ , -2]) %>% arrange(AQI_Value)
+
+data <- group_by(data, AqsID) %>%
+        mutate(circle_scale = round(min(max(AQI_Value ** 0.5, 4.5), 12, na.rm = T), 1))
+
+map <- leaflet(data[, c(9,13:17)], width='99%') %>%
+  setView(lat = 46.2, lng= -95.2, zoom= 6) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  addCircleMarkers(~Long, ~Lat, 
+                   popup = ~Popup, 
+                   radius = ~circle_scale, 
+                   fillColor = ~aqi_color,
+                   color = 'gray',
+                   weight = 2, 
+                   fillOpacity = 0.65,
+                   opacity = 0.5)
+
+map 
+```
+</div>
+<br>
+The __1-hr AQI__ shows the value that would result from a monitor's current concentration persisting for the entire AQI averaging period. 

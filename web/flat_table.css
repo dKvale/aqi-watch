@@ -1,0 +1,63 @@
+@media (max-width:767px) {
+  .navbar-toggle {
+	    float: left;
+	    
+  }
+	
+  .navbar-collapse {
+	    clear: both;
+	    float: none;
+  }
+}
+	
+table {
+  font-size: 105%;
+  overflow: auto;
+  width: 99%;
+}
+
+th {
+  background-color: #0088ee;
+  color: white;
+  font-weight: normal;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+
+.gray table th {
+  background-color: #8c8c8c;
+}
+
+.orange table th {
+  background-color: #d53700;
+}
+
+
+td {
+  background-color: rgb(238, 238, 238);
+  color: rgb(111, 111, 111);
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+body {width: 99%; max-width: 99%; /* 900px*/}
+
+code {font-size: 18px;}
+
+pre {font-size: 18px}
+
+p {font-size: 16px}
+
+h1.title {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
