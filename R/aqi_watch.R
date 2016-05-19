@@ -287,7 +287,6 @@ setwd("C:/Users/dkvale/Desktop/aqi-watch")
 
 # Commit to github 
 git <- "C: & CD C:/Users/dkvale/Desktop/_site & C:/Users/dkvale/AppData/Local/Programs/Git/bin/git.exe "
-
 shell('C: & copy /Y "C:/Users/dkvale/Desktop/aqi-watch/web/_site/"  "C:/Users/dkvale/Desktop/_site/" ')
 
 #shell(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
@@ -298,7 +297,7 @@ shell('C: & copy /Y "C:/Users/dkvale/Desktop/aqi-watch/web/_site/"  "C:/Users/dk
 
 shell(paste0(git, "add -u"))
 
-commit <- paste0(git, 'commit -a -m ', '"update high sites"')
+commit <- paste0(git, 'commit -a -m ', '"re-center map"')
 shell(commit)
 
 #shell(paste0(git, "branch -D master"))
