@@ -47,7 +47,7 @@ data <- group_by(data, AqsID) %>%
         mutate(circle_scale = round(min(max(AQI_Value ** 0.5, 4.5), 12, na.rm = T), 1))
 
 map <- leaflet(data[, c(9,13:17)], width='99%') %>%
-  setView(lat = 46.3, lng= -95.2, zoom= 6) %>%
+  setView(lat = 46.33, lng= -95.2, zoom= 6) %>%
   addProviderTiles("CartoDB.Positron") %>%
   addCircleMarkers(~Long, ~Lat, 
                    popup = ~Popup, 
