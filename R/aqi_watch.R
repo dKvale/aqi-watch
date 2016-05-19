@@ -286,29 +286,35 @@ rmarkdown::render_site()
 setwd("C:/Users/dkvale/Desktop/aqi-watch")
 
 # Commit to github 
-git <- "C: & cd C:/Users/dkvale/Desktop/aqi-watch & C:/Users/dkvale/AppData/Local/Programs/Git/bin/git.exe "
+git <- "C: & CD C:/Users/dkvale/Desktop/_site & C:/Users/dkvale/AppData/Local/Programs/Git/bin/git.exe "
 
-shell(paste0(git, "checkout --orphan new_branch"))
+shell('C: & copy /Y "C:/Users/dkvale/Desktop/aqi-watch/web/_site/"  "C:/Users/dkvale/Desktop/_site/" ')
 
-shell(paste0(git, "add -A"))
+#shell(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
+#shell(paste0(git, "checkout --orphan gh-pages"))
+#shell(paste0(git, "rm -rf ."))
 
-commit <- paste0(git, 'commit -am ', '"update high sites"')
+#shell(paste0(git, "checkout --orphan new_branch"))
+
+shell(paste0(git, "add -u"))
+
+commit <- paste0(git, 'commit -a -m ', '"update high sites"')
 shell(commit)
 
-shell(paste0(git, "branch -D master"))
-shell(paste0(git, "branch -m master"))
+#shell(paste0(git, "branch -D master"))
+#shell(paste0(git, "branch -m master"))
 
 shell(paste0(git, "config --global user.name dkvale"))
 shell(paste0(git, "config --global user.email ", email))
 shell(paste0(git, "config credential.helper store"))
 
-push <- paste0(git, "push -f origin master")
+#push <- paste0(git, "push -f origin master")
+push <- paste0(git, "push -f origin gh-pages")
 shell(push)
 
-shell(paste0(git, "push origin --delete gh-pages"))
-
-push <- paste0(git, "subtree push --prefix web/_site origin gh-pages")
-shell(push)
+#shell(paste0(git, "push origin --delete gh-pages"))
+#push <- paste0(git, "subtree push --prefix web/_site origin gh-pages")
+#shell(push)
 
 # Save high sites table to test for changes on next cycle
 write.csv(aqi, "data/aqi_previous.csv", row.names = F)
