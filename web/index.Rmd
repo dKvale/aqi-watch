@@ -1,9 +1,7 @@
 ---
-title: "1-hr AQI"
+title: "1-hr AQI (PM2.5, Ozone, PM10)"
 ---
 
-
-### (PM2.5, Ozone, PM10)
 <hr>  
 
 <script type="text/JavaScript">
@@ -62,4 +60,4 @@ map
 ```
 </div>
 <br>
-The __1-hr AQI__ shows the value that would result from a monitor's current concentration persisting for the entire AQI averaging period. 
+The __1-hr AQI__ is the value that would result if a monitor's current concentration persisted for the entire AQI averaging period. 
