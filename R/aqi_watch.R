@@ -279,19 +279,20 @@ rmarkdown::render_site()
 setwd("../")
 
 # Commit to github 
-git <- "CD ../_site & git "
-shell('copy /Y "aqi-watch/web/_site/"  "../_site/"')
+#git <- "cd ~/_site/; git "
+#system(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
+git <- "cd ~/_site/aqi-watch/; git "
+#system(paste0(git, "checkout --orphan gh-pages"))
+#system(paste0(git, "rm -rf ."))
 
-#shell(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
-#shell(paste0(git, "checkout --orphan gh-pages"))
-#shell(paste0(git, "rm -rf ."))
+#system(paste0(git, "checkout --orphan new_branch"))
 
-#shell(paste0(git, "checkout --orphan new_branch"))
+system("cp -r ~/aqi-watch/web/_site/  ~/_site/aqi-watch")
 
-shell(paste0(git, "add -u"))
+system(paste0(git, "add -u"))
 
 commit <- paste0(git, 'commit -a -m ', '"re-center map"')
-shell(commit)
+system(commit)
 
 #shell(paste0(git, "branch -D master"))
 #shell(paste0(git, "branch -m master"))
