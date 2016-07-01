@@ -279,27 +279,28 @@ rmarkdown::render_site()
 setwd("../")
 
 # Commit to github 
-#git <- "cd ~/_site/; git "
-#system(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
-git <- "cd ~/_site/aqi-watch/; git "
+#git <- "cd ~/_site/; git 
+#system("rm -r _site")
+#system(paste0("git clone https://github.com/dKvale/aqi-watch.git _site"))
+git <- "cd ~/_site; git "
 #system(paste0(git, "checkout --orphan gh-pages"))
 #system(paste0(git, "rm -rf ."))
 
 #system(paste0(git, "checkout --orphan new_branch"))
 
-system("cp -r ~/aqi-watch/web/_site/  ~/_site/aqi-watch")
+system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
 
-system(paste0(git, "add -u"))
+system(paste0(git, "add ."))
 
-commit <- paste0(git, 'commit -a -m ', '"re-center map"')
+commit <- paste0(git, 'commit -a -m ', '"update obs"')
 system(commit)
 
 #shell(paste0(git, "branch -D master"))
 #shell(paste0(git, "branch -m master"))
 
-shell(paste0(git, "config --global user.name dkvale"))
-shell(paste0(git, "config --global user.email ", credentials$email))
-shell(paste0(git, "config credential.helper store"))
+#system(paste0(git, "config --global user.name dkvale"))
+#system(paste0(git, "config --global user.email ", credentials$email))
+#system(paste0(git, "config credential.helper store"))
 
 #push <- paste0(git, "push -f origin master")
 push <- paste0(git, "push -f origin gh-pages")
