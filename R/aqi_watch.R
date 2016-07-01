@@ -318,10 +318,10 @@ write.csv(aqi, "data/aqi_previous.csv", row.names = F)
 ## or if it has been over 2 hours since the last issued alert
 
 # Set issue notification to sleep from 10 pm to 4 am
-if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
+if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 4)) { 
   
 # Remove PM10 and low concentrations
-aqi <- filter(aqi, AQI_Value >= 85) 
+aqi <- filter(aqi, AQI_Value >= 91) 
   
 aqi_all <- aqi
 aqi <- filter(aqi, Parameter != "PM10")
