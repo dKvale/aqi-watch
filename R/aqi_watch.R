@@ -338,10 +338,10 @@ if(nrow(aqi) > 0) {
       as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 1.05) {
   
   # Commit to github 
-  git <- "cd aqi-watch & git "
+  git <- "cd ~/aqi-watch & git "
     
-  shell(paste0(git, "config --global user.name dkvale"))
-  shell(paste0(git, "config --global user.email ", credentials$email))
+  system(paste0(git, "config --global user.name dkvale"))
+  system(paste0(git, "config --global user.email ", credentials$email))
     
   max_site <- filter(aqi, AQI_Value == max(aqi$AQI_Value, na.rm=T))[1, ]
     
@@ -375,12 +375,12 @@ if(nrow(aqi) > 0) {
   cat(issue, file = "issue.json") 
   
   # Create batch file
-  cat(paste0('CD aqi-watch & 
-              curl ', 
-             '-i -H "Authorization: token ', credentials$issue_token,
-             '\" -d @issue.json https://api.github.com/repos/dKvale/aqi-watch/issues'), file = "create_issue.bat") 
+  send_issue <- paste0('cd ~/aqi-watch; curl ', 
+                       '-i -H "Authorization: token ', 
+                       credentials$issue_token,
+                       '\" -d @issue.json https://api.github.com/repos/dKvale/aqi-watch/issues')
   
-  shell("CD aqi-watch & create_issue.bat")
+  system(send_issue)
   
   #Save alert time
   names(aqi_all)[11] <- as.character(Sys.time() + 61)
