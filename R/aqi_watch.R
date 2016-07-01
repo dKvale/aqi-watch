@@ -6,12 +6,10 @@ library(stringr)
 library(rmarkdown)
 library(pander)
 
-setwd("C:/Users/dkvale/Desktop/aqi-watch")
-
 options(rstudio.markdownToHTML = 
           function(inputFile, outputFile) {      
             require(markdown)
-            markdownToHTML(inputFile, outputFile, stylesheet='C:\\Users\\dkvale\\Desktop\\aqi-watch\\R\\flat_table.css')   
+            markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
 border_sites <- c('380171004', '271370034', '550630012')
@@ -23,12 +21,7 @@ year <- format(Sys.Date(), "%Y")
 daylight_savings <- Sys.Date() > as.Date(paste0(year, "-03-12")) & Sys.Date() < as.Date(paste0(year, "-10-6"))
   
 # Load credentials
-credentials <- read_csv("C:\\Users\\dkvale\\Desktop\\credentials.csv")
-
-user <- credentials$user
-pwd  <- credentials$pwd
-email <- credentials$email
-token <- credentials$issue_token
+credentials <- read_csv("../credentials.csv")
 
 gmt_time <-  (as.numeric(format(Sys.time() - 195, tz="GMT", "%H")) - 1) %% 24
 #gmt_time <- paste0("0", gmt_time) %>% substring(nchar(.) - 1, nchar(.))
@@ -42,7 +35,7 @@ time <- paste0("0", (gmt_time - i) %% 24) %>% substring(nchar(.) - 1, nchar(.))
   
 date_time <- paste0(format(Sys.time() - (60 * 60 + 195), tz="GMT", "%Y%m%d"), time)
 
-airNow_link <- paste0('ftp://', user, ':', pwd, 
+airNow_link <- paste0('ftp://', credentials$user, ':', credentials$pwd, 
                       '@ftp.airnowapi.org/HourlyData/', date_time,'.dat')
   
 aqi <- try(read_delim(airNow_link, "|", 
@@ -279,15 +272,15 @@ aqi_rank <- filter(ungroup(aqi_rank), rank == 1) %>% arrange(-AQI_Value)
 
 # Create high sites table
 #rmarkdown::render("R/high_sites2.Rmd", output_file="../index.html")  
-setwd("C:/Users/dkvale/Desktop/aqi-watch/web")
+setwd("web")
 
 rmarkdown::render_site()
 
-setwd("C:/Users/dkvale/Desktop/aqi-watch")
+setwd("../")
 
 # Commit to github 
-git <- "C: & CD C:/Users/dkvale/Desktop/_site & C:/Users/dkvale/AppData/Local/Programs/Git/bin/git.exe "
-shell('C: & copy /Y "C:/Users/dkvale/Desktop/aqi-watch/web/_site/"  "C:/Users/dkvale/Desktop/_site/" ')
+git <- "CD ../_site & git "
+shell('copy /Y "aqi-watch/web/_site/"  "../_site/"')
 
 #shell(paste0(git, "clone https://github.com/dKvale/aqi-watch.git"))
 #shell(paste0(git, "checkout --orphan gh-pages"))
@@ -304,7 +297,7 @@ shell(commit)
 #shell(paste0(git, "branch -m master"))
 
 shell(paste0(git, "config --global user.name dkvale"))
-shell(paste0(git, "config --global user.email ", email))
+shell(paste0(git, "config --global user.email ", credentials$email))
 shell(paste0(git, "config credential.helper store"))
 
 #push <- paste0(git, "push -f origin master")
@@ -341,10 +334,10 @@ if(nrow(aqi) > 0) {
       as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 1.05) {
   
   # Commit to github 
-  git <- "C: & cd C:/Users/dkvale/Desktop/aqi-watch & C:/Users/dkvale/AppData/Local/Programs/Git/bin/git.exe "
+  git <- "cd aqi-watch & git "
     
   shell(paste0(git, "config --global user.name dkvale"))
-  shell(paste0(git, "config --global user.email ", email))
+  shell(paste0(git, "config --global user.email ", credentials$email))
     
   max_site <- filter(aqi, AQI_Value == max(aqi$AQI_Value, na.rm=T))[1, ]
     
@@ -378,12 +371,12 @@ if(nrow(aqi) > 0) {
   cat(issue, file = "issue.json") 
   
   # Create batch file
-  cat(paste0('C: & CD C:/Users/dkvale/Desktop/aqi-watch & 
-              C:/Users/dkvale/AppData/Local/Programs/Git/bin/curl.exe ', 
-             '-i -H "Authorization: token ', token,
+  cat(paste0('CD aqi-watch & 
+              curl ', 
+             '-i -H "Authorization: token ', credentials$issue_token,
              '\" -d @issue.json https://api.github.com/repos/dKvale/aqi-watch/issues'), file = "create_issue.bat") 
   
-  shell("C: & CD C:/Users/dkvale/Desktop/aqi-watch & create_issue.bat")
+  shell("CD aqi-watch & create_issue.bat")
   
   #Save alert time
   names(aqi_all)[11] <- as.character(Sys.time() + 61)
