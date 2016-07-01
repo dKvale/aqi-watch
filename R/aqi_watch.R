@@ -12,6 +12,8 @@ options(rstudio.markdownToHTML =
             markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
+setwd("aqi-watch")
+
 border_sites <- c('380171004', '271370034', '550630012')
 
 canada_sites <- c('000070118', '000070119', '000070203', '000064001')
