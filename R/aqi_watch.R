@@ -298,13 +298,13 @@ system(commit)
 #shell(paste0(git, "branch -D master"))
 #shell(paste0(git, "branch -m master"))
 
-#system(paste0(git, "config --global user.name dkvale"))
-#system(paste0(git, "config --global user.email ", credentials$email))
-#system(paste0(git, "config credential.helper store"))
+system(paste0(git, "config --global user.name dkvale"))
+system(paste0(git, "config --global user.email ", credentials$email))
+system(paste0(git, "config credential.helper store"))
 
 #push <- paste0(git, "push -f origin master")
 push <- paste0(git, "push -f origin gh-pages")
-shell(push)
+system(push)
 
 #shell(paste0(git, "push origin --delete gh-pages"))
 #push <- paste0(git, "subtree push --prefix web/_site origin gh-pages")
