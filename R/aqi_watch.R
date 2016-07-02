@@ -335,7 +335,7 @@ if(nrow(aqi) > 0) {
   
   if(((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
      (sum(!aqi$Parameter %in% aqi_prev$Parameter) > 0)) ||
-      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 1.05) {
+      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 0.9) {
   
   # Commit to github 
   git <- "cd ~/aqi-watch & git "
