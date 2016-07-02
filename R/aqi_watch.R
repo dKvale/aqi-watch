@@ -352,7 +352,7 @@ if(nrow(aqi) > 0) {
     VIP_list <- " "
   }
   
-  message <- paste0("__Update for ", format(Sys.time(), "%h %d, %Y at %H:%M"), " CST&#46;__", 
+  message <- paste0("__Update for ", format(Sys.time(), "%h %d, %Y at %H:%M"), " CDT&#46;__", 
                     "  There ", 
                     ifelse(length(unique(aqi$AqsID)) > 1, "are ", "is "),
                     length(unique(aqi$AqsID)), 
@@ -366,7 +366,7 @@ if(nrow(aqi) > 0) {
                     "**&#46; Learn more at <a href=http://dkvale&#46;github&#46;io/aqi-watch> AQI Watch</a>&#46; </br> </br> ",
                     VIP_list)
   
-   issue <- paste0('{\n\t"title": " High concentrations reported at ', 
+   issue <- paste0('{\n\t"title": "AQI Watch ', 
                    aqi$Time[1], ', ', aqi$Date[1], 
                    '", \n\t"body": "', message,
                    '", \n\t"labels": ["watch alerts"]\n}')
