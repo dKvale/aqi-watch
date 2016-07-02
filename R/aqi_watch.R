@@ -345,8 +345,7 @@ if(nrow(aqi) > 0) {
     
   max_site <- filter(aqi, AQI_Value == max(aqi$AQI_Value, na.rm=T))[1, ]
     
-  if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites),
-                 AQI_Value > 91)) > 0) {
+  if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 0) {
     VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer "
   } else {
     VIP_list <- " "
@@ -358,7 +357,7 @@ if(nrow(aqi) > 0) {
                     length(unique(aqi$AqsID)), 
                     " monitoring ", 
                     ifelse(length(unique(aqi$AqsID)) > 1, "sites ", "site "),
-                    "reporting a 1-hr AQI above 85&#46; ", 
+                    "reporting a 1-hr AQI above 90&#46; ", 
                     "The maximum 1-hr AQI of ", max_site$AQI_Value,
                     " (", gsub("25","2&#46;5", max_site$Parameter), 
                     ") was reported at ", max_site$'Site Name', " [AQS ID: ", max_site$AqsID,
