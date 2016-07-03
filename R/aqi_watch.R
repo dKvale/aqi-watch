@@ -331,7 +331,7 @@ aqi_all <- aqi
 aqi <- filter(aqi, Parameter != "PM10")
 aqi_prev <- filter(aqi_prev, Parameter != "PM10")
 
-if(nrow(aqi) > 0) {
+if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 0) {
   
   if(((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
      (sum(!aqi$Parameter %in% aqi_prev$Parameter) > 0)) ||
