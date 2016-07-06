@@ -14,7 +14,13 @@ options(rstudio.markdownToHTML =
 
 setwd("aqi-watch")
 
+email_trigger <- 90
+
+# Fargo, Lacrosse, Voyageurs
 border_sites <- c('380171004', '271370034', '550630012')
+
+# Sioux Falls, Emmetsburg
+extra_sites <- c('191471002', '460990008')
 
 canada_sites <- c('000070118', '000070119', '000070203', '000064001')
 
@@ -51,10 +57,10 @@ closeAllConnections()
 if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
   errs <- read.csv("log/error_log.csv", stringsAsFactors=F)
 
-  Time <- as.character(format(Sys.time(), tz="America/Chicago"))
+  errTime <- as.character(format(Sys.time(), tz="America/Chicago"))
   
   errs <- rbind(errs, data.frame(File = date_time, 
-                                 Time = Time, 
+                                 Time = errTime, 
                                  Status="Failed", 
                                  Message = paste0(aqi, collapse="")))
   
@@ -86,7 +92,16 @@ aqi_all <- rbind(aqi, aqi_all)
 }
 }
 
+
+#--------------------------------------------------------#
+# Check for results
+#--------------------------------------------------------#
+
 if(nrow(aqi_all) < 1) return()
+
+#--------------------------------------------------------#
+
+
 
 aqi <- aqi_all[ , 1:9]
 
