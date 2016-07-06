@@ -41,7 +41,11 @@ for(i in 0:2) {
 
 time <- paste0("0", (gmt_time - i) %% 24) %>% substring(nchar(.) - 1, nchar(.))
   
-date_time <- paste0(format(Sys.time() - (60 * 60 + 195), tz="GMT", "%Y%m%d"), time)
+if((gmt_time < 2) && (time > 20)) {  
+    date_time <- paste0(format(Sys.time() - (60 * 60 * 24), tz="GMT", "%Y%m%d"), time)
+} else {
+  date_time <- paste0(format(Sys.time(), tz="GMT", "%Y%m%d"), time)
+}
 
 airNow_link <- paste0('ftp://', credentials$user, ':', credentials$pwd, 
                       '@ftp.airnowapi.org/HourlyData/', date_time,'.dat')
