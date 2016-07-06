@@ -92,7 +92,6 @@ aqi_all <- rbind(aqi, aqi_all)
 }
 }
 
-
 #--------------------------------------------------------#
 # Check for results
 #--------------------------------------------------------#
@@ -100,7 +99,6 @@ aqi_all <- rbind(aqi, aqi_all)
 if(nrow(aqi_all) < 1) return()
 
 #--------------------------------------------------------#
-
 
 
 aqi <- aqi_all[ , 1:9]
@@ -214,8 +212,7 @@ grab_aqicn <- function(country="usa", state="north-dakota", city="fargo-nw", par
                         "red-lake-nation" = "Red Lake", 
                         "winnipeg-ellen-st." = '000070119',
                         "winnipeg-scotia-st." = '000070118',
-                        "thunder-bay" = "thunder-bay"
-                           )
+                        "thunder-bay" = "thunder-bay")
   
   units <- ifelse(param=="o3", "PPB", "UG/M3")
   
@@ -274,14 +271,27 @@ aqi_prev <- read_csv("data/aqi_previous.csv", col_types = c("ccccccdcdTT")) %>%
 aqi$last_notification <- NA
 names(aqi)[11] <- names(aqi_prev)[11]
 
+
+#--------------------------------------------------------#
+# Update web map and tables                              #
+#--------------------------------------------------------#
+
 # If high sites table has changed update github repo
 if(!identical(aqi$AQI_Value, aqi_prev$AQI_Value) || 
    !identical(aqi$AqsID, aqi_prev$AqsID) || 
-   as.numeric(difftime(names(aqi)[10], names(aqi_prev)[10], units="hours")) > 0.9) {
+   as.numeric(difftime(names(aqi)[10], names(aqi_prev)[10], units="hours")) > 1.1) {
 
 locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
   
 site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
+
+mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
+
+aqi$Agency <- ifelse(grepl("Wisconsin", aqi$Agency), "Wisconsin DNR", aqi$Agency)
+
+aqi$Agency <- ifelse(grepl("South Dakota", aqi$Agency), "South Dakota", aqi$Agency)
+
+aqi$Agency <- ifelse(grepl("North Dakota", aqi$Agency), "North Dakota Health", aqi$Agency)
 
 aqi_rank <- group_by(aqi, AqsID) %>% arrange(-AQI_Value) %>% mutate(rank = 1:n())
 
@@ -332,25 +342,35 @@ write.csv(aqi, "data/aqi_previous.csv", row.names = F)
 }
 
 
+
+#--------------------------------------------------------#
+# Send Alert                                             #
+#--------------------------------------------------------#
 # Create issue if exceedances found for PM25 or Ozone
 ## And a new site has been added to the list
 ## or if it has been over 2 hours since the last issued alert
 
+
 # Set issue notification to sleep from 10 pm to 4 am
-if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 4)) { 
+if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
   
-# Remove PM10 and low concentrations
-aqi <- filter(aqi, AQI_Value >= 91) 
+# Remove: PM10, low concentrations, and outstate monitors
+aqi <- filter(aqi, AQI_Value > email_trigger) 
+
+aqi <- filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites, extra_sites))
   
 aqi_all <- aqi
 aqi <- filter(aqi, Parameter != "PM10")
 aqi_prev <- filter(aqi_prev, Parameter != "PM10")
 
-if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 0) {
+if(nrow(aqi) > 0) {
   
-  if(((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
-     (sum(!aqi$Parameter %in% aqi_prev$Parameter) > 0)) ||
-      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 0.9) {
+  if((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
+      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > .9) {
+      
+  aqi$Agency <- gsub("Minnesota Pollution Control Agency", "MPCA", aqi$Agency)
+  
+  max_site <- filter(aqi, AQI_Value == max(aqi$AQI_Value, na.rm=T))[1, ]
   
   # Commit to github 
   git <- "cd ~/aqi-watch & git "
@@ -358,31 +378,30 @@ if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 
   system(paste0(git, "config --global user.name dkvale"))
   system(paste0(git, "config --global user.email ", credentials$email))
     
-  max_site <- filter(aqi, AQI_Value == max(aqi$AQI_Value, na.rm=T))[1, ]
-    
-  if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 0) {
-    VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer "
+ if(sum(unique(aqi$AqsID) %in% mn_sites$AqsID) < 1){
+    VIP_list <- "Attention:  &#64;rrobers "
   } else {
-    VIP_list <- " "
+    VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer "
   }
   
-  message <- paste0("__Update for ", format(Sys.time(), "%h %d, %Y at %H:%M"), " CDT&#46;__", 
-                    "  There ", 
-                    ifelse(length(unique(aqi$AqsID)) > 1, "are ", "is "),
+  message_title <- "AQI-Watch for "
+    
+  message_text <- paste0("**AQI Watch** </br>",
+                    
                     length(unique(aqi$AqsID)), 
-                    " monitoring ", 
-                    ifelse(length(unique(aqi$AqsID)) > 1, "sites ", "site "),
+                    ifelse(length(unique(aqi$AqsID)) > 1, " monitors are ", " monitor is "),
                     "reporting a 1-hr AQI above 90&#46; ", 
-                    "The maximum 1-hr AQI of ", max_site$AQI_Value,
-                    " (", gsub("25","2&#46;5", max_site$Parameter), 
-                    ") was reported at ", max_site$'Site Name', " [AQS ID: ", max_site$AqsID,
-                    "] by the **", max_site$Agency, 
-                    "**&#46; Learn more at <a href=http://dkvale&#46;github&#46;io/aqi-watch> AQI Watch</a>&#46; </br> </br> ",
+                    "A value of **", max_site$AQI_Value,
+                    "** for ", gsub("25","2&#46;5", max_site$Parameter), 
+                    " was reported at **", max_site$'Site Name',
+                    "** (", max_site$Agency, 
+                    ")&#46; For more details visit the <a href=http://dkvale&#46;github&#46;io/aqi-watch> AQI Watch</a>&#46; </br>",
+                    "_", format(Sys.time(), "%h %d, %Y at %H:%M"), " CDT_ </br> </br>",
                     VIP_list)
   
-   issue <- paste0('{\n\t"title": "AQI Watch ', 
+   issue <- paste0('{\n\t"title": "', message_title, 
                    aqi$Time[1], ', ', aqi$Date[1], 
-                   '", \n\t"body": "', message,
+                   '", \n\t"body": "', message_text,
                    '", \n\t"labels": ["watch alerts"]\n}')
    
   # Save issue to JSON file
@@ -399,7 +418,9 @@ if(nrow(filter(aqi, grepl('Minnesota', Agency) | AqsID %in% c(border_sites))) > 
   #Save alert time
   names(aqi_all)[11] <- as.character(Sys.time() + 61)
   write.csv(aqi_all, "data/aqi_previous.csv", row.names = F)
-  }
-}
+}   # Sites added to list or hour has lapsed
+}   # High sites check
+}   # Sleep time check
 
-}
+rm(aqi)
+rm(aqi_rank)
