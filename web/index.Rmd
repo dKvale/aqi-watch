@@ -62,4 +62,4 @@ map
 ```
 </div>
 <br>
-The __1-hr AQI__ shows the value that would result from a monitor's current concentration persisting for the entire AQI averaging period. The map above includes the AQI readings for the pollutants Ozone, PM2.5, and PM10.
+The __1-hr AQI__ is the value that would result from a monitor's current concentration persisting for the entire AQI averaging period. The map above shows the highest 1-hr AQI at each site for the pollutants Ozone, PM-2.5, and PM-10.
