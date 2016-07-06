@@ -2,9 +2,14 @@
 title: "High sites (1-hr AQI)"
 ---
 
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
 <hr> 
 
-##### Current air monitors reporting concentrations above a 1-hr AQI of 85.
+##### Current air monitors reporting concentrations above a 1-hr AQI of 90.
 
 <div class = "orange">
 ```{r kable, message=F, echo=F, results='asis', warning=F}
@@ -12,7 +17,7 @@ library(knitr)
 library(dplyr)
 
 
-data <- filter(aqi_rank, AQI_Value >= 85) 
+data <- filter(aqi_rank, AQI_Value > email_trigger) 
 
 data <- data[ , c(1:4,8,5,7,9)]
 
@@ -21,7 +26,7 @@ names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration (ug/m3)", "1-hr AQI")
 kable(data[ , c(4,5,3,6:8,1:2)], 'html', align = 'c')
 
 if(nrow(data) < 1) {
-  cat(" *The table is currently empty.  All sites are reporting concentrations below a 1-hr AQI of 85.")
+  cat(" *The table is currently empty.  All sites are reporting concentrations at or below a 1-hr AQI of 90.")
 } 
 
 ```

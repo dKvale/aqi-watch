@@ -2,6 +2,11 @@
 title: "MN sites (1-hr AQI)"
 ---
 
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+
 <hr> 
 
 ```{r kable2, message=F, echo=F, results='asis', warning=F}
@@ -9,7 +14,7 @@ library(knitr)
 
 options(warn = -1)
 
-data <- filter(aqi_rank, grepl("Minnesota", Agency) | AqsID %in% border_sites)
+data <- filter(aqi_rank, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites))
 
 data <- data[ , c(1:4,8,5,7,9)]
 
@@ -29,9 +34,8 @@ if(nrow(data) < 1) {
 ## Missing parameters for Minnesota
 ```{r miss_MN, message=F, echo=F, results='asis', warning=F}
 
-mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
 
-missing_mn <- mn_sites[!mn_sites$Site_Param %in% aqi$Site_Param, ]
+missing_mn <- mn_sites[!mn_sites$Site_Param %in% paste(aqi$AqsID, aqi$Parameter, sep="_"), ]
 
 kable(arrange(missing_mn[ , c(1,4,3,2)], `Site Name`), 'html', align = 'c')
 

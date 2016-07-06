@@ -9,7 +9,7 @@ library(knitr)
 
 options(warn = -1)
 
-data <- filter(aqi_rank, !grepl("Minnesota", Agency),  !AqsID %in% border_sites)
+data <- filter(aqi_rank, !AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites))
 
 data <- data[ , c(1:4,8,5,7,9)]
 
@@ -27,7 +27,7 @@ if(nrow(data) < 1) {
 ## Missing parameters for nearby sites
 ```{r miss_nearby, message=F, echo=F, results='asis', warning=F}
 
-missing_sites <- filter(site_params, substring(AqsID, 1, 2) != '27' & !AqsID %in% border_sites)
+missing_sites <- filter(site_params, !AqsID %in% c(mn_sites$AqsID, border_sites))
 
 missing_sites <- missing_sites[!missing_sites$Site_Param %in% aqi$Site_Param, ]
 
