@@ -61,10 +61,10 @@ closeAllConnections()
 if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
   errs <- read.csv("log/error_log.csv", stringsAsFactors=F)
 
-  errTime <- as.character(format(Sys.time(), tz="America/Chicago"))
+  err_time <- as.character(format(Sys.time(), tz="America/Chicago"))
   
   errs <- rbind(errs, data.frame(File = date_time, 
-                                 Time = errTime, 
+                                 Time = err_time, 
                                  Status="Failed", 
                                  Message = paste0(aqi, collapse="")))
   
