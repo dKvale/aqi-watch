@@ -388,10 +388,11 @@ if(nrow(aqi) > 0) {
     VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer "
   }
   
-  message_title <- "AQI-Watch for "
+  message_title <- paste0("1-hr AQI at ", max_site$AQI_Value, " for ", max_site$Parameter)
     
+   # format(Sys.time(), "%I:%M %p"), ', ', aqi$Date[1] 
+   
   message_text <- paste0("**AQI Watch** </br>",
-                    
                     length(unique(aqi$AqsID)), 
                     ifelse(length(unique(aqi$AqsID)) > 1, " monitors are ", " monitor is "),
                     "reporting a 1-hr AQI above 90&#46; ", 
@@ -404,7 +405,6 @@ if(nrow(aqi) > 0) {
                     VIP_list)
   
    issue <- paste0('{\n\t"title": "', message_title, 
-                   aqi$Time[1], ', ', aqi$Date[1], 
                    '", \n\t"body": "', message_text,
                    '", \n\t"labels": ["watch alerts"]\n}')
    
