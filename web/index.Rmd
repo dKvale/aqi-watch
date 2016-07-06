@@ -1,19 +1,21 @@
 ---
-title: "1-hr AQI (PM2.5, Ozone, PM10)"
----
+title: "1-hr AQI"
+---  
 
-<hr>  
 
 <script type="text/JavaScript">
   setTimeout(function() { window.location=window.location;}, 350000);
 </script>
+
+<hr>  
+
 
 <div style = "margin-left: 4px;"> 
  _Last updated - `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
 </div>
 
 <div style = "margin-right: 2%;">   
-```{r leafMap, message=F, echo=F, warning=F,  fig.height = 5.2}
+```{r leafMap, message=F, echo=F, warning=F,  fig.height = 5.3}
 library(leaflet)
 
 options(warn = -1)
@@ -60,4 +62,4 @@ map
 ```
 </div>
 <br>
-The __1-hr AQI__ is the value that would result if a monitor's current concentration persisted for the entire AQI averaging period. 
+The __1-hr AQI__ shows the value that would result from a monitor's current concentration persisting for the entire AQI averaging period. The map above includes the AQI readings for the pollutants Ozone, PM2.5, and PM10.
