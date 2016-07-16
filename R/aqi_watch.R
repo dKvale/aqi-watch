@@ -262,7 +262,7 @@ aqi$Time_CST   <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 names(aqi)[11] <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 
 # Drop negative AQIs
-aqi <- filter(aqi, AQI_Value >= 0)[ , -5]
+aqi <- filter(aqi, AQI_Value > -26)[ , -5]
 
 # Arrange from high to low
 aqi <- arrange(ungroup(aqi), -AQI_Value)
