@@ -261,8 +261,11 @@ aqi <- rbind_list(aqi,
 aqi$Time_CST   <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 names(aqi)[11] <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 
-# Drop negative AQIs
-aqi <- filter(aqi, AQI_Value > -26)[ , -5]
+# Drop negative AQIs below 30
+aqi <- filter(aqi, AQI_Value > -29)[ , -5]
+
+# Set negative AQIs to zero
+aqi[aqi$AQI_Value < 0, ]$AQI_Value <- 0 
 
 # Arrange from high to low
 aqi <- arrange(ungroup(aqi), -AQI_Value)
