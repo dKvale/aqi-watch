@@ -20,7 +20,7 @@ data <- data[ , c(1:4,8,5,7,9)]
 
 data$Agency <- gsub("Minnesota Pollution Control Agency", "MPCA", data$Agency)
 
-names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration (ug/m3)", "1-hr AQI")
+names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration", "1-hr AQI")
 
 kable(data[ , c(4,5,3,6:8,1:2)], 'html', align = 'c')
 
