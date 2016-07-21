@@ -357,7 +357,6 @@ write.csv(aqi, "data/aqi_previous.csv", row.names = F)
 ## And a new site has been added to the list
 ## or if it has been over 2 hours since the last issued alert
 
-
 # Set issue notification to sleep from 10 pm to 4 am
 if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
   
@@ -372,8 +371,7 @@ aqi_prev <- filter(aqi_prev, Parameter != "PM10")
 
 if(nrow(aqi) > 0) {
   
-  if((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
-      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > .9) {
+  if(as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > .9) {
       
   aqi$Agency <- gsub("Minnesota Pollution Control Agency", "MPCA", aqi$Agency)
   
