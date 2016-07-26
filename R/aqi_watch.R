@@ -372,6 +372,10 @@ aqi_prev <- filter(aqi_prev, Parameter != "PM10")
 if(nrow(aqi) > 0) {
   
   if(as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > .9) {
+  
+  if((sum(!aqi$AqsID %in% aqi_prev$AqsID) > 0) || 
+      as.numeric(difftime(names(aqi)[10], names(aqi_prev)[11], units="hours")) > 1.9) {
+      
       
   aqi$Agency <- gsub("Minnesota Pollution Control Agency", "MPCA", aqi$Agency)
   
@@ -423,7 +427,8 @@ if(nrow(aqi) > 0) {
   #Save alert time
   names(aqi_all)[11] <- as.character(Sys.time() + 61)
   write.csv(aqi_all, "data/aqi_previous.csv", row.names = F)
-}   # Sites added to list or hour has lapsed
+}   # Sites added to list or 2 hours has lapsed
+}   # 1 hour has lapsed
 }   # High sites check
 }   # Sleep time check
 
