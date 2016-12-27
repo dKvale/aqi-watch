@@ -1,170 +1,111 @@
-"Date","Time","AqsID","Site Name","Parameter","Units","Concentration","Agency","AQI_Value","2016-05-19 10:16:49","2016-05-19 10:02:49"
-"05/19/2016","8:00","191630020","Davenport, Hayes Sch","PM25","UG/M3",32,"Iowa DNR",93,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191630017","Buffalo","PM10","UG/M3",121,"Iowa DNR",84,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190450019","Clinton, Chancy Park","PM25","UG/M3",27,"Iowa DNR",82,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190450021","Clinton, Rainbow Par","PM25","UG/M3",24,"Iowa DNR",76,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550250041","MADISON EAST","PM25","UG/M3",21,"Wisconsin Dept. of Natural Resources",70,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191390019","Muscatine, High Scho","PM25","UG/M3",19,"Iowa DNR",66,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550270001","Horicon Wildlife Are","PM25","UG/M3",18,"Wisconsin Dept. of Natural Resources",63,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460290002","Watertown","PM10","UG/M3",78,"South Dakota Department of Environmental and Natural Resources",62,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550430009","Potosi","PM25","UG/M3",17,"Wisconsin Dept. of Natural Resources",61,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380171004","Fargo NW","PM25","UG/M3",16,"North Dakota Department of Health",59,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270353204","Brainerd","PM25","UG/M3",16,"Minnesota Pollution Control Agency",59,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550090005","GREEN BAY E HIGH","PM25","UG/M3",14,"Wisconsin Dept. of Natural Resources",55,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191630015","Davenport, 10th & Vi","PM25","UG/M3",13,"Iowa DNR",53,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070119","Winnipeg_Ellens","PM10","UG/M3",58,"Manitoba Conservation Air Quality Section",52,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","191032001","Iowa City, Hoover Sc","PM25","UG/M3",12,"Iowa DNR",51,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191370002","Viking Lake State Pa","PM25","UG/M3",12,"Iowa DNR",51,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460990008","Sioux Falls","PM10","UG/M3",54,"South Dakota Department of Environmental and Natural Resources",51,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190130009","Waterloo, Water Towe","PM25","UG/M3",12,"Iowa DNR",51,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191130040","PUBLIC HEALTH","PM25","UG/M3",12,"Linn Co. Public Health",51,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","000064001","Experimental Lakes","OZONE","PPB",51,"Canadian Air and Precipitation Monitoring Network",47,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070203","Brandon","PM10","UG/M3",50,"Manitoba Conservation Air Quality Section",46,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191138040","PUBLIC HEALTH 4","PM25","UG/M3",11,"Linn Co. Public Health",46,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551110007","Devils Lake","OZONE","PPB",47,"Wisconsin Dept. of Natural Resources",44,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270750005","Ely","OZONE","PPB",47,"Minnesota Pollution Control Agency",44,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270177417","Fond du Lac","OZONE","PPB",47,"Minnesota Pollution Control Agency",44,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070203","Brandon","PM25","UG/M3",10.2,"Manitoba Conservation Air Quality Section",42,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191471002","Emmetsburg, ILCC","PM25","UG/M3",10,"Iowa DNR",42,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550290004","NEWPORT","OZONE","PPB",45,"Wisconsin Dept. of Natural Resources",42,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550390006","FOND DU LAC","OZONE","PPB",45,"Wisconsin Dept. of Natural Resources",42,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270353204","Brainerd","OZONE","PPB",45,"Minnesota Pollution Control Agency",42,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270052013","Detroit Lakes","OZONE","PPB",45,"Minnesota Pollution Control Agency",42,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","thunder-bay","THUNDER-BAY","PM25","UG/M3",10.1,"ONTARIO Department of Health",42,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551270005","LAKE GENEVA","OZONE","PPB",44,"Wisconsin Dept. of Natural Resources",41,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","461270001","UC1","PM25","UG/M3",9.5,"South Dakota Department of Environmental and Natural Resources",40,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","551199991","Perkinstown","OZONE","PPB",42,"EPA Office of Atmospheric Programs",39,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550410007","POTAWATOMI","OZONE","PPB",42,"Wisconsin Dept. of Natural Resources",39,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191690011","SLATER","OZONE","PPB",42,"Polk Co. Air Quality Division",39,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271095008","Rochester","OZONE","PPB",42,"Minnesota Pollution Control Agency",39,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270495302","Stanton","OZONE","PPB",42,"Minnesota Pollution Control Agency",39,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","271095008","Rochester","PM25","UG/M3",9,"Minnesota Pollution Control Agency",38,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790058","Milwaukee College Av","PM25","UG/M3",9,"Wisconsin Dept. of Natural Resources",38,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","461030020","Credit Union","PM25","UG/M3",9.1,"South Dakota Department of Environmental and Natural Resources",38,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550870009","APPLETON AAL","PM25","UG/M3",9,"Wisconsin Dept. of Natural Resources",38,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790010","MILWAUKEE 16TH ST","PM25","UG/M3",9,"Wisconsin Dept. of Natural Resources",38,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191530030","CARPENTER","OZONE","PPB",41,"Polk Co. Air Quality Division",38,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271231908","St. Anthony Park","PM25","UG/M3",9,"Minnesota Pollution Control Agency",38,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551170006","SHEBOYGAN","OZONE","PPB",40,"Wisconsin Dept. of Natural Resources",37,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460990008","Sioux Falls","PM25","UG/M3",8.8,"South Dakota Department of Environmental and Natural Resources",37,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550610002","KEWAUNEE","OZONE","PPB",39,"Wisconsin Dept. of Natural Resources",36,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550710007","MANITOWOC","OZONE","PPB",39,"Wisconsin Dept. of Natural Resources",36,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191130033","COGGON","OZONE","PPB",39,"Linn Co. Public Health",36,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460650003","Pierre","PM25","UG/M3",8.5,"South Dakota Department of Environmental and Natural Resources",35,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550890008","GRAFTON","OZONE","PPB",38,"Wisconsin Dept. of Natural Resources",35,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460990008","Sioux Falls","OZONE","PPB",38,"South Dakota Department of Environmental and Natural Resources",35,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191130028","KIRKWOOD","OZONE","PPB",38,"Linn Co. Public Health",35,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270953051","Mille Lacs","OZONE","PPB",38,"Minnesota Pollution Control Agency",35,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190170011","Waverly, Airport","OZONE","PPB",37,"Iowa DNR",34,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270834210","Marshall","OZONE","PPB",37,"Minnesota Pollution Control Agency",34,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551170009","Sheboygan-Haven","OZONE","PPB",36,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550210015","COLUMBUS","OZONE","PPB",36,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550270001","Horicon Wildlife Are","OZONE","PPB",36,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790026","MILWAUKEE SER DNR","PM25","UG/M3",8,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550550009","Jefferson-Laatsch","OZONE","PPB",36,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551050030","Beloit-Converse","OZONE","PPB",36,"Wisconsin Dept. of Natural Resources",33,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271713201","St. Michael","PM25","UG/M3",8,"Minnesota Pollution Control Agency",33,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271377554","West Duluth","PM25","UG/M3",8,"Minnesota Pollution Control Agency",33,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","000070119","WINNIPEG-ELLEN-ST.","PM25","UG/M3",7.9,"MANITOBA Department of Health",33,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191630014","Scott County Park","OZONE","PPB",34,"Iowa DNR",31,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191810022","Lake Ahquabi","OZONE","PPB",33,"Iowa DNR",31,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550730012","LAKE DUBAY","OZONE","PPB",34,"Wisconsin Dept. of Natural Resources",31,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550870009","APPLETON AAL","OZONE","PPB",34,"Wisconsin Dept. of Natural Resources",31,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270031002","Blaine","PM10","UG/M3",33,"Minnesota Pollution Control Agency",31,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271390505","Shakopee","OZONE","PPB",33,"Minnesota Pollution Control Agency",31,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271713201","St. Michael","OZONE","PPB",33,"Minnesota Pollution Control Agency",31,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191130040","PUBLIC HEALTH","OZONE","PPB",34,"Linn Co. Public Health",31,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191370002","Viking Lake State Pa","OZONE","PPB",32,"Iowa DNR",30,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190851101","Pisgah, Harrison Cou","OZONE","PPB",32,"Iowa DNR",30,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790085","BAYSIDE","OZONE","PPB",32,"Wisconsin Dept. of Natural Resources",30,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550890009","HARRINGTON BCH","OZONE","PPB",32,"Wisconsin Dept. of Natural Resources",30,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270031001","East Bethel","OZONE","PPB",32,"Minnesota Pollution Control Agency",30,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271636016","Marine on St. Croix","OZONE","PPB",32,"Minnesota Pollution Control Agency",30,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","270177417","Fond du Lac","PM25","UG/M3",7,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380171004","Fargo NW","OZONE","PPB",31,"North Dakota Department of Health",29,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191770006","Lake Sugema","OZONE","PPB",31,"Iowa DNR",29,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551110007","Devils Lake","PM25","UG/M3",7,"Wisconsin Dept. of Natural Resources",29,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271230871","St. Paul-Harding H.S","PM25","UG/M3",7,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271453052","St. Cloud","OZONE","PPB",31,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270317810","Grand Portage","PM25","UG/M3",7,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270530962","Minneapolis-Near Roa","PM25","UG/M3",7,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270370480","Lakeville - Near Roa","PM25","UG/M3",7,"Minnesota Pollution Control Agency",29,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460330132","WIND CAVE","OZONE","PPB",30,"South Dakota Department of Environmental and Natural Resources",28,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","000070118","WINNIPEG-SCOTIA-ST.","PM25","UG/M3",6.7,"MANITOBA Department of Health",28,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550030010","BAD RIVER TRIBAL SCH","OZONE","PPB",29,"Wisconsin Dept. of Natural Resources",27,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460290002","Watertown","PM25","UG/M3",6.5,"South Dakota Department of Environmental and Natural Resources",27,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550590019","CHIWAUKEE","OZONE","PPB",29,"Wisconsin Dept. of Natural Resources",27,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790026","MILWAUKEE SER DNR","PM10","UG/M3",29,"Wisconsin Dept. of Natural Resources",27,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551330027","WAUKESHA - CLEVELAND","OZONE","PPB",29,"Wisconsin Dept. of Natural Resources",27,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270031002","Blaine","OZONE","PPB",29,"Minnesota Pollution Control Agency",27,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380150003","Bismarck Residential","OZONE","PPB",28,"North Dakota Department of Health",26,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","460110003","Research Farm","OZONE","PPB",28,"South Dakota Department of Environmental and Natural Resources",26,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","190450021","Clinton, Rainbow Par","OZONE","PPB",28,"Iowa DNR",26,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550350014","Eau Claire","OZONE","PPB",28,"Wisconsin Dept. of Natural Resources",26,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550270001","Horicon Wildlife Are","PM10","UG/M3",28,"Wisconsin Dept. of Natural Resources",26,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550590025","Kenosha-Water Tower","OZONE","PPB",28,"Wisconsin Dept. of Natural Resources",26,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","381050003","Williston","PM10","UG/M3",27,"North Dakota Department of Health",25,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380130004","Lostwood NWR","OZONE","PPB",27,"North Dakota Department of Health",25,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191471002","Emmetsburg, ILCC","OZONE","PPB",27,"Iowa DNR",25,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","380250003","Dunn Center","OZONE","PPB",27,"North Dakota Department of Health",25,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550350014","Eau Claire","PM25","UG/M3",6,"Wisconsin Dept. of Natural Resources",25,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551330027","WAUKESHA - CLEVELAND","PM25","UG/M3",6,"Wisconsin Dept. of Natural Resources",25,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270031002","Blaine","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270530963","Minneapolis-Phillips","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","191530030","CARPENTER","PM25","UG/M3",6,"Polk Co. Air Quality Division",25,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380570004","Beulah North","OZONE","PPB",26,"North Dakota Department of Health",24,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191630015","Davenport, 10th & Vi","OZONE","PPB",26,"Iowa DNR",24,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070119","Winnipeg_Ellens","OZONE","PPB",26,"Manitoba Conservation Air Quality Section",24,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","380250003","Dunn Center","PM25","UG/M3",5.8,"North Dakota Department of Health",24,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550090026","GREEN BAY UW","OZONE","PPB",26,"Wisconsin Dept. of Natural Resources",24,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790026","MILWAUKEE SER DNR","OZONE","PPB",26,"Wisconsin Dept. of Natural Resources",24,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380650002","Hannover","OZONE","PPB",25,"North Dakota Department of Health",23,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380650002","Hannover","PM25","UG/M3",5.6,"North Dakota Department of Health",23,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460930001","Black Hawk","PM10","UG/M3",25,"South Dakota Department of Environmental and Natural Resources",23,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551250001","TROUT LAKE","OZONE","PPB",25,"Wisconsin Dept. of Natural Resources",23,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271230868","St. Paul - Downtown","PM10","UG/M3",25,"Minnesota Pollution Control Agency",23,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270530962","Minneapolis-Near Roa","OZONE","PPB",25,"Minnesota Pollution Control Agency",23,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","460110003","Research Farm","PM10","UG/M3",24,"South Dakota Department of Environmental and Natural Resources",22,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","461270001","UC1","OZONE","PPB",24,"South Dakota Department of Environmental and Natural Resources",22,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550250041","MADISON EAST","OZONE","PPB",24,"Wisconsin Dept. of Natural Resources",22,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550790010","MILWAUKEE 16TH ST","OZONE","PPB",24,"Wisconsin Dept. of Natural Resources",22,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550630012","LACROSSE DOT","OZONE","PPB",24,"Wisconsin Dept. of Natural Resources",22,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271377550","Duluth-WDSE","OZONE","PPB",24,"Minnesota Pollution Control Agency",22,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551010020","Racine-Payne and Dol","OZONE","PPB",23,"Wisconsin Dept. of Natural Resources",21,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550890009","HARRINGTON BCH","PM25","UG/M3",5,"Wisconsin Dept. of Natural Resources",21,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270750005","Ely","PM25","UG/M3",5,"Minnesota Pollution Control Agency",21,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271453052","St. Cloud","PM25","UG/M3",5,"Minnesota Pollution Control Agency",21,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270834210","Marshall","PM25","UG/M3",5,"Minnesota Pollution Control Agency",21,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380171004","Fargo NW","PM10","UG/M3",22,"North Dakota Department of Health",20,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","380070002","Theodore Roosevelt N","OZONE","PPB",22,"National Park Service",20,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","381050003","Williston","PM25","UG/M3",4.5,"North Dakota Department of Health",19,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380130004","Lostwood NWR","PM10","UG/M3",20,"North Dakota Department of Health",19,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070118","Winnipeg_Scotia","OZONE","PPB",20,"Manitoba Conservation Air Quality Section",19,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380150003","Bismarck Residential","PM10","UG/M3",19,"North Dakota Department of Health",18,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380530002","TRNP-NU","OZONE","PPB",19,"North Dakota Department of Health",18,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","461270001","UC1","PM10","UG/M3",19,"South Dakota Department of Environmental and Natural Resources",18,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","381050003","Williston","OZONE","PPB",18,"North Dakota Department of Health",17,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550410007","POTAWATOMI","PM25","UG/M3",4,"Wisconsin Dept. of Natural Resources",17,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","000070203","Brandon","OZONE","PPB",18,"Manitoba Conservation Air Quality Section",17,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550590019","CHIWAUKEE","PM25","UG/M3",4,"Wisconsin Dept. of Natural Resources",17,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","550630012","LACROSSE DOT","PM25","UG/M3",4,"Wisconsin Dept. of Natural Resources",17,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270370470","Apple Valley","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380650002","Hannover","PM10","UG/M3",16,"North Dakota Department of Health",15,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460930001","Black Hawk","OZONE","PPB",16,"South Dakota Department of Environmental and Natural Resources",15,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","thunder-bay","THUNDER-BAY","OZONE","PPB",16.2,"ONTARIO Department of Health",15,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380150003","Bismarck Residential","PM25","UG/M3",3.3,"North Dakota Department of Health",14,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551110007","Devils Lake","PM10","UG/M3",14,"Wisconsin Dept. of Natural Resources",13,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","460710001","Badlands","PM25","UG/M3",2.8,"South Dakota Department of Environmental and Natural Resources",12,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","380250003","Dunn Center","PM10","UG/M3",11,"North Dakota Department of Health",10,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380130004","Lostwood NWR","PM25","UG/M3",1.9,"North Dakota Department of Health",8,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270052013","Detroit Lakes","PM25","UG/M3",2,"Minnesota Pollution Control Agency",8,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","271377001","Virginia","PM25","UG/M3",2,"Minnesota Pollution Control Agency",8,"2016-05-19 10:16:49",NA
-"05/19/2016","9:00","270072304","Red Lake Nation","PM25","UG/M3",2,"Minnesota Pollution Control Agency",8,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380570004","Beulah North","PM10","UG/M3",7,"North Dakota Department of Health",6,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380530002","TRNP-NU","PM10","UG/M3",5,"North Dakota Department of Health",5,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","191770006","Lake Sugema","PM25","UG/M3",1,"Iowa DNR",4,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460710001","Badlands","PM10","UG/M3",4,"South Dakota Department of Environmental and Natural Resources",4,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","551198001","PERKINSTOWN","PM25","UG/M3",1,"Wisconsin Dept. of Natural Resources",4,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380570004","Beulah North","PM25","UG/M3",0.8,"North Dakota Department of Health",3,"2016-05-19 10:16:49",NA
-"05/19/2016","7:00","380530002","TRNP-NU","PM25","UG/M3",-0.1,"North Dakota Department of Health",0,"2016-05-19 10:16:49",NA
-"05/19/2016","8:00","460330132","WIND CAVE","PM25","UG/M3",-0.1,"South Dakota Department of Environmental and Natural Resources",0,"2016-05-19 10:16:49",NA
+"Date","Time","AqsID","Site Name","Parameter","Units","Concentration","Agency","AQI_Value","2016-12-26 23:17:18","2016-12-26 15:18:16"
+"12/26/2016","21:00","191630017","Buffalo","PM10","UG/M3",79,"Iowa DNR",63,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070203","Brandon","PM25","UG/M3",10.7,"Manitoba Conservation Air Quality Section",45,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","190450019","Clinton, Chancy Park","PM25","UG/M3",10,"Iowa DNR",42,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","381050003","Williston","PM25","UG/M3",9.3,"North Dakota Health",39,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","190450021","Clinton, Rainbow Par","PM25","UG/M3",9,"Iowa DNR",38,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460330132","WIND CAVE","OZONE","PPB",38,"South Dakota",35,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550790010","MILWAUKEE 16TH ST","PM25","UG/M3",8,"Wisconsin DNR",33,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","190130009","Waterloo, Water Towe","PM25","UG/M3",8,"Iowa DNR",33,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","000064001","Experimental Lakes","OZONE","PPB",35,"Canadian Air and Precipitation Monitoring Network",32,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380171004","Fargo NW","OZONE","PPB",33,"North Dakota Health",31,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550030010","BAD RIVER TRIBAL SCH","OZONE","PPB",34,"Wisconsin DNR",31,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","461030020","Credit Union","PM25","UG/M3",7.5,"South Dakota",31,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380130004","Lostwood NWR","OZONE","PPB",32,"North Dakota Health",30,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380570004","Beulah North","OZONE","PPB",31,"North Dakota Health",29,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380650002","Hannover","OZONE","PPB",31,"North Dakota Health",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550870009","APPLETON AAL","PM25","UG/M3",7,"Wisconsin DNR",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","551330027","WAUKESHA - CLEVELAND","PM25","UG/M3",7,"Wisconsin DNR",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191630015","Davenport, 10th & Vi","PM25","UG/M3",7,"Iowa DNR",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191471002","Emmetsburg, ILCC","PM25","UG/M3",7,"Iowa DNR",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460710001","Badlands","OZONE","PPB",31,"South Dakota",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460990008","Sioux Falls","OZONE","PPB",31,"South Dakota",29,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271390505","Shakopee","OZONE","PPB",31,"Minnesota Pollution Control Agency",29,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271377550","Duluth-WDSE","OZONE","PPB",31,"Minnesota Pollution Control Agency",29,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","380070002","Theodore Roosevelt N","OZONE","PPB",30,"National Park Service",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","271370034","Voyageurs NP","OZONE","PPB",30,"National Park Service",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550410007","POTAWATOMI","OZONE","PPB",30,"Wisconsin DNR",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","551199991","Perkinstown","OZONE","PPB",30,"EPA Office of Atmospheric Programs",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460930001","Black Hawk","OZONE","PPB",30,"South Dakota",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","461270001","UC1","OZONE","PPB",30,"South Dakota",28,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270031002","Blaine","OZONE","PPB",30,"Minnesota Pollution Control Agency",28,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","380250003","Dunn Center","OZONE","PPB",29,"North Dakota Health",27,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380530002","TRNP-NU","OZONE","PPB",28,"North Dakota Health",26,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550270001","Horicon Wildlife Are","OZONE","PPB",28,"Wisconsin DNR",26,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380150003","Bismarck Residential","OZONE","PPB",27,"North Dakota Health",25,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550250041","MADISON EAST","PM25","UG/M3",6,"Wisconsin DNR",25,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550590019","CHIWAUKEE","PM25","UG/M3",6,"Wisconsin DNR",25,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550790026","MILWAUKEE SER DNR","OZONE","PPB",27,"Wisconsin DNR",25,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550410007","POTAWATOMI","PM25","UG/M3",6,"Wisconsin DNR",25,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270370470","Apple Valley","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271713201","St. Michael","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271095008","Rochester","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270317810","Grand Portage","PM25","UG/M3",6,"Minnesota Pollution Control Agency",25,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","191130040","PUBLIC HEALTH","PM25","UG/M3",6,"Linn Co. Public Health",25,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","460650003","Pierre","PM25","UG/M3",5.3,"South Dakota",22,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380650002","Hannover","PM25","UG/M3",5.3,"North Dakota Health",22,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270530962","Minneapolis-Near Roa","OZONE","PPB",24,"Minnesota Pollution Control Agency",22,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","380250003","Dunn Center","PM25","UG/M3",5,"North Dakota Health",21,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550350014","Eau Claire","PM25","UG/M3",5,"Wisconsin DNR",21,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","191530030","CARPENTER","PM25","UG/M3",5,"Polk Co. Air Quality Division",21,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","381050003","Williston","OZONE","PPB",22,"North Dakota Health",20,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070119","Winnipeg_Ellens","OZONE","PPB",21,"Manitoba Conservation Air Quality Section",19,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191630015","Davenport, 10th & Vi","OZONE","PPB",19,"Iowa DNR",18,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460990008","Sioux Falls","PM25","UG/M3",4.2,"South Dakota",18,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380130004","Lostwood NWR","PM25","UG/M3",4,"North Dakota Health",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550270001","Horicon Wildlife Are","PM25","UG/M3",4,"Wisconsin DNR",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550790026","MILWAUKEE SER DNR","PM25","UG/M3",4,"Wisconsin DNR",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550790058","Milwaukee College Av","PM25","UG/M3",4,"Wisconsin DNR",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191390019","Muscatine, High Scho","PM25","UG/M3",4,"Iowa DNR",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550090005","GREEN BAY E HIGH","PM25","UG/M3",4,"Wisconsin DNR",17,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","461270001","UC1","PM25","UG/M3",4,"South Dakota",17,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271453052","St. Cloud","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270031002","Blaine","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270530962","Minneapolis-Near Roa","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270072304","Red Lake Nation","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271231908","St. Anthony Park","PM25","UG/M3",4,"Minnesota Pollution Control Agency",17,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070118","Winnipeg_Scotia","OZONE","PPB",17,"Manitoba Conservation Air Quality Section",16,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460330132","WIND CAVE","PM25","UG/M3",3.8,"South Dakota",16,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191032001","Iowa City, Hoover Sc","PM25","UG/M3",3.8,"Iowa DNR",16,"2016-12-26 23:17:18",NA
+"12/26/2016","18:00","000070118","WINNIPEG-SCOTIA-ST.","PM25","UG/M3",3.8,"MANITOBA Department of Health",16,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460990008","Sioux Falls","PM10","UG/M3",14,"South Dakota",13,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460290002","Watertown","PM25","UG/M3",3.1,"South Dakota",13,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","551198001","PERKINSTOWN","PM25","UG/M3",3,"Wisconsin DNR",12,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460330132","WIND CAVE","PM10","UG/M3",13,"South Dakota",12,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191630020","Davenport, Hayes Sch","PM25","UG/M3",3,"Iowa DNR",12,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550630012","LACROSSE DOT","PM25","UG/M3",3,"Wisconsin DNR",12,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550430009","Potosi","PM25","UG/M3",3,"Wisconsin DNR",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271230871","St. Paul-Harding H.S","PM25","UG/M3",3,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270530963","Minneapolis-Phillips","PM25","UG/M3",3,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271230868","St. Paul - Downtown","PM10","UG/M3",13,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270370480","Lakeville - Near Roa","PM25","UG/M3",3,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270177417","Fond du Lac","PM25","UG/M3",3,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270353204","Brainerd","PM25","UG/M3",3,"Minnesota Pollution Control Agency",12,"2016-12-26 23:17:18",NA
+"12/26/2016","18:00","000070119","WINNIPEG-ELLEN-ST.","PM25","UG/M3",2.4,"MANITOBA Department of Health",10,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550790026","MILWAUKEE SER DNR","PM10","UG/M3",10,"Wisconsin DNR",9,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380171004","Fargo NW","PM10","UG/M3",9,"North Dakota Health",8,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","460110003","Research Farm","PM25","UG/M3",1.9,"South Dakota",8,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","551110007","Devils Lake","PM25","UG/M3",2,"Wisconsin DNR",8,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","191770006","Lake Sugema","PM25","UG/M3",2,"Iowa DNR",8,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","191138040","PUBLIC HEALTH 4","PM25","UG/M3",2,"Linn Co. Public Health",8,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","381050003","Williston","PM10","UG/M3",7,"North Dakota Health",6,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","551110007","Devils Lake","PM10","UG/M3",6,"Wisconsin DNR",6,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460930001","Black Hawk","PM10","UG/M3",7,"South Dakota",6,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270031002","Blaine","PM10","UG/M3",7,"Minnesota Pollution Control Agency",6,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070119","Winnipeg_Ellens","PM10","UG/M3",5,"Manitoba Conservation Air Quality Section",5,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550270001","Horicon Wildlife Are","PM10","UG/M3",5,"Wisconsin DNR",5,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380570004","Beulah North","PM10","UG/M3",4,"North Dakota Health",4,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380130004","Lostwood NWR","PM10","UG/M3",4,"North Dakota Health",4,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271377554","West Duluth","PM25","UG/M3",1,"Minnesota Pollution Control Agency",4,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380530002","TRNP-NU","PM10","UG/M3",3,"North Dakota Health",3,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","460290002","Watertown","PM10","UG/M3",3,"South Dakota",3,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380171004","Fargo NW","PM25","UG/M3",0.4,"North Dakota Health",2,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","380250003","Dunn Center","PM10","UG/M3",2,"North Dakota Health",2,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380570004","Beulah North","PM25","UG/M3",-1.9,"North Dakota Health",0,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380530002","TRNP-NU","PM25","UG/M3",-2.4,"North Dakota Health",0,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","380650002","Hannover","PM10","UG/M3",-1,"North Dakota Health",0,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070203","Brandon","OZONE","PPB",0,"Manitoba Conservation Air Quality Section",0,"2016-12-26 23:17:18",NA
+"12/26/2016","20:00","000070203","Brandon","PM10","UG/M3",-1,"Manitoba Conservation Air Quality Section",0,"2016-12-26 23:17:18",NA
+"12/26/2016","21:00","550890009","HARRINGTON BCH","PM25","UG/M3",0,"Wisconsin DNR",0,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","271377001","Virginia","PM25","UG/M3",-1,"Minnesota Pollution Control Agency",0,"2016-12-26 23:17:18",NA
+"12/26/2016","22:00","270052013","Detroit Lakes","PM25","UG/M3",0,"Minnesota Pollution Control Agency",0,"2016-12-26 23:17:18",NA

@@ -316,29 +316,37 @@ setwd("../")
 #git <- "cd ~/_site/; git 
 #system("rm -r _site")
 #system(paste0("git clone https://github.com/dKvale/aqi-watch.git _site"))
+
 git <- "cd ~/_site; git "
+
 #system(paste0(git, "checkout --orphan gh-pages"))
 #system(paste0(git, "rm -rf ."))
-
 #system(paste0(git, "checkout --orphan new_branch"))
 
-system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
 
-system(paste0(git, "add ."))
+
+###!system(paste0(git, "add ."))
 
 commit <- paste0(git, 'commit -a -m ', '"update obs"')
-system(commit)
+###!system(commit)
 
 #shell(paste0(git, "branch -D master"))
 #shell(paste0(git, "branch -m master"))
 
-system(paste0(git, "config --global user.name dkvale"))
-system(paste0(git, "config --global user.email ", credentials$email))
-system(paste0(git, "config credential.helper store"))
+###!system(paste0(git, "config --global user.name dkvale"))
+###!system(paste0(git, "config --global user.email ", credentials$email))
+###!system(paste0(git, "config credential.helper store"))
 
 #push <- paste0(git, "push -f origin master")
+
+system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
+
+#system("cp -a ~/aqi-watch/web/_site/.  ../../../../usr/share/nginx/html/")
+
+system("sudo cp -a ~/_site/*html ../../../../usr/share/nginx/html/")  
+
 push <- paste0(git, "push -f origin gh-pages")
-system(push)
+###!system(push)
 
 #shell(paste0(git, "push origin --delete gh-pages"))
 #push <- paste0(git, "subtree push --prefix web/_site origin gh-pages")

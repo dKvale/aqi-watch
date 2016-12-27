@@ -15,3 +15,661 @@
 "2015120818","2015-12-08 13:33:09","Failed","Error in open.connection(con, ""rb"") : 
   Failure when receiving data from the peer
 "
+"2016072609","2016-07-26 05:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072608","2016-07-26 05:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072607","2016-07-26 05:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072705","2016-07-27 01:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072704","2016-07-27 01:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072703","2016-07-27 01:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072723","2016-07-27 19:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072722","2016-07-27 19:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072721","2016-07-27 19:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072802","2016-07-27 22:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072801","2016-07-27 22:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072800","2016-07-27 22:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072814","2016-07-28 10:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072813","2016-07-28 10:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072812","2016-07-28 10:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072907","2016-07-29 03:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072906","2016-07-29 03:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072905","2016-07-29 03:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072913","2016-07-29 09:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072912","2016-07-29 09:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016072911","2016-07-29 09:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080213","2016-08-02 09:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080212","2016-08-02 09:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080211","2016-08-02 09:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080217","2016-08-02 13:18:02","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016080219","2016-08-02 15:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080218","2016-08-02 15:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080217","2016-08-02 15:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080222","2016-08-02 18:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080221","2016-08-02 18:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080220","2016-08-02 18:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080301","2016-08-02 21:17:03","Failed","character(0)"
+"2016080302","2016-08-02 22:17:02","Failed","character(0)"
+"2016080301","2016-08-02 22:17:03","Failed","character(0)"
+"2016080303","2016-08-02 23:17:03","Failed","character(0)"
+"2016080302","2016-08-02 23:17:03","Failed","character(0)"
+"2016080304","2016-08-03 00:17:03","Failed","character(0)"
+"2016080305","2016-08-03 01:17:02","Failed","character(0)"
+"2016080306","2016-08-03 02:17:02","Failed","character(0)"
+"2016080307","2016-08-03 03:17:02","Failed","character(0)"
+"2016080306","2016-08-03 03:17:03","Failed","character(0)"
+"2016080308","2016-08-03 04:17:03","Failed","character(0)"
+"2016080307","2016-08-03 04:17:03","Failed","character(0)"
+"2016080306","2016-08-03 04:17:04","Failed","character(0)"
+"2016080309","2016-08-03 05:17:02","Failed","character(0)"
+"2016080308","2016-08-03 05:17:03","Failed","character(0)"
+"2016080307","2016-08-03 05:17:04","Failed","character(0)"
+"2016080310","2016-08-03 06:17:02","Failed","character(0)"
+"2016080309","2016-08-03 06:17:03","Failed","character(0)"
+"2016080308","2016-08-03 06:17:03","Failed","character(0)"
+"2016080311","2016-08-03 07:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080310","2016-08-03 07:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080309","2016-08-03 07:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080312","2016-08-03 08:17:03","Failed","character(0)"
+"2016080311","2016-08-03 08:17:04","Failed","character(0)"
+"2016080310","2016-08-03 08:17:05","Failed","character(0)"
+"2016080312","2016-08-03 09:17:04","Failed","character(0)"
+"2016080311","2016-08-03 09:17:05","Failed","character(0)"
+"2016080314","2016-08-03 10:17:02","Failed","character(0)"
+"2016080314","2016-08-03 11:17:04","Failed","character(0)"
+"2016080316","2016-08-03 12:17:02","Failed","character(0)"
+"2016080314","2016-08-03 12:17:04","Failed","character(0)"
+"2016080321","2016-08-03 17:17:03","Failed","character(0)"
+"2016080517","2016-08-05 13:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080516","2016-08-05 13:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080515","2016-08-05 13:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080520","2016-08-05 16:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080519","2016-08-05 16:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080518","2016-08-05 16:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080714","2016-08-07 10:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080713","2016-08-07 10:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016080712","2016-08-07 10:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081101","2016-08-10 21:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081100","2016-08-10 21:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081023","2016-08-10 21:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081207","2016-08-12 03:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081206","2016-08-12 03:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081205","2016-08-12 03:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081219","2016-08-12 15:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081218","2016-08-12 15:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081217","2016-08-12 15:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081222","2016-08-12 18:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081221","2016-08-12 18:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081220","2016-08-12 18:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081318","2016-08-13 14:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081317","2016-08-13 14:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081316","2016-08-13 14:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081513","2016-08-15 09:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081512","2016-08-15 09:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081511","2016-08-15 09:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081516","2016-08-15 12:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081515","2016-08-15 12:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081514","2016-08-15 12:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081619","2016-08-16 15:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081618","2016-08-16 15:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081617","2016-08-16 15:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081623","2016-08-16 19:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081700","2016-08-16 20:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081623","2016-08-16 20:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081701","2016-08-16 21:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081700","2016-08-16 21:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081623","2016-08-16 21:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081702","2016-08-16 22:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081701","2016-08-16 22:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081700","2016-08-16 22:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081703","2016-08-16 23:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081702","2016-08-16 23:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081701","2016-08-16 23:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081704","2016-08-17 00:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081703","2016-08-17 00:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081702","2016-08-17 00:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081705","2016-08-17 01:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081704","2016-08-17 01:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081703","2016-08-17 01:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081706","2016-08-17 02:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081705","2016-08-17 02:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081704","2016-08-17 02:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081707","2016-08-17 03:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081706","2016-08-17 03:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081705","2016-08-17 03:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081708","2016-08-17 04:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081707","2016-08-17 04:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081706","2016-08-17 04:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081709","2016-08-17 05:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081708","2016-08-17 05:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081707","2016-08-17 05:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081710","2016-08-17 06:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081709","2016-08-17 06:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081708","2016-08-17 06:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081711","2016-08-17 07:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081710","2016-08-17 07:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081709","2016-08-17 07:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081712","2016-08-17 08:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081711","2016-08-17 08:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081710","2016-08-17 08:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081713","2016-08-17 09:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081712","2016-08-17 09:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081711","2016-08-17 09:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081714","2016-08-17 10:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081713","2016-08-17 10:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081712","2016-08-17 10:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016081811","2016-08-18 07:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081810","2016-08-18 07:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081809","2016-08-18 07:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081813","2016-08-18 09:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081812","2016-08-18 09:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016081811","2016-08-18 09:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016083101","2016-08-30 21:17:02","Failed","character(0)"
+"2016090403","2016-09-03 23:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016090402","2016-09-03 23:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016090401","2016-09-03 23:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016090408","2016-09-04 04:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016090407","2016-09-04 04:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016090406","2016-09-04 04:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016091412","2016-09-14 08:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016091411","2016-09-14 08:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016091410","2016-09-14 08:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092111","2016-09-21 07:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092110","2016-09-21 07:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092109","2016-09-21 07:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092217","2016-09-22 15:18:08","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016092306","2016-09-23 02:18:03","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016092412","2016-09-24 08:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092411","2016-09-24 08:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092410","2016-09-24 08:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092413","2016-09-24 10:18:07","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016092818","2016-09-28 14:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092817","2016-09-28 14:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092816","2016-09-28 14:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092908","2016-09-29 04:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092907","2016-09-29 04:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092906","2016-09-29 04:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092921","2016-09-29 17:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092920","2016-09-29 17:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092919","2016-09-29 17:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092922","2016-09-29 18:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092921","2016-09-29 18:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016092920","2016-09-29 18:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093011","2016-09-30 07:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093010","2016-09-30 07:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093009","2016-09-30 07:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093012","2016-09-30 08:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093011","2016-09-30 08:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093010","2016-09-30 08:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093014","2016-09-30 10:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093013","2016-09-30 10:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016093012","2016-09-30 10:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100103","2016-09-30 23:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100102","2016-09-30 23:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100101","2016-09-30 23:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100514","2016-10-05 10:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100513","2016-10-05 10:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016100512","2016-10-05 10:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101107","2016-10-11 03:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101106","2016-10-11 03:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101105","2016-10-11 03:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101108","2016-10-11 04:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101107","2016-10-11 04:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101106","2016-10-11 04:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101109","2016-10-11 05:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101108","2016-10-11 05:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016101107","2016-10-11 05:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102005","2016-10-20 01:18:03","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016102600","2016-10-25 20:17:02","Failed","character(0)"
+"2016102601","2016-10-25 21:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102600","2016-10-25 21:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102523","2016-10-25 21:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102602","2016-10-25 22:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102601","2016-10-25 22:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102600","2016-10-25 22:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102718","2016-10-27 14:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016102813","2016-10-28 09:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102812","2016-10-28 09:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016102811","2016-10-28 09:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016103114","2016-10-31 10:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016103113","2016-10-31 10:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016103112","2016-10-31 10:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110519","2016-11-05 15:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110518","2016-11-05 15:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110517","2016-11-05 15:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110608","2016-11-06 03:17:02","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016110608","2016-11-06 04:17:03","Failed","Error in open.connection(con, ""rb"") : 
+  FTP: couldn't retrieve (RETR failed) the specified file
+"
+"2016110616","2016-11-06 11:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110615","2016-11-06 11:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110614","2016-11-06 11:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110704","2016-11-06 23:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110703","2016-11-06 23:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016110702","2016-11-06 23:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111006","2016-11-10 01:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111005","2016-11-10 01:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111004","2016-11-10 01:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111101","2016-11-10 20:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111100","2016-11-10 20:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111023","2016-11-10 20:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111309","2016-11-13 04:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111308","2016-11-13 04:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111307","2016-11-13 04:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111503","2016-11-14 22:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111502","2016-11-14 22:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111501","2016-11-14 22:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111613","2016-11-16 09:18:03","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016111616","2016-11-16 11:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111615","2016-11-16 11:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111614","2016-11-16 11:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111709","2016-11-17 04:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111708","2016-11-17 04:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016111707","2016-11-17 04:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112301","2016-11-22 20:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112300","2016-11-22 20:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112223","2016-11-22 20:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112311","2016-11-23 06:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112310","2016-11-23 06:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112309","2016-11-23 06:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112313","2016-11-23 08:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112312","2016-11-23 08:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112311","2016-11-23 08:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112323","2016-11-23 18:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112322","2016-11-23 18:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112321","2016-11-23 18:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112416","2016-11-24 11:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112415","2016-11-24 11:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016112414","2016-11-24 11:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120821","2016-12-08 16:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120820","2016-12-08 16:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120819","2016-12-08 16:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120901","2016-12-08 20:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120900","2016-12-08 20:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120823","2016-12-08 20:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016120909","2016-12-09 06:18:06","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016120912","2016-12-09 09:18:06","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016121011","2016-12-10 06:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121010","2016-12-10 06:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121009","2016-12-10 06:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121212","2016-12-12 07:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121211","2016-12-12 07:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121210","2016-12-12 07:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121401","2016-12-13 20:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121400","2016-12-13 20:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121323","2016-12-13 20:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121411","2016-12-14 06:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121410","2016-12-14 06:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121409","2016-12-14 06:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121703","2016-12-16 22:17:11","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121702","2016-12-16 22:17:21","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121701","2016-12-16 22:17:31","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121917","2016-12-19 12:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121916","2016-12-19 12:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016121915","2016-12-19 12:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122301","2016-12-22 21:18:04","Failed","Error in open.connection(con, ""rb"") : 
+  Failure when receiving data from the peer
+"
+"2016122306","2016-12-23 01:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122305","2016-12-23 01:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122304","2016-12-23 01:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122309","2016-12-23 04:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122308","2016-12-23 04:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122307","2016-12-23 04:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122415","2016-12-24 10:17:12","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122414","2016-12-24 10:17:22","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122413","2016-12-24 10:17:32","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2016122609","2016-12-26 04:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122608","2016-12-26 04:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122607","2016-12-26 04:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122610","2016-12-26 05:17:01","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122609","2016-12-26 05:17:01","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122608","2016-12-26 05:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122611","2016-12-26 06:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122610","2016-12-26 06:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122609","2016-12-26 06:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122612","2016-12-26 07:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122611","2016-12-26 07:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122610","2016-12-26 07:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122613","2016-12-26 08:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122612","2016-12-26 08:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122611","2016-12-26 08:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122614","2016-12-26 09:17:01","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122613","2016-12-26 09:17:01","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
+"2016122612","2016-12-26 09:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
+"
