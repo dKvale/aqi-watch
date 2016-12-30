@@ -47,15 +47,20 @@ if(((gmt_time < 2) && (time > 20)) | gmt_time == 23) {
   date_time <- paste0(format(Sys.time(), tz="GMT", "%Y%m%d"), time)
 }
 
-airNow_link <- paste0('ftp://', credentials$user, ':', credentials$pwd, 
-                      '@ftp.airnowapi.org/HourlyData/', date_time,'.dat')
+ #airnow_link <- paste0('ftp://', credentials$user, ':', credentials$pwd, 
+ #                      '@ftp.airnowapi.org/HourlyData/', date_time, '.dat')
   
-aqi <- try(read_delim(airNow_link, "|", 
-                      col_names=F, 
-                      col_types=c('ccccdccdc')), 
-           silent=T)
-
-closeAllConnections()
+  airnow_link <- paste0("https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/",
+                        substring(date_time, 1, 4), "/", 
+                        substring(date_time, 1, 8), "/", 
+                        "HourlyData_", date_time, ".dat")
+  
+  aqi <- try(read_delim(airnow_link, "|", 
+                        col_names = F, 
+                        col_types = c('ccccdccdc')), 
+             silent = T)
+  
+  closeAllConnections()
 
 # Write to error log if AirNow site is down
 if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
