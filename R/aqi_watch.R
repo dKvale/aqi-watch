@@ -256,7 +256,7 @@ thunder_pm25 <- grab_aqicn(country="canada", state="ontario", city="thunder-bay"
 thunder_o3 <- grab_aqicn(country="canada", state="ontario", city="thunder-bay", param="o3")
 
 # Combine all
-aqi <- rbind_list(aqi, 
+aqi <- bind_rows(aqi, 
                  winnipeg_ellen_pm25, 
                  winnipeg_scotia_pm25, 
                  thunder_pm25, 
