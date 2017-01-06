@@ -62,7 +62,20 @@ if(((gmt_time < 2) && (time > 20)) | gmt_time == 23) {
   
   closeAllConnections()
 
-# Write to error log if AirNow site is down
+# If blank, try again in 5 minutes
+if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
+          if(i == 0) {
+                
+           Sys.sleep(60 * 5)  # Pause for 5 minutes        
+                    
+           aqi <- try(read_delim(airnow_link, "|", 
+                        col_names = F, 
+                        col_types = c('ccccdccdc')), 
+             silent = T)         
+          }
+}
+          
+# Write to error log if AirNow data missing
 if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
   errs <- read.csv("log/error_log.csv", stringsAsFactors=F)
 
