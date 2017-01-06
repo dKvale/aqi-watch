@@ -283,7 +283,7 @@ names(aqi)[11] <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 aqi <- filter(aqi, AQI_Value > -29)[ , -5]
 
 # Set negative AQIs to zero
-aqi[aqi$AQI_Value < 0, ]$AQI_Value <- 0 
+aqi$AQI_Value <- ifelse(aqi$AQI_Value < 0, 0, aqi$AQI_Value)
 
 # Arrange from high to low
 aqi <- arrange(ungroup(aqi), -AQI_Value)
