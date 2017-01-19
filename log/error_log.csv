@@ -683,3 +683,7 @@
 "
 "2017011823","2017-01-18 18:13:10","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
 "
+"2017011900","2017-01-18 19:09:18","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017011900","2017-01-18 19:18:58","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"

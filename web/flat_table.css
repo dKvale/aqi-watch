@@ -1,11 +1,11 @@
 .main-container {
-  max-width: 1350px;
+  max-width: 1350px !important;
   margin-left: auto;
   margin-right: auto;
 }
 
 .container-fluid {
-  max-width: 1350px;
+  max-width: 1350px !important;
   margin-left: auto;
   margin-right: auto;
 } 
@@ -46,29 +46,29 @@ th {
 
 
 td {
-  background-color: rgb(238, 238, 238);
+  /*background-color: rgb(238, 238, 238); */
   color: rgb(111, 111, 111);
-  padding: 8px 6px;
-  font-size: 12px;
+  padding: 8px 6px !important;
+  font-size: 12px !important;
 }
 
-body {width: 99%; max-width: 99%; /* 900px*/}
+/*body {width: 99%; max-width: 99%;  900px*/}
 
-code {font-size: 18px;}
+code {font-size: 18px !important;}
 
-pre {font-size: 18px}
+pre {font-size: 18px !important;}
 
-p {font-size: 16px}
+p {font-size: 16px !important;}
 
 h1.title {
-    font-size: 32px;
+    font-size: 32px !important;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 22px !important;
 }
 
 hr {
-    margin-top: 6px;
-    margin-bottom: 10px;
+    margin-top: 2px !important;
+    margin-bottom: 8px !important;
 }

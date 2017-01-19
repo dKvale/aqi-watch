@@ -19,6 +19,7 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
 
@@ -78,6 +79,7 @@ button.code-folding-btn:focus {
 }
 </style>
 
+
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
@@ -134,7 +136,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.0/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -161,6 +162,7 @@ $(document).ready(function () {
     <div id="navbar" class="collapse navbar-collapse navbar-left">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Map</a></li>
+        <li><a href="mn_history.html">History</a></li>
         <li><a href="exceed.html">High sites (1-hr)</a></li>
         <li><a href="mn_sites.html">MN sites (1-hr)</a></li>
         <li><a href="nearby_sites.html">Nearby sites (1-hr)</a></li>
@@ -183,43 +185,9 @@ $(document).ready(function () {
   setTimeout(function() { window.location=window.location;}, 350000);
 </script>
 <hr>
-<div id="current-air-monitors-reporting-concentrations-above-a-1-hr-aqi-of-90." class="section level5">
-<h5>Current air monitors reporting concentrations above a 1-hr AQI of 90.</h5>
+<div id="monitors-reporting-a-1-hr-aqi-above-90." class="section level2">
+<h2>Monitors reporting a 1-hr AQI above 90.</h2>
 <div class="orange">
-<table>
-<thead>
-<tr>
-<th style="text-align:center;">
-Site Name
-</th>
-<th style="text-align:center;">
-Agency
-</th>
-<th style="text-align:center;">
-AqsID
-</th>
-<th style="text-align:center;">
-Parameter
-</th>
-<th style="text-align:center;">
-Concentration
-</th>
-<th style="text-align:center;">
-1-hr AQI
-</th>
-<th style="text-align:center;">
-Date
-</th>
-<th style="text-align:center;">
-Sampling Hour
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
 <p>*The table is currently empty. All sites are reporting concentrations at or below a 1-hr AQI of 90.</p>
 </div>
 <br>
@@ -244,6 +212,90 @@ AqsID
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Winnipeg_Scotia
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+000070118
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Winnipeg_Ellens
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+000070119
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Winnipeg_Ellens
+</td>
+<td style="text-align:center;">
+PM10
+</td>
+<td style="text-align:center;">
+000070119
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Brandon
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+000070203
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Brandon
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+000070203
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+CAN
+</td>
+<td style="text-align:center;">
+Brandon
+</td>
+<td style="text-align:center;">
+PM10
+</td>
+<td style="text-align:center;">
+000070203
+</td>
+</tr>
 <tr>
 <td style="text-align:center;">
 IA
@@ -347,13 +399,13 @@ OZONE
 IA
 </td>
 <td style="text-align:center;">
-Viking Lake State Park
+PUBLIC HEALTH
 </td>
 <td style="text-align:center;">
-OZONE
+PM25
 </td>
 <td style="text-align:center;">
-191370002
+191130040
 </td>
 </tr>
 <tr>
@@ -364,7 +416,7 @@ IA
 Viking Lake State Park
 </td>
 <td style="text-align:center;">
-PM25
+OZONE
 </td>
 <td style="text-align:center;">
 191370002
@@ -382,20 +434,6 @@ OZONE
 </td>
 <td style="text-align:center;">
 191471002
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-CARPENTER
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-191530030
 </td>
 </tr>
 <tr>
@@ -571,38 +609,10 @@ OZONE
 MN
 </td>
 <td style="text-align:center;">
-Ely
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-270750005
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
 Marshall
 </td>
 <td style="text-align:center;">
 OZONE
-</td>
-<td style="text-align:center;">
-270834210
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
-Marshall
-</td>
-<td style="text-align:center;">
-PM25
 </td>
 <td style="text-align:center;">
 270834210
@@ -634,6 +644,20 @@ OZONE
 </td>
 <td style="text-align:center;">
 271095008
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+MN
+</td>
+<td style="text-align:center;">
+St. Anthony Park
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+271231908
 </td>
 </tr>
 <tr>
@@ -697,6 +721,34 @@ PM25
 ND
 </td>
 <td style="text-align:center;">
+Lostwood NWR
+</td>
+<td style="text-align:center;">
+OZONE
+</td>
+<td style="text-align:center;">
+380130004
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+ND
+</td>
+<td style="text-align:center;">
+Lostwood NWR
+</td>
+<td style="text-align:center;">
+PM10
+</td>
+<td style="text-align:center;">
+380130004
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+ND
+</td>
+<td style="text-align:center;">
 Bismarck Residential
 </td>
 <td style="text-align:center;">
@@ -718,76 +770,6 @@ PM10
 </td>
 <td style="text-align:center;">
 380150003
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SD
-</td>
-<td style="text-align:center;">
-Research Farm
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-460110003
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SD
-</td>
-<td style="text-align:center;">
-Research Farm
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-460110003
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SD
-</td>
-<td style="text-align:center;">
-Badlands
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-460710001
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SD
-</td>
-<td style="text-align:center;">
-Badlands
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-460710001
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SD
-</td>
-<td style="text-align:center;">
-UC1
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-461270001
 </td>
 </tr>
 <tr>
@@ -872,6 +854,20 @@ OZONE
 </td>
 <td style="text-align:center;">
 550390006
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+WI
+</td>
+<td style="text-align:center;">
+Potosi
+</td>
+<td style="text-align:center;">
+PM25
+</td>
+<td style="text-align:center;">
+550430009
 </td>
 </tr>
 <tr>
@@ -1154,34 +1150,6 @@ OZONE
 551330027
 </td>
 </tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Thunder Bay
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-thunder-bay
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Thunder Bay
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-thunder-bay
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1195,9 +1163,13 @@ thunder-bay
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 

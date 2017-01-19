@@ -12,7 +12,8 @@ options(rstudio.markdownToHTML =
             markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
-setwd("aqi-watch")
+#setwd("../")
+#setwd("aqi-watch")
 
 email_trigger <- 90
 
@@ -242,9 +243,19 @@ grab_aqicn <- function(country="usa", state="north-dakota", city="fargo-nw", par
   
   data_conc <- round(aqi2conc(as.numeric(data_aqi), param), 1)
 
-  data <- data.frame(data_date, paste0(data_time, ":00"), aqsid, toupper(city), NaN, param, units, data_conc, x=paste(toupper(state), "Department of Health"), as.numeric(data_aqi), stringsAsFactors = F)
+  data <- data.frame(data_date, 
+                     paste0(data_time, ":00"), 
+                     aqsid, 
+                     toupper(city), 
+                     NaN,
+                     param, 
+                     units, 
+                     data_conc, 
+                     x=paste(toupper(state), "Department of Health"), 
+                     as.numeric(data_aqi), 
+                     stringsAsFactors = F)
   
-  names(data) <- names(aqi)
+  names(data) <- names(aqi)[1:10]
   
   return(data)
 }
@@ -294,6 +305,7 @@ aqi_prev <- read_csv("data/aqi_previous.csv", col_types = c("ccccccdcdTT")) %>%
 
 # Attach last AQI watch notification time
 aqi$last_notification <- NA
+
 names(aqi)[11] <- names(aqi_prev)[11]
 
 
@@ -302,9 +314,10 @@ names(aqi)[11] <- names(aqi_prev)[11]
 #--------------------------------------------------------#
 
 # If high sites table has changed update github repo
-if(!identical(aqi$AQI_Value, aqi_prev$AQI_Value) || 
-   !identical(aqi$AqsID, aqi_prev$AqsID) || 
-   as.numeric(difftime(names(aqi)[10], names(aqi_prev)[10], units="hours")) > 1.1) {
+if(TRUE) {
+#if(!identical(aqi$AQI_Value, aqi_prev$AQI_Value) || 
+#   !identical(aqi$AqsID, aqi_prev$AqsID) || 
+#   as.numeric(difftime(names(aqi)[10], names(aqi_prev)[10], units="hours")) > 1.1) {
 
 locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
   
@@ -384,7 +397,9 @@ write.csv(aqi, "data/aqi_previous.csv", row.names = F)
 ## or if it has been over 2 hours since the last issued alert
 
 # Set issue notification to sleep from 10 pm to 4 am
-if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
+
+if(FALSE) {
+#if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
   
 # Remove: PM10, low concentrations, and outstate monitors
 aqi <- filter(aqi, AQI_Value > email_trigger) 

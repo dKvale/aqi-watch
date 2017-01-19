@@ -14,7 +14,7 @@ title: "1-hr AQI"
  _Last updated `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
 </div>
 
-<div style = "margin-right: 1%; margin-left: 1%;">   
+<div style = "margin-right: 4px; margin-left: 4px;">   
 ```{r leafMap, message=F, echo=F, warning=F,  fig.height = 5.3}
 library(leaflet)
 
