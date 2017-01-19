@@ -13,7 +13,7 @@ options(rstudio.markdownToHTML =
           })
 
 #setwd("../")
-#setwd("aqi-watch")
+setwd("aqi-watch")
 
 email_trigger <- 90
 
@@ -398,8 +398,8 @@ write.csv(aqi, "data/aqi_previous.csv", row.names = F)
 
 # Set issue notification to sleep from 10 pm to 4 am
 
-if(FALSE) {
-#if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
+#if(FALSE) {
+if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
   
 # Remove: PM10, low concentrations, and outstate monitors
 aqi <- filter(aqi, AQI_Value > email_trigger) 
