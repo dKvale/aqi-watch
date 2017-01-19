@@ -1,0 +1,10 @@
+anyNA                   Backport of anyNA
+dir.exists              Backport of dir.exists
+endsWith                Backport of endsWith
+file.info               Backport of 'file.info'
+file.mode               Backports of wrappers around 'file.info'
+hasName                 Backport of hasName
+lengths                 Backport of lengths
+startsWith              Backport of startsWith
+strrep                  Backport of strrep
+trimws                  Backport of trimws
