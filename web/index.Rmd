@@ -11,7 +11,7 @@ title: "1-hr AQI"
 
 
 <div style = "margin-left: 4px;"> 
- _Last updated - `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
+ _Last updated `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
 </div>
 
 <div style = "margin-right: 1%; margin-left: 1%;">   

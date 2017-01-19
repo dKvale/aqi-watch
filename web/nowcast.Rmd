@@ -1,6 +1,12 @@
 ---
 title: "EPA NowCast"
----
+---  
+
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
 
 <hr> 
 
@@ -17,4 +23,7 @@ title: "EPA NowCast"
 <iframe src="http://www.smogwatch.com/minn/realtimedata.cfm" overflow="visible" frameborder="0" scrolling="no" style="width: 1000px; height: 1100px;"> </iframe> 
 
 </div>
+
+
+
 <br>

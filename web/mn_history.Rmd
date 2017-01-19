@@ -1,0 +1,84 @@
+---
+title: "History"
+---
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+<hr> 
+
+<div style = "margin-left: 1px; margin-bottom: 5px;"> 
+ _Last updated `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
+</div>
+
+
+### PM2.5 concentrations
+
+```{r kable_hist, message=F, echo=F, results='asis', warning=F}
+library(knitr)
+library(dplyr)
+library(DT)
+
+options(warn = -1)
+
+#Blank table
+if(FALSE) {
+  hours <- format(strptime(0:23, "%H"), "%H")
+  aqi_hist <- data[!duplicated(data$AqsID), c(3,4,6)]
+  for(i in hours){aqi_hist[ , i] <- NA}
+  aqi_hist <- arrange(aqi_hist, `Site Name`)
+  aqi_hist$Parameter <- "PM25"
+  aqi_hist_ozone <- aqi_hist
+  aqi_hist_ozone$Parameter <- "OZONE"
+  aqi_hist <- rbind(aqi_hist, aqi_hist_ozone)
+  saveRDS(aqi_hist, "../data/aqi_history.Rdata")
+}
+
+# New obs
+data <- filter(aqi, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites))
+
+if(nrow(data) > 0) {
+  data <- data[ , c(1:4,8,5,7,9)]
+
+  data$Time <- format(strptime(data$Time, "%H"), "%I")
+
+  # Load history
+  aqi_hist <- readRDS("../data/aqi_history.Rdata")[ , 1:27]
+
+  # Clear old values
+  old_hours <- as.character(max(data$Time, na.rm=T):23)
+  
+  aqi_hist[ , old_hours] <- NA
+  
+  aqi_hist[is.na(aqi_hist)] <- " "
+
+  # Update table
+  for(i in 1:nrow(data)) {
+    new_obs <- data[i, ]
+  
+    aqi_hist[(aqi_hist$AqsID == new_obs$AqsID) & (aqi_hist$Parameter == new_obs$Parameter), as.character(new_obs$Time)] <- as.integer(round(as.numeric(new_obs$Concentration)))
+  }
+
+  saveRDS(aqi_hist[ , 1:27], "../data/aqi_history.Rdata")
+
+  #kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = 'c', options())
+  
+  datatable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), autoHideNavigation = T, rownames = F, options = list(dom = 'ft', autoWidth = TRUE, initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff'});",
+    "}"))) #filter = 'top',
+} 
+```
+<br>
+
+### Ozone concentrations
+<!--<div style = "margin-left: 1px; margin-top:-4px;"> 
+_Start time in CDT_
+</div>-->
+```{r kable_hist2, message=F, echo=F, results='asis', warning=F}
+if(nrow(data) > 0) {
+  kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', align = 'c')
+}
+```
+

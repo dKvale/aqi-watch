@@ -673,3 +673,13 @@
 "
 "2016122612","2016-12-26 09:17:02","Failed","Error in open.connection(con, ""rb"") : Couldn't connect to server
 "
+"2017011814","2017-01-18 09:27:53","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017011817","2017-01-18 12:15:10","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017011818","2017-01-18 13:14:21","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017011819","2017-01-18 14:15:35","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017011823","2017-01-18 18:13:10","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"

@@ -9,7 +9,7 @@ title: "MN sites (1-hr AQI)"
 
 <hr> 
 
-```{r kable2, message=F, echo=F, results='asis', warning=F}
+```{r kable_MN, message=F, echo=F, results='asis', warning=F}
 library(knitr)
 
 options(warn = -1)
@@ -33,7 +33,6 @@ if(nrow(data) < 1) {
 <div class = "gray">
 ## Missing parameters for Minnesota
 ```{r miss_MN, message=F, echo=F, results='asis', warning=F}
-
 
 missing_mn <- mn_sites[!mn_sites$Site_Param %in% paste(aqi$AqsID, aqi$Parameter, sep="_"), ]
 

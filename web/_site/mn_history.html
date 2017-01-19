@@ -11,15 +11,20 @@
 
 
 
-<title>Nearby sites (1-hr AQI)</title>
+<title>History</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="site_libs/datatables-binding-0.2/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
 
 
 
@@ -176,12 +181,28 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Nearby sites (1-hr AQI)</h1>
+<h1 class="title toc-ignore">History</h1>
 
 </div>
 
 
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
 <hr>
+<div style="margin-left: 1px; margin-bottom: 5px;">
+<p><em>Last updated Jan 18, 2017 18:47 CDT</em></p>
+</div>
+<div id="pm2.5-concentrations" class="section level3">
+<h3>PM2.5 concentrations</h3>
+<p><div id="htmlwidget-36b62d137c8e6c56ff73" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-36b62d137c8e6c56ff73">{"x":{"filter":"none","autoHideNavigation":true,"data":[["Apple Valley","Blaine","Brainerd","Detroit Lakes","Duluth-WDSE","Ely","Emmetsburg, ILCC","Fargo NW","Fond du Lac","Grand Portage","LACROSSE DOT","Lakeville - Near Roa","Marshall","Minneapolis-Near Roa","Minneapolis-Phillips","Red Lake Nation","Rochester","Shakopee","Sioux Falls","St. Cloud","St. Michael","St. Paul-Harding H.S","St. Paul - Downtown","Virginia","Voyageurs NP","West Duluth"],["PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25","PM25"],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," ","9"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],["11","20","10","5"," ","5","12"," ","13","10","17","13","5","9","12","9","13"," ","7","11","15","11"," ","11"," ","14"],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Site Name\u003c/th>\n      <th>Parameter\u003c/th>\n      <th>00\u003c/th>\n      <th>01\u003c/th>\n      <th>02\u003c/th>\n      <th>03\u003c/th>\n      <th>04\u003c/th>\n      <th>05\u003c/th>\n      <th>06\u003c/th>\n      <th>07\u003c/th>\n      <th>08\u003c/th>\n      <th>09\u003c/th>\n      <th>10\u003c/th>\n      <th>11\u003c/th>\n      <th>12\u003c/th>\n      <th>13\u003c/th>\n      <th>14\u003c/th>\n      <th>15\u003c/th>\n      <th>16\u003c/th>\n      <th>17\u003c/th>\n      <th>18\u003c/th>\n      <th>19\u003c/th>\n      <th>20\u003c/th>\n      <th>21\u003c/th>\n      <th>22\u003c/th>\n      <th>23\u003c/th>\n      <th>5\u003c/th>\n      <th>6\u003c/th>\n      <th>7\u003c/th>\n      <th>8\u003c/th>\n      <th>9\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"dom":"ft","autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff'});\n}","order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script> <br></p>
+</div>
+<div id="ozone-concentrations" class="section level3">
+<h3>Ozone concentrations</h3>
+<!--<div style = "margin-left: 1px; margin-top:-4px;"> 
+_Start time in CDT_
+</div>-->
 <table>
 <thead>
 <tr>
@@ -189,1552 +210,497 @@ $(document).ready(function () {
 Site Name
 </th>
 <th style="text-align:center;">
-Agency
-</th>
-<th style="text-align:center;">
-AqsID
-</th>
-<th style="text-align:center;">
 Parameter
 </th>
 <th style="text-align:center;">
-Concentration
+00
 </th>
 <th style="text-align:center;">
-1-hr AQI
+01
 </th>
 <th style="text-align:center;">
-Date
+02
 </th>
 <th style="text-align:center;">
-Sampling Hour
+03
 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-Clinton, Chancy Park
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-190450019
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-24.0
-</td>
-<td style="text-align:center;">
-76
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-THUNDER-BAY
-</td>
-<td style="text-align:center;">
-ONTARIO Department of Health
-</td>
-<td style="text-align:center;">
-thunder-bay
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-21.1
-</td>
-<td style="text-align:center;">
-70
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
--2:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Clinton, Rainbow Par
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-190450021
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-20.0
-</td>
-<td style="text-align:center;">
-68
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Muscatine, High Scho
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191390019
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-17.0
-</td>
-<td style="text-align:center;">
-61
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Eau Claire
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550350014
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-17.0
-</td>
-<td style="text-align:center;">
-61
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Waterloo, Water Towe
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-190130009
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-17.0
-</td>
-<td style="text-align:center;">
-61
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Credit Union
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-461030020
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-14.5
-</td>
-<td style="text-align:center;">
-56
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Lake Sugema
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191770006
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-14.0
-</td>
-<td style="text-align:center;">
-55
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MILWAUKEE COLLEGE AV
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550790056
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-14.0
-</td>
-<td style="text-align:center;">
-55
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Black Hawk
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460930001
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-64.0
-</td>
-<td style="text-align:center;">
-55
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MADISON EAST
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550250041
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-14.0
-</td>
-<td style="text-align:center;">
-55
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Watertown
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460290002
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-13.1
-</td>
-<td style="text-align:center;">
-53
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Davenport, 10th &amp; Vi
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191630015
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-12.0
-</td>
-<td style="text-align:center;">
-51
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Milwaukee College Av
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550790058
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-12.0
-</td>
-<td style="text-align:center;">
-51
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WAUKESHA - CLEVELAND
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-551330027
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Davenport, Hayes Sch
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191630020
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-TRNP-NU
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380530002
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-48.0
-</td>
-<td style="text-align:center;">
-44
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WIND CAVE
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460330132
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-48.0
-</td>
-<td style="text-align:center;">
-44
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Hannover
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380650002
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-46.0
-</td>
-<td style="text-align:center;">
-43
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Devils Lake
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-551110007
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-10.0
-</td>
-<td style="text-align:center;">
-42
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Dunn Center
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380250003
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-45.0
-</td>
-<td style="text-align:center;">
-42
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-PUBLIC HEALTH 4
-</td>
-<td style="text-align:center;">
-Linn Co. Public Health
-</td>
-<td style="text-align:center;">
-191138040
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-10.0
-</td>
-<td style="text-align:center;">
-42
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Experimental Lakes
-</td>
-<td style="text-align:center;">
-Canadian Air and Precipitation Monitoring Network
-</td>
-<td style="text-align:center;">
-000064001
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-43.0
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-POTAWATOMI
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550410007
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-43.0
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Theodore Roosevelt N
-</td>
-<td style="text-align:center;">
-National Park Service
-</td>
-<td style="text-align:center;">
-380070002
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-43.0
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Research Farm
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460110003
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-9.5
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Perkinstown
-</td>
-<td style="text-align:center;">
-EPA Office of Atmospheric Programs
-</td>
-<td style="text-align:center;">
-551199991
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-41.0
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-15:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CARPENTER
-</td>
-<td style="text-align:center;">
-Polk Co. Air Quality Division
-</td>
-<td style="text-align:center;">
-191530030
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-9.0
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MILWAUKEE 16TH ST
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550790010
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-9.0
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Badlands
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460710001
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-41.0
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MILWAUKEE SER DNR
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550790026
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-9.0
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Beulah North
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380570004
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-40.0
-</td>
-<td style="text-align:center;">
-37
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-BAD RIVER TRIBAL SCH
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550030010
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-39.0
-</td>
-<td style="text-align:center;">
-36
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Bismarck Residential
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380150003
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-38.0
-</td>
-<td style="text-align:center;">
-35
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-PERKINSTOWN
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-551198001
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-8.0
-</td>
-<td style="text-align:center;">
-33
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Williston
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-381050003
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-36.0
-</td>
-<td style="text-align:center;">
-33
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Horicon Wildlife Are
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550270001
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-8.0
-</td>
-<td style="text-align:center;">
-33
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Iowa City, Hoover Sc
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191032001
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-8.0
-</td>
-<td style="text-align:center;">
-33
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-UC1
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-461270001
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-7.8
-</td>
-<td style="text-align:center;">
-32
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WINNIPEG-SCOTIA-ST.
-</td>
-<td style="text-align:center;">
-MANITOBA Department of Health
-</td>
-<td style="text-align:center;">
-000070118
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-7.7
-</td>
-<td style="text-align:center;">
-32
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CHIWAUKEE
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550590019
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-7.0
-</td>
-<td style="text-align:center;">
-29
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WINNIPEG-ELLEN-ST.
-</td>
-<td style="text-align:center;">
-MANITOBA Department of Health
-</td>
-<td style="text-align:center;">
-000070119
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.2
-</td>
-<td style="text-align:center;">
-26
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Lostwood NWR
-</td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380130004
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-15:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-GREEN BAY E HIGH
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550090005
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Buffalo
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191630017
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-27.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-APPLETON AAL
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550870009
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-HARRINGTON BCH
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550890009
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-SHELDAHL
-</td>
-<td style="text-align:center;">
-Polk Co. Air Quality Division
-</td>
-<td style="text-align:center;">
-191530011
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-23.0
-</td>
-<td style="text-align:center;">
-21
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Viking Lake State Pa
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191370002
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-4.0
-</td>
-<td style="text-align:center;">
-17
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-17:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Pierre
-</td>
-<td style="text-align:center;">
-South Dakota
-</td>
-<td style="text-align:center;">
-460650003
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-3.3
-</td>
-<td style="text-align:center;">
+<th style="text-align:center;">
+04
+</th>
+<th style="text-align:center;">
+05
+</th>
+<th style="text-align:center;">
+06
+</th>
+<th style="text-align:center;">
+07
+</th>
+<th style="text-align:center;">
+08
+</th>
+<th style="text-align:center;">
+09
+</th>
+<th style="text-align:center;">
+10
+</th>
+<th style="text-align:center;">
+11
+</th>
+<th style="text-align:center;">
+12
+</th>
+<th style="text-align:center;">
+13
+</th>
+<th style="text-align:center;">
 14
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-16:00
-</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<div class="gray">
-<h2 id="missing-parameters-for-nearby-sites">Missing parameters for nearby sites</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center;">
-State
 </th>
 <th style="text-align:center;">
-Site Name
+15
 </th>
 <th style="text-align:center;">
-Parameter
+16
 </th>
 <th style="text-align:center;">
-AqsID
+17
+</th>
+<th style="text-align:center;">
+18
+</th>
+<th style="text-align:center;">
+19
+</th>
+<th style="text-align:center;">
+20
+</th>
+<th style="text-align:center;">
+21
+</th>
+<th style="text-align:center;">
+22
+</th>
+<th style="text-align:center;">
+23
+</th>
+<th style="text-align:center;">
+5
+</th>
+<th style="text-align:center;">
+6
+</th>
+<th style="text-align:center;">
+7
+</th>
+<th style="text-align:center;">
+8
+</th>
+<th style="text-align:center;">
+9
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-APPLETON AAL
+Apple Valley
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550870009
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-BAYSIDE
+Blaine
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550790085
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-Beloit-Converse
+Brainerd
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-551050030
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-ND
-</td>
-<td style="text-align:center;">
-Bismarck Residential
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-380150003
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-ND
-</td>
-<td style="text-align:center;">
-Bismarck Residential
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-380150003
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Brandon
+Detroit Lakes
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-000070203
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Brandon
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-000070203
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Brandon
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-000070203
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-CHIWAUKEE
+Duluth-WDSE
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550590019
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Clinton, Rainbow Park
+Ely
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-190450021
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-COGGON
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-191130033
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-COLUMBUS
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-550210015
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-Devils Lake
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-551110007
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-Eau Claire
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-550350014
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-IA
-</td>
 <td style="text-align:center;">
 Emmetsburg, ILCC
 </td>
@@ -1742,511 +708,1321 @@ Emmetsburg, ILCC
 OZONE
 </td>
 <td style="text-align:center;">
-191471002
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-FOND DU LAC
+Fargo NW
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550390006
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-GRAFTON
+Fond du Lac
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550890008
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-GREEN BAY UW
+Grand Portage
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550090026
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-HARRINGTON BCH
+LACROSSE DOT
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550890009
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-Jefferson-Laatsch
+Lakeville - Near Roa
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550550009
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-Kenosha-Water Tower
+Marshall
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550590025
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-KEWAUNEE
+Minneapolis-Near Roa
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550610002
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-KIRKWOOD
+Minneapolis-Phillips
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-191130028
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Lake Ahquabi
+Red Lake Nation
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-191810022
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-LAKE DUBAY
+Rochester
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550730012
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-LAKE GENEVA
+Shakopee
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-551270005
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Lake Sugema
+Sioux Falls
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-191770006
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-ND
-</td>
-<td style="text-align:center;">
-Lostwood NWR
+St. Cloud
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-380130004
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-ND
-</td>
-<td style="text-align:center;">
-Lostwood NWR
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-380130004
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-MADISON EAST
+St. Michael
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550250041
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-MANITOWOC
+St. Paul-Harding H.S
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550710007
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-MILWAUKEE 16TH ST
+St. Paul - Downtown
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550790010
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-NEWPORT
+Virginia
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-550290004
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Pisgah, Forestry Office
+Voyageurs NP
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-190850007
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+41
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Pisgah, Harrison County
+West Duluth
 </td>
 <td style="text-align:center;">
 OZONE
 </td>
 <td style="text-align:center;">
-190851101
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-WI
 </td>
 <td style="text-align:center;">
-Potosi
 </td>
 <td style="text-align:center;">
-PM25
 </td>
 <td style="text-align:center;">
-550430009
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-IA
 </td>
 <td style="text-align:center;">
-PUBLIC HEALTH
 </td>
 <td style="text-align:center;">
-OZONE
 </td>
 <td style="text-align:center;">
-191130040
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-IA
 </td>
 <td style="text-align:center;">
-PUBLIC HEALTH
 </td>
 <td style="text-align:center;">
-PM25
 </td>
 <td style="text-align:center;">
-191130040
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-WI
 </td>
 <td style="text-align:center;">
-Racine-Payne and Dolan
 </td>
 <td style="text-align:center;">
-OZONE
 </td>
 <td style="text-align:center;">
-551010020
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-IA
 </td>
 <td style="text-align:center;">
-Scott County Park
 </td>
 <td style="text-align:center;">
-OZONE
 </td>
 <td style="text-align:center;">
-191630014
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-WI
 </td>
 <td style="text-align:center;">
-SHEBOYGAN
 </td>
 <td style="text-align:center;">
-OZONE
 </td>
 <td style="text-align:center;">
-551170006
 </td>
-</tr>
-<tr>
 <td style="text-align:center;">
-WI
 </td>
 <td style="text-align:center;">
-Sheboygan-Haven
 </td>
 <td style="text-align:center;">
-OZONE
 </td>
 <td style="text-align:center;">
-551170009
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-SLATER
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-191690011
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-ND
-</td>
-<td style="text-align:center;">
-Theodore Roosevelt NP - Painted Canyon VC
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-380070002
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-TROUT LAKE
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-551250001
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Viking Lake State Park
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-191370002
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-WAUKESHA - CLEVELAND AVE
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-551330027
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-IA
-</td>
-<td style="text-align:center;">
-Waverly, Airport
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-190170011
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Winnipeg_Ellens
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-000070119
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Winnipeg_Ellens
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-000070119
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-CAN
-</td>
-<td style="text-align:center;">
-Winnipeg_Scotia
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-000070118
 </td>
 </tr>
 </tbody>

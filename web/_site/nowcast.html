@@ -19,6 +19,7 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
 
@@ -78,6 +79,7 @@ button.code-folding-btn:focus {
 }
 </style>
 
+
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
@@ -134,7 +136,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.0/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -161,6 +162,7 @@ $(document).ready(function () {
     <div id="navbar" class="collapse navbar-collapse navbar-left">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Map</a></li>
+        <li><a href="mn_history.html">History</a></li>
         <li><a href="exceed.html">High sites (1-hr)</a></li>
         <li><a href="mn_sites.html">MN sites (1-hr)</a></li>
         <li><a href="nearby_sites.html">Nearby sites (1-hr)</a></li>
@@ -179,6 +181,9 @@ $(document).ready(function () {
 </div>
 
 
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
 <hr>
 <div id="nowcast-map" class="section level2">
 <h2>NowCast map</h2>
@@ -202,9 +207,13 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 

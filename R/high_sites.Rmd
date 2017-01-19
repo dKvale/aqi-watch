@@ -1,15 +1,17 @@
 ---
+title: "Sites above 90 (1-hr AQI)"
+---
+    
+<script type="text/JavaScript">
+setTimeout(function() { window.location=window.location;},300000);
+</script>
+
 output:
   html_document:
     highlight: tango
     keep_md: no
     toc: no
     css: flat_table.css
----
-    
-<script type="text/JavaScript">
-setTimeout(function() { window.location=window.location;},300000);
-</script>
 
 # AQI Watch
 
