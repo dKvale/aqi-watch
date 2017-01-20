@@ -2,6 +2,11 @@
 title: "24-hr history"
 ---
 
+<style>
+   body {margin-left: 10px;}
+  .main-container {margin-left: 5px; max-width: 1350px;}
+</style>
+
 <script type="text/JavaScript">
   setTimeout(function() { window.location=window.location;}, 350000);
 </script>
