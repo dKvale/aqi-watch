@@ -5,6 +5,8 @@ title: "High sites (1-hr AQI)"
 <style>
    body {margin-left: 0px;}
   .main-container {max-width: 1350px;}
+  tr:nth-child(even){background-color: #e9e9e9;}
+  tr:nth-child(odd){background-color: #FFF;}
 </style>
 
 <script type="text/JavaScript">
@@ -30,7 +32,7 @@ data <- data[ , c(1:4,8,5,7,9)]
 
 names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration", "1-hr AQI")
 
-kable(data[ , c(4,5,3,6:8,1:2)], 'html', align = 'c')
+kable(data[ , c(4,5,1:2,6:8)], 'html', align = 'lllllcc')
 }
  
 ```
@@ -49,7 +51,7 @@ missing_sites <- site_params[!site_params$Site_Param %in% paste(aqi$AqsID, aqi$P
 if(length(missing_sites) < 1) {
   cat(" *There were no missing sites or parameters.")
 } else {
-  kable(arrange(missing_sites[ , c(1,4,3,2)], AqsID), 'html', align = 'c')
+  kable(arrange(missing_sites[ , c(1,4,3,2)], AqsID), 'html', align = 'llll')
 }
 
 ```

@@ -5,6 +5,8 @@ title: "24-hr history"
 <style>
    body {margin-left: 0px;}
   .main-container {margin-left: 5px; max-width: 1350px;}
+  tr:nth-child(even){background-color: #e9e9e9;}
+  tr:nth-child(odd){background-color: #FFF;}
 </style>
 
 <script type="text/JavaScript">
@@ -130,9 +132,15 @@ if(nrow(data) > 0) {
   saveRDS(aqi_hist[ , 1:min(ncol(aqi_hist) - 2, 27)], "../data/aqi_history.Rdata")
   
   # Blank out missing values
-  aqi_hist[is.na(aqi_hist)] <- " "
+  aqi_hist[is.na(aqi_hist)] <- "."
   
+  # Drop zeros from column headers
   names(aqi_hist)[4:(ncol(aqi_hist) - 2)] <- as.numeric(names(aqi_hist)[4:(ncol(aqi_hist) - 2)])
+  
+  # Add line before summary columns
+  aqi_hist$` ` <- "::"
+  n_col <- ncol(aqi_hist)
+  aqi_hist <- aqi_hist[ , c(1:(n_col - 3), n_col, (n_col - 2), (n_col - 1))]
   
   if(FALSE) {
    datatable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
@@ -143,9 +151,8 @@ initComplete = JS(
     "}"))) #filter = 'top',
  }
   
-  kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = 'c')
+  kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = paste0(c('l', 'l', rep('c', n_col - 3)), collapse=""))
   
- 
 } 
 ```
 
@@ -164,7 +171,7 @@ initComplete = JS(
     "}"))) #filter = 'top',
   }
   
-  kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', class="stripe nowrap compact", align = 'c')
+  kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', class="stripe nowrap compact", align = paste0(c('l', 'l', rep('c', n_col - 3)), collapse=""))
  
 }
 ```
