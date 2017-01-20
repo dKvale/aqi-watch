@@ -3,7 +3,7 @@ title: "24-hr history"
 ---
 
 <style>
-   body {margin-left: 10px;}
+   body {margin-left: 0px;}
   .main-container {margin-left: 5px; max-width: 1350px;}
 </style>
 
