@@ -369,16 +369,17 @@ commit <- paste0(git, 'commit -a -m ', '"update obs"')
 ###!system(paste0(git, "config --global user.name dkvale"))
 ###!system(paste0(git, "config --global user.email ", credentials$email))
 ###!system(paste0(git, "config credential.helper store"))
+###push <- paste0(git, "push -f origin master")
 
-#push <- paste0(git, "push -f origin master")
+#system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
 
-system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
+system("cp -a ~/aqi-watch/web/_site/.  ../../../../usr/share/nginx/html/")
 
-#system("cp -a ~/aqi-watch/web/_site/.  ../../../../usr/share/nginx/html/")
+#system("sudo cp -a ~/_site/*html ../../../../usr/share/nginx/html/")  
+#system("sudo cp -a ~/_site/*css ../../../../usr/share/nginx/html/") 
+#system("sudo cp -a ~/_site/. ../../../../usr/share/nginx/html/")
 
-system("sudo cp -a ~/_site/*html ../../../../usr/share/nginx/html/")  
-
-push <- paste0(git, "push -f origin gh-pages")
+#push <- paste0(git, "push -f origin gh-pages")
 ###!system(push)
 
 #shell(paste0(git, "push origin --delete gh-pages"))

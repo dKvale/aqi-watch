@@ -1,3 +1,26 @@
+.main-container {
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+@media (max-width:749px) {
+  .navbar-toggle {
+	    float: left;
+  }
+	
+  .navbar-collapse {
+	    clear: both;
+	    float: none;
+  }
+}
+	
 table {
   font-size: 105%;
   overflow: auto;
@@ -8,7 +31,7 @@ th {
   background-color: #0088ee;
   color: white;
   font-weight: normal;
-  padding: 10px 15px;
+  padding: 10px 8px;
   text-align: center;
 }
 
@@ -23,16 +46,28 @@ th {
 
 
 td {
-  background-color: rgb(238, 238, 238);
   color: rgb(111, 111, 111);
-  padding: 10px 16px;
-  font-size: 13px;
+  padding: 8px 6px !important;
+  font-size: 12px !important;
 }
 
-body {width: 95%; max-width: 98%; /* 900px*/}
+/*body {width: 99%; max-width: 99%;  } */
 
-code {font-size: 18px;}
+code {font-size: 18px !important;}
 
-pre {font-size: 18px}
+pre {font-size: 18px !important;}
 
-p {font-size: 16px}
+p {font-size: 16px !important;}
+
+h1.title {
+    font-size: 32px !important;
+}
+
+h3 {
+    font-size: 22px !important;
+}
+
+hr {
+    margin-top: 0px !important;
+    margin-bottom: 8px !important;
+}
