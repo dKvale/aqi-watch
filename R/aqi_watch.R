@@ -13,7 +13,7 @@ options(rstudio.markdownToHTML =
           })
 
 #setwd("../")
-setwd("aqi-watch")
+#setwd("aqi-watch")
 
 email_trigger <- 90
 
@@ -138,20 +138,22 @@ aqi$Date <- format(Sys.Date() - ifelse(gmt_time == 5, 1, 0), "%m/%d/%Y")
 # PM10 is here [http://www3.epa.gov/ttn/oarpg/t1/memoranda/rg701.pdf]
 
 # Load breakpoints
-breaks <- read_csv("data-raw/aqi_breakpoints.csv", col_types=c('cccccccc'))
+breaks_aqi <- read_csv("data-raw/aqi_breakpoints.csv", col_types=c('cccccccc'))
 
-names(breaks) <- c("Rating", "Breakpoints", "OZONE", 
+names(breaks_aqi) <- c("Rating", "Breakpoints", "OZONE", 
                    "PM25", "SO2", "CO", "NO2", "PM10")
 
 # Define concentration to AQI function
-conc2aqi <- function(conc, param){
+conc2aqi <- function(conc, param) {
   
-  aqi_value <- breaks[ , c(param, "Breakpoints", "Rating")]
+  if(is.na(conc) || is.na(param)) return(NA)
+  
+  aqi_value <- breaks_aqi[ , c(param, "Breakpoints", "Rating")]
   
   names(aqi_value)[1] <- "Conc_cutoffs"
   
   aqi_value <- mutate(aqi_value, 
-                      Breakpoints = str_split(Breakpoints, ","),
+                      Breakpoints  = str_split(Breakpoints, ","),
                       Conc_cutoffs = str_split(Conc_cutoffs, ","))
   
   aqi_value <- group_by(aqi_value, Rating) %>%
@@ -170,7 +172,7 @@ conc2aqi <- function(conc, param){
 # Define AQI to concentration function
 aqi2conc <- function(aqi, param){
   
-  aqi_value <- breaks[ , c(param, "Breakpoints", "Rating")]
+  aqi_value <- breaks_aqi[ , c(param, "Breakpoints", "Rating")]
   
   names(aqi_value)[1] <- "Conc_cutoffs"
   

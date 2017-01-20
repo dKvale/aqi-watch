@@ -1,5 +1,5 @@
 ---
-title: "History"
+title: "24-hr history"
 ---
 
 <script type="text/JavaScript">
@@ -12,9 +12,9 @@ title: "History"
  _Last updated `r format(Sys.time(), " %h %d, %Y  %H:%M")` CDT_
 </div>
 
-## {.tabset .tabset-pills}
+<!-- ## {.tabset .tabset-pills} -->
 
-### PM2.5 concentrations
+## PM2.5 concentrations
 ```{r kable_hist, message=F, echo=F, results='asis', warning=F}
 library(knitr)
 library(dplyr)
@@ -36,7 +36,7 @@ if(FALSE) {
 }
 
 # New obs
-data <- filter(aqi, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites))
+data <- filter(aqi, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), Parameter %in% c("OZONE", "PM25"))
 
 if(nrow(data) > 0) {
   data <- data[ , c(1:4,8,5,7,9)]
@@ -44,48 +44,113 @@ if(nrow(data) > 0) {
   data$Time <- format(strptime(data$Time, "%H"), "%H")
 
   # Load history
-  aqi_hist <- readRDS("../data/aqi_history.Rdata")[ , 1:27]
+  aqi_hist <- readRDS("../data/aqi_history.Rdata")
 
+  aqi_hist$NowCast <- NULL
+  aqi_hist$`Today's Avg` <- NULL
+  
   # Clear old values
-  old_hours <- as.character(max(data$Time, na.rm=T):23)
+  #old_hours <- as.character(max(data$Time, na.rm = T):23)
+  #old_hours <- format(strptime(old_hours, "%H"), "%H")
   
-  old_hours <- format(strptime(old_hours, "%H"), "%H")
+  aqi_hist <- aqi_hist[ , 1:min(ncol(aqi_hist), as.numeric(max(data$Time, na.rm = T)) + 4, na.rm = T)]
   
-  aqi_hist[ , old_hours] <- NA
+  if(FALSE) {
+    aqi_hist[ , old_hours] <- NA
+  }
   
-  aqi_hist[is.na(aqi_hist)] <- " "
-
+  # Add "Site_Param"
+  data$Site_param <- paste(data$AqsID, data$Parameter, sep="_")
+  
+  # NowCast function
+  get_nowcast <- function(x = data) {
+    
+    x[x == "" | x == " "] <- NA
+    
+    x[x < 0 & !is.na(x)] <- 0
+    
+    x <- as.numeric(x)
+    
+    is_value <- !is.na(x) 
+    
+    if(sum(is_value[1:3], na.rm = T) < 2) return(NA)
+    
+    a_range  <- max(x, na.rm=T) - min(x, na.rm=T)
+    
+    a_max    <- max(x, na.rm=T)
+    
+    a_factor <- 1 - (a_range / a_max)
+    
+    a_factor <- max(0.5, a_factor, na.rm = T)
+    
+    wtd_sum  <- sum(x * a_factor**(0:11), na.rm = T) / sum((a_factor**(0:11)) * is_value, na.rm = T)
+    
+    # Test
+    #test_x <- rev(c(50,80,75,90,82,53,64,74,21,10,16,13))
+    #NowCast <- 17.4
+    #invisible(print(wtd_sum))
+  }
+  
+  data <- arrange(data, Time)
+  
+  # Add missing hours
+  for(i in 1:nrow(data)) {
+    
+    new_obs <- data[i, ]
+    
+    if(!as.character(new_obs$Time) %in% names(aqi_hist)) aqi_hist[ , as.character(new_obs$Time)] <- NA
+  }
+    
+  # Summary columns
+  aqi_hist$`NowCast AQI` <- NA
+  aqi_hist$`Today's Avg` <- NA
+  
   # Update table
   for(i in 1:nrow(data)) {
+    
     new_obs <- data[i, ]
+    
+    hist_row <- grep(new_obs$Site_param, paste(aqi_hist$AqsID, aqi_hist$Parameter, sep="_"))
   
-    aqi_hist[(aqi_hist$AqsID == new_obs$AqsID) & (aqi_hist$Parameter == new_obs$Parameter), as.character(new_obs$Time)] <- as.integer(round(as.numeric(new_obs$Concentration)))
+    aqi_hist[hist_row, as.character(new_obs$Time)] <- as.integer(round(as.numeric(new_obs$Concentration)))
+    
+    first_value <- max(grep("[0-9]+", aqi_hist[hist_row, 4:ncol(aqi_hist)]), na.rm = T) + 3
+    
+    aqi_hist[hist_row, ]$`NowCast AQI` <- round(conc2aqi(get_nowcast(as.numeric(aqi_hist[hist_row, first_value:max(first_value - 11, 4, na.rm = T)])), as.character(new_obs$Parameter)))
+    
+    aqi_hist[hist_row, ]$`Today's Avg` <- round(mean(as.numeric(aqi_hist[hist_row, 4:first_value]), na.rm = T))
   }
 
-  saveRDS(aqi_hist[ , 1:27], "../data/aqi_history.Rdata")
-
+  saveRDS(aqi_hist[ , 1:min(ncol(aqi_hist) - 2, 27)], "../data/aqi_history.Rdata")
+  
+  # Blank out missing values
+  aqi_hist[is.na(aqi_hist)] <- " "
+  
   #kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = 'c', options())
-  names(aqi_hist)[4:27] <- 0:23
+  
+  names(aqi_hist)[4:(ncol(aqi_hist) - 2)] <- as.numeric(names(aqi_hist)[4:(ncol(aqi_hist) - 2)])
   
   datatable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
-columnDefs = list(list(className = 'dt-center', targets = 0:25)), 
+columnDefs = list(list(className = 'dt-center', targets = 1:(ncol(aqi_hist)-2))), 
 initComplete = JS(
     "function(settings, json) {",
-    "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff'});",
+    "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff', 'margin-left': '0', 'text-align': 'left'});",
     "}"))) #filter = 'top',
 } 
 ```
 
-### Ozone concentrations
+<br>
+
+## Ozone concentrations
 ```{r kable_hist2, message=F, echo=F, results='asis', warning=F}
 if(nrow(data) > 0) {
   #kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', class="stripe", align = 'c')
   
-   datatable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = TRUE, pageLength = 50, ordering = 0, 
-columnDefs = list(list(className = 'dt-center', targets = 0:25)), 
+   datatable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
+columnDefs = list(list(className = 'dt-center', targets = 1:(ncol(aqi_hist)-2))), 
 initComplete = JS(
     "function(settings, json) {",
-    "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff'});",
+    "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff', 'margin-left': '0', 'text-align': 'left'});",
     "}"))) #filter = 'top',
  
 }
