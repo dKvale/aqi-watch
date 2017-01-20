@@ -102,8 +102,9 @@ if(nrow(data) > 0) {
   }
     
   # Summary columns
+  aqi_hist$`Rolling Avg` <- NA
   aqi_hist$`NowCast AQI` <- NA
-  aqi_hist$`Today's Avg` <- NA
+  
   
   # Update table
   for(i in 1:nrow(data)) {
@@ -118,7 +119,7 @@ if(nrow(data) > 0) {
     
     aqi_hist[hist_row, ]$`NowCast AQI` <- round(conc2aqi(get_nowcast(as.numeric(aqi_hist[hist_row, first_value:max(first_value - 11, 4, na.rm = T)])), as.character(new_obs$Parameter)))
     
-    aqi_hist[hist_row, ]$`Today's Avg` <- round(mean(as.numeric(aqi_hist[hist_row, 4:first_value]), na.rm = T))
+    aqi_hist[hist_row, ]$`Rolling Avg` <- round(mean(as.numeric(aqi_hist[hist_row, 4:first_value]), na.rm = T))
   }
 
   saveRDS(aqi_hist[ , 1:min(ncol(aqi_hist) - 2, 27)], "../data/aqi_history.Rdata")
@@ -126,16 +127,20 @@ if(nrow(data) > 0) {
   # Blank out missing values
   aqi_hist[is.na(aqi_hist)] <- " "
   
-  #kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = 'c', options())
-  
   names(aqi_hist)[4:(ncol(aqi_hist) - 2)] <- as.numeric(names(aqi_hist)[4:(ncol(aqi_hist) - 2)])
   
-  datatable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
+  if(FALSE) {
+   datatable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
 columnDefs = list(list(className = 'dt-center', targets = 1:(ncol(aqi_hist)-2))), 
 initComplete = JS(
     "function(settings, json) {",
     "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff', 'margin-left': '0', 'text-align': 'left'});",
     "}"))) #filter = 'top',
+ }
+  
+  kable(arrange(filter(aqi_hist, Parameter == "PM25")[ , -1], `Site Name`), 'html',  align = 'c')
+  
+ 
 } 
 ```
 
@@ -144,14 +149,17 @@ initComplete = JS(
 ## Ozone concentrations
 ```{r kable_hist2, message=F, echo=F, results='asis', warning=F}
 if(nrow(data) > 0) {
-  #kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', class="stripe", align = 'c')
   
-   datatable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
+  if(FALSE) {
+     datatable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), autoHideNavigation = T, class="stripe nowrap compact", rownames = F, options = list(dom = 'ft', autoWidth = F, pageLength = 50, ordering = 0, 
 columnDefs = list(list(className = 'dt-center', targets = 1:(ncol(aqi_hist)-2))), 
 initComplete = JS(
     "function(settings, json) {",
     "$(this.api().table().header()).css({'background-color': '#0088ee', 'color': '#fff', 'margin-left': '0', 'text-align': 'left'});",
     "}"))) #filter = 'top',
+  }
+  
+  kable(arrange(filter(aqi_hist, Parameter == "OZONE")[ , -1], `Site Name`), 'html', class="stripe nowrap compact", align = 'c')
  
 }
 ```

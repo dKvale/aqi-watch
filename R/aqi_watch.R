@@ -13,7 +13,7 @@ options(rstudio.markdownToHTML =
           })
 
 #setwd("../")
-#setwd("aqi-watch")
+setwd("aqi-watch")
 
 email_trigger <- 90
 
