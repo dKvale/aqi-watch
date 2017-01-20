@@ -2,6 +2,11 @@
 title: "Nearby sites (1-hr AQI)"
 ---
 
+<style>
+   body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+</style>
+
 <hr> 
 
 ```{r kable_nearby, message=F, echo=F, results='asis', warning=F}

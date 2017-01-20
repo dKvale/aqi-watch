@@ -2,6 +2,12 @@
 title: "MN sites (1-hr AQI)"
 ---
 
+
+<style>
+   body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+</style>
+
 <script type="text/JavaScript">
   setTimeout(function() { window.location=window.location;}, 350000);
 </script>
