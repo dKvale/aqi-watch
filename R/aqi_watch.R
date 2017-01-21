@@ -67,7 +67,7 @@ if(((gmt_time < 2) && (time > 20)) | gmt_time == 23) {
 if(!is.data.frame(aqi) || (nrow(aqi) < 1)) {
           if(i == 0) {
                 
-           Sys.sleep(60 * 5)  # Pause for 5 minutes        
+           Sys.sleep(60 * 4)  # Pause for 5 minutes        
                     
            aqi <- try(read_delim(airnow_link, "|", 
                         col_names = F, 

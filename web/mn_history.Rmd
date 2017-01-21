@@ -53,14 +53,16 @@ if(nrow(data) > 0) {
   # Load history
   aqi_hist <- readRDS("../data/aqi_history.Rdata")
 
-  aqi_hist$NowCast <- NULL
-  aqi_hist$`Today's Avg` <- NULL
+  aqi_hist$`Rolling Avg` <- NULL
+  aqi_hist$`NowCast AQI` <- NULL
   
   # Clear old values
   #old_hours <- as.character(max(data$Time, na.rm = T):23)
   #old_hours <- format(strptime(old_hours, "%H"), "%H")
   
-  aqi_hist <- aqi_hist[ , 1:min(ncol(aqi_hist), as.numeric(max(data$Time, na.rm = T)) + 4, na.rm = T)]
+  if(as.numeric(max(data$Time, na.rm = T)) == 23 && 0 %in% as.numeric(data$Time)) data <- filter(data, Time < 10)
+  
+  aqi_hist <- aqi_hist[ , 1:min(ncol(aqi_hist), as.numeric(max(data$Time, na.rm = T)) + 3, na.rm = T)]
   
   if(FALSE) {
     aqi_hist[ , old_hours] <- NA
@@ -127,6 +129,7 @@ if(nrow(data) > 0) {
     aqi_hist[hist_row, ]$`NowCast AQI` <- round(conc2aqi(get_nowcast(as.numeric(aqi_hist[hist_row, first_value:max(first_value - 11, 4, na.rm = T)])), as.character(new_obs$Parameter)))
     
     aqi_hist[hist_row, ]$`Rolling Avg` <- round(mean(as.numeric(aqi_hist[hist_row, 4:first_value]), na.rm = T))
+    
   }
 
   saveRDS(aqi_hist[ , 1:min(ncol(aqi_hist) - 2, 27)], "../data/aqi_history.Rdata")
