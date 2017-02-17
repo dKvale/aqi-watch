@@ -29,7 +29,18 @@ library(DT)
 
 options(warn = -1)
 
-#Blank table
+# New obs
+data <- filter(aqi, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), Parameter %in% c("OZONE", "PM25"))
+
+if(nrow(data) > 0) {
+  data <- data[ , c(1:4,8,5,7,9)]
+
+  data$Time <- format(strptime(data$Time, "%H"), "%H")
+
+  # Load history
+  aqi_hist <- readRDS("../data/aqi_history.Rdata")
+
+# Blank table
 if(FALSE) {
   hours <- format(strptime(0:23, "%H"), "%H")
   aqi_hist <- data[!duplicated(data$AqsID), c(3,4,6)]
@@ -42,16 +53,22 @@ if(FALSE) {
   saveRDS(aqi_hist, "../data/aqi_history.Rdata")
 }
 
-# New obs
-data <- filter(aqi, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), Parameter %in% c("OZONE", "PM25"))
+# Add missing sites
+if(sum(!data$AqsID %in% aqi_hist$AqsID, na.rm=T) > 0) {
 
-if(nrow(data) > 0) {
-  data <- data[ , c(1:4,8,5,7,9)]
-
-  data$Time <- format(strptime(data$Time, "%H"), "%H")
-
-  # Load history
-  aqi_hist <- readRDS("../data/aqi_history.Rdata")
+  new_hist <- data[!duplicated(data$AqsID), c(3,4,6)]
+  new_hist <- new_hist[!new_hist$AqsID %in% aqi_hist$AqsID, ]
+  hours <- names(aqi_hist[4:ncol(aqi_hist)])
+  for(i in hours){new_hist[ , i] <- NA}
+  new_hist$Parameter <- "PM25"
+  new_hist <- arrange(new_hist, `Site Name`)
+  new_hist_ozone <- new_hist
+  new_hist_ozone$Parameter <- "OZONE"
+  new_hist <- rbind(new_hist, new_hist_ozone)
+  aqi_hist <- rbind(aqi_hist, new_hist)
+  aqi_hist <- arrange(aqi_hist, desc(Parameter), `Site Name`)
+  saveRDS(aqi_hist, "../data/aqi_history.Rdata")
+}
 
   aqi_hist$`Rolling Avg` <- NULL
   aqi_hist$`NowCast AQI` <- NULL
