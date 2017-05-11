@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
 
-library(readr, lib.loc="~/R/x86_64-redhat-linux-gnu-library/3.2")
-library(dplyr, lib.loc="~/R/x86_64-redhat-linux-gnu-library/3.2")
-library(stringr, lib.loc="~/R/x86_64-redhat-linux-gnu-library/3.2")
-library(rmarkdown, lib.loc="~/R/x86_64-redhat-linux-gnu-library/3.2")
-library(pander, lib.loc="~/R/x86_64-redhat-linux-gnu-library/3.2")
+library(readr)
+library(dplyr)
+library(stringr)
+library(rmarkdown)
+library(pander)
 
 options(rstudio.markdownToHTML = 
           function(inputFile, outputFile) {      
