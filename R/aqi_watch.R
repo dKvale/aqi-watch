@@ -373,7 +373,7 @@ commit <- paste0(git, 'commit -a -m ', '"update obs"')
 
 #system("cp -a ~/aqi-watch/web/_site/.  ~/_site")
 
-system("cp -a ~/aqi-watch/web/_site/.  ../../../../usr/share/nginx/html/")
+system("sudo cp -a ~/aqi-watch/web/_site/.  ../../../../usr/share/nginx/html/")
 
 #system("sudo cp -a ~/_site/*html ../../../../usr/share/nginx/html/")  
 #system("sudo cp -a ~/_site/*css ../../../../usr/share/nginx/html/") 
