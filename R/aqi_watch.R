@@ -141,7 +141,7 @@ aqi$Date <- format(Sys.Date() - ifelse(gmt_time == 5, 1, 0), "%m/%d/%Y")
 breaks_aqi <- read_csv("data-raw/aqi_breakpoints.csv", col_types=c('cccccccc'))
 
 names(breaks_aqi) <- c("Rating", "Breakpoints", "OZONE", 
-                   "PM25", "SO2", "CO", "NO2", "PM10")
+                       "PM25", "SO2", "CO", "NO2", "PM10")
 
 # Define concentration to AQI function
 conc2aqi <- function(conc, param) {
@@ -295,8 +295,11 @@ names(aqi)[11] <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 # Drop negative AQIs below 30
 aqi <- filter(aqi, AQI_Value > -29)[ , -5]
 
-# Set negative AQIs to zero
+# Set negative AQIs & concentrations to zero
 aqi$AQI_Value <- ifelse(aqi$AQI_Value < 0, 0, aqi$AQI_Value)
+
+aqi$AQI_Value <- ifelse(aqi$Concentration < -5, 0, aqi$Concentration)
+
 
 # Arrange from high to low
 aqi <- arrange(ungroup(aqi), -AQI_Value)
