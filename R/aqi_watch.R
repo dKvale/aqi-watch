@@ -437,7 +437,7 @@ if(nrow(aqi) > 0) {
  if(sum(unique(aqi$AqsID) %in% mn_sites$AqsID) < 1){
     VIP_list <- "Attention:  &#64;rrobers "
   } else {
-    VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer "
+    VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer &#64;K-ander"
   }
   
   message_title <- paste0("1-hr AQI at ", max_site$AQI_Value, " for ", max_site$Parameter)
