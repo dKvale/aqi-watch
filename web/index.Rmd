@@ -70,4 +70,4 @@ map
 ```
 </div>
 <br>
-The __1-hr AQI__ assumes a monitor's current concentration persists for the entire AQI averaging period. The map above includes the pollutants Ozone, PM-2.5, and PM-10.
+The __1-hr AQI__ assumes a monitor's current concentration persists for the entire AQI averaging period. The map above includes the pollutants Ozone, PM2.5, and PM10.
