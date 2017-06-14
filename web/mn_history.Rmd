@@ -106,13 +106,11 @@ if(nrow(data) > 0) {
   #-- Impute missing values
   #
   #
-  #
-  #
   #--
   
   
   #-- Save new history file
-  saveRDS(data.frame(ungroup(aqi_hist), stringsAsFactors = F), "../data/aqi_history.Rdata")
+  saveRDS(data.frame(ungroup(aqi_hist), stringsAsFactors = F, check.names = F), "../data/aqi_history.Rdata")
   
   #aqi_hist <- readRDS("../data/aqi_history3.Rdata")
   
