@@ -2,6 +2,7 @@
 .Rhistory
 .Rapp.history
 
+
 # Example code in package build process
 *-Ex.R
 
@@ -19,3 +20,8 @@ create_issue.bat
 error.log
 
 # web libs
+web/site_libs/*
+web/_site/site_libs/*
+
+# produced html files
+web/_site/*.html

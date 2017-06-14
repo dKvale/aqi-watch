@@ -34,7 +34,7 @@ daylight_savings <- Sys.Date() > as.Date(paste0(year, "-03-12")) & Sys.Date() < 
 # Load credentials
 credentials <- read_csv("../credentials.csv")
 
-gmt_time <-  (as.numeric(format(Sys.time() - 195, tz="GMT", "%H")) - 1) %% 24
+gmt_time <-  (as.numeric(format(Sys.time() - 195, tz="GMT", "%H")) - 3) %% 24
 #gmt_time <- paste0("0", gmt_time) %>% substring(nchar(.) - 1, nchar(.))
 
 aqi_all <- data.frame()

@@ -80,8 +80,8 @@ if(nrow(data) > 0) {
   
   missing <- filter(missing, !duplicated(paste0(AqsID, Parameter)))[ , 1:6]
             
-  missing <- mutate(missing, 
-                    Date = max_date,  
+  missing <- ungroup(missing) %>% 
+             mutate(Date = max_date,  
                     Time = mode_hour)  
   
   
@@ -121,7 +121,7 @@ if(nrow(data) > 0) {
   #  - 24 hour rolling avg concentration for PM 2.5
   
   #-- Arrange by hour, from oldest to newsest
-  aqi_hist <- aqi_hist %>% 
+  aqi_hist <- ungroup(aqi_hist) %>% 
               group_by(AqsID, Parameter) %>% 
               arrange(Date, Time) %>% 
               mutate(row_id = 1:n()) %>% 
@@ -182,7 +182,8 @@ if(nrow(data) > 0) {
   }
   
   #-- Select summary values for current hour
-  aqi_hist <- group_by(aqi_hist, Date, AqsID, `Site Name`, Parameter) %>%
+  aqi_hist <- ungroup(aqi_hist) %>% 
+              group_by(Date, AqsID, `Site Name`, Parameter) %>%
               mutate(`Daily Max 8-hr Avg` = max(obs_avg, na.rm = T),
                      `Rolling 24-hr Avg`  = obs_avg[Time == max(Time, na.rm = T)],
                      `NowCast AQI`        = nowcast[Time == max(Time, na.rm = T)]) %>% 
