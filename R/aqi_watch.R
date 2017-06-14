@@ -149,7 +149,7 @@ aqi <- group_by(aqi, AqsID, Parameter) %>% mutate(AQI_Value = round(conc2aqi(Con
 
 
 #-- Get missing sites from China Air Quality site - aqicn.org
-source("../R/get_aqicn.R")
+source("R/get_aqicn.R")
 
 #-- Grab Fargo
 ## fargo <- get_aqicn(country="usa", state="north-dakota", city="fargo-nw", param="pm25")

@@ -188,6 +188,9 @@ if(nrow(data) > 0) {
                      `NowCast AQI`        = nowcast[Time == max(Time, na.rm = T)]) %>% 
               ungroup()
   
+  #-- Set -Inf values to NA
+  aqi_hist$`Daily Max 8-hr Avg` <- ifelse(aqi_hist$`Daily Max 8-hr Avg` == -Inf, NA, aqi_hist$`Daily Max 8-hr Avg`)
+  
   #-- Flip to wide table w/ hours along the top
   wide_tbl <- spread(select(aqi_hist, Date, `Site Name`, Parameter, Time, Concentration), Time, Concentration)
   
@@ -226,7 +229,7 @@ The _NowCast AQI_ is the most recent hour's NowCast value in AQI units.
 <br>  
 
 ### __PM2.5 data__  
-Concentrations in units of  _$ug/m^3$_. Hours are the monitoring start hour. <br>  
+Concentrations in units of  _ug/m$^3$_. Hours are the monitoring start hour. <br>  
 ```{r kable_hist_PM25, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
 
 if(nrow(wide_tbl) > 0) {
