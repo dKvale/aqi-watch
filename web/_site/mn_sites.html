@@ -4,14 +4,14 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
 
 
 
-<title>MN sites (1-hr AQI)</title>
+<title>Minnesota sites</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -162,11 +162,13 @@ $(document).ready(function () {
     <div id="navbar" class="collapse navbar-collapse navbar-left">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Map</a></li>
-        <li><a href="mn_history.html">History</a></li>
-        <li><a href="exceed.html">High sites (1-hr)</a></li>
-        <li><a href="mn_sites.html">MN sites (1-hr)</a></li>
-        <li><a href="nearby_sites.html">Nearby sites (1-hr)</a></li>
-        <li><a href="nowcast.html">EPA NowCast</a></li>
+        <li><a href="mn_history.html">Observations</a></li>
+        <li><a href="airnow_map.html">AirNow map</a></li>
+        <li><a href="smogwatch.html">SmogWatch</a></li>
+        <li><a href="exceed.html">High sites</a></li>
+        <li><a href="mn_sites.html">MN sites</a></li>
+        <li><a href="nearby_sites.html">Nearby sites</a></li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -176,11 +178,17 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">MN sites (1-hr AQI)</h1>
+<h1 class="title toc-ignore">Minnesota sites</h1>
 
 </div>
 
 
+<style>
+   body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+  tr:nth-child(even){background-color: #e9e9e9;
+  tr:nth-child(odd){background-color: #FFF;}
+</style>
 <script type="text/JavaScript">
   setTimeout(function() { window.location=window.location;}, 350000);
 </script>
@@ -188,16 +196,19 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr>
-<th style="text-align:center;">
+<th style="text-align:left;">
 Site Name
 </th>
-<th style="text-align:center;">
+<th style="text-align:left;">
 Agency
 </th>
-<th style="text-align:center;">
-AqsID
+<th style="text-align:left;">
+Date
 </th>
-<th style="text-align:center;">
+<th style="text-align:left;">
+Sampling Hour
+</th>
+<th style="text-align:left;">
 Parameter
 </th>
 <th style="text-align:center;">
@@ -206,689 +217,559 @@ Concentration
 <th style="text-align:center;">
 1-hr AQI
 </th>
-<th style="text-align:center;">
-Date
-</th>
-<th style="text-align:center;">
-Sampling Hour
-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;">
-St. Paul-Harding H.S
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271230871
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-20.0
-</td>
-<td style="text-align:center;">
-68
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Minneapolis-Phillips
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270530963
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-17.0
-</td>
-<td style="text-align:center;">
-61
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Blaine
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270031002
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-17.0
-</td>
-<td style="text-align:center;">
-61
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-St. Michael
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271713201
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-16.0
-</td>
-<td style="text-align:center;">
-59
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Minneapolis-Near Roa
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270530962
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-16.0
-</td>
-<td style="text-align:center;">
-59
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-St. Cloud
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271453052
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-15.0
-</td>
-<td style="text-align:center;">
-57
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Fond du Lac
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270177417
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-15.0
-</td>
-<td style="text-align:center;">
-57
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-West Duluth
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271377554
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-15.0
-</td>
-<td style="text-align:center;">
-57
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Apple Valley
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270370470
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-14.0
-</td>
-<td style="text-align:center;">
-55
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Marshall
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MPCA
 </td>
-<td style="text-align:center;">
-270834210
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
 </td>
 <td style="text-align:center;">
-PM25
+50
 </td>
 <td style="text-align:center;">
-12.0
-</td>
-<td style="text-align:center;">
-51
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
+50
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Red Lake Nation
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270072304
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-12.0
-</td>
-<td style="text-align:center;">
-51
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Lakeville - Near Roa
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270370480
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-12.0
-</td>
-<td style="text-align:center;">
-51
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-LACROSSE DOT
-</td>
-<td style="text-align:center;">
-Wisconsin DNR
-</td>
-<td style="text-align:center;">
-550630012
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Rochester
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271095008
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Brainerd
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270353204
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Emmetsburg, ILCC
-</td>
-<td style="text-align:center;">
-Iowa DNR
-</td>
-<td style="text-align:center;">
-191471002
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-11.0
-</td>
-<td style="text-align:center;">
-46
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sioux Falls
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 South Dakota
 </td>
-<td style="text-align:center;">
-460990008
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
 </td>
 <td style="text-align:center;">
-PM25
+49
 </td>
 <td style="text-align:center;">
-9.0
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fargo NW
+</td>
+<td style="text-align:left;">
+North Dakota Health
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+14:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+47
+</td>
+<td style="text-align:center;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Emmetsburg, ILCC
+</td>
+<td style="text-align:left;">
+Iowa DNR
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fond du Lac
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brainerd
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LACROSSE DOT
+</td>
+<td style="text-align:left;">
+Wisconsin DNR
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+14:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+43
+</td>
+<td style="text-align:center;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stanton
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ely
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+41
+</td>
+<td style="text-align:center;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Detroit Lakes
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mille Lacs
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
 </td>
 <td style="text-align:center;">
 38
 </td>
 <td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
+38
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Voyageurs NP
+<td style="text-align:left;">
+Rochester
 </td>
-<td style="text-align:center;">
-National Park Service
+<td style="text-align:left;">
+MPCA
 </td>
-<td style="text-align:center;">
-271370034
+<td style="text-align:left;">
+06/12/2017
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
 OZONE
 </td>
 <td style="text-align:center;">
-38.0
+38
+</td>
+<td style="text-align:center;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shakopee
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+38
+</td>
+<td style="text-align:center;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+St. Cloud
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+38
+</td>
+<td style="text-align:center;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Marine on St. Croix
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+38
+</td>
+<td style="text-align:center;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+St. Michael
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Blaine
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+OZONE
 </td>
 <td style="text-align:center;">
 35
 </td>
 <td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
+35
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Fargo NW
+<td style="text-align:left;">
+East Bethel
 </td>
-<td style="text-align:center;">
-North Dakota Health
-</td>
-<td style="text-align:center;">
-380171004
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-6.9
-</td>
-<td style="text-align:center;">
-29
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-18:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Detroit Lakes
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MPCA
 </td>
-<td style="text-align:center;">
-270052013
+<td style="text-align:left;">
+06/12/2017
 </td>
-<td style="text-align:center;">
-PM25
+<td style="text-align:left;">
+15:00
 </td>
-<td style="text-align:center;">
-7.0
-</td>
-<td style="text-align:center;">
-29
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-St. Paul - Downtown
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271230868
-</td>
-<td style="text-align:center;">
-PM10
-</td>
-<td style="text-align:center;">
-29.0
+<td style="text-align:left;">
+OZONE
 </td>
 <td style="text-align:center;">
 27
 </td>
 <td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
+27
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Duluth-WDSE
+<td style="text-align:left;">
+St. Paul - Downtown
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MPCA
 </td>
-<td style="text-align:center;">
-271377550
+<td style="text-align:left;">
+06/12/2017
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+15:00
 </td>
-<td style="text-align:center;">
-27.0
-</td>
-<td style="text-align:center;">
-25
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Grand Portage
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-270317810
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-5.0
+<td style="text-align:left;">
+PM10
 </td>
 <td style="text-align:center;">
 21
 </td>
 <td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Virginia
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271377001
-</td>
-<td style="text-align:center;">
-PM25
-</td>
-<td style="text-align:center;">
-5.0
-</td>
-<td style="text-align:center;">
 21
 </td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Ely
+<td style="text-align:left;">
+Minneapolis-Near Roa
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MPCA
 </td>
-<td style="text-align:center;">
-270750005
+<td style="text-align:left;">
+06/12/2017
 </td>
-<td style="text-align:center;">
-PM25
+<td style="text-align:left;">
+15:00
 </td>
-<td style="text-align:center;">
-4.0
-</td>
-<td style="text-align:center;">
-17
-</td>
-<td style="text-align:center;">
-01/18/2017
-</td>
-<td style="text-align:center;">
-19:00
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-Shakopee
-</td>
-<td style="text-align:center;">
-MPCA
-</td>
-<td style="text-align:center;">
-271390505
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 OZONE
 </td>
 <td style="text-align:center;">
-18.0
+15
 </td>
 <td style="text-align:center;">
-17
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Minneapolis-Phillips
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+PM25
 </td>
 <td style="text-align:center;">
-01/18/2017
+8
 </td>
 <td style="text-align:center;">
-19:00
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apple Valley
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Red Lake Nation
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+West Duluth
+</td>
+<td style="text-align:left;">
+MPCA
+</td>
+<td style="text-align:left;">
+06/12/2017
+</td>
+<td style="text-align:left;">
+15:00
+</td>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
 </td>
 </tr>
 </tbody>
@@ -899,243 +780,187 @@ OZONE
 <table>
 <thead>
 <tr>
-<th style="text-align:center;">
+<th style="text-align:left;">
 State
 </th>
-<th style="text-align:center;">
+<th style="text-align:left;">
 Site Name
 </th>
-<th style="text-align:center;">
+<th style="text-align:left;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:left;">
 AqsID
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Brainerd
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-270353204
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Detroit Lakes
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 270052013
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-East Bethel
+<td style="text-align:left;">
+Duluth-WDSE
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 OZONE
 </td>
-<td style="text-align:center;">
-270031001
+<td style="text-align:left;">
+271377550
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Ely
+<td style="text-align:left;">
+Grand Portage
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
-270750005
+<td style="text-align:left;">
+270317810
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Fond du Lac
+<td style="text-align:left;">
+Lakeville - Near Road
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
-270177417
+<td style="text-align:left;">
+270370480
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
-WI
-</td>
-<td style="text-align:center;">
-LACROSSE DOT
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-550630012
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Marine on St. Croix
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-271636016
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Marshall
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 270834210
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Mille Lacs
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-270953051
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Minneapolis-Lowry Av
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 PM10
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 270530909
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
+Minneapolis-Near Road
+</td>
+<td style="text-align:left;">
+PM25
+</td>
+<td style="text-align:left;">
+270530962
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MN
+</td>
+<td style="text-align:left;">
 Minneapolis-Pacific St
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 PM10
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 270530910
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Rochester
-</td>
-<td style="text-align:center;">
-OZONE
-</td>
-<td style="text-align:center;">
-271095008
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-MN
-</td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 St. Anthony Park
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 PM25
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 271231908
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-St. Cloud
+<td style="text-align:left;">
+St. Paul-Harding H.S.
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
-271453052
+<td style="text-align:left;">
+271230871
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-St. Michael
+<td style="text-align:left;">
+Virginia
 </td>
-<td style="text-align:center;">
-OZONE
+<td style="text-align:left;">
+PM25
 </td>
-<td style="text-align:center;">
-271713201
+<td style="text-align:left;">
+271377001
 </td>
 </tr>
 <tr>
-<td style="text-align:center;">
+<td style="text-align:left;">
 MN
 </td>
-<td style="text-align:center;">
-Stanton
+<td style="text-align:left;">
+Voyageurs NP
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 OZONE
 </td>
-<td style="text-align:center;">
-270495302
+<td style="text-align:left;">
+271370034
 </td>
 </tr>
 </tbody>
@@ -1165,7 +990,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

@@ -14,6 +14,8 @@ options(rstudio.markdownToHTML =
 
 #setwd("../")
 setwd("aqi-watch")
+source("R/aqi2conc.R")
+source("R/conc2aqi.R")
 
 email_trigger <- 90
 
@@ -43,9 +45,9 @@ for(i in 0:2) {
 time <- paste0("0", (gmt_time - i) %% 24) %>% substring(nchar(.) - 1, nchar(.))
   
 if(((gmt_time < 2) && (time > 20)) | gmt_time == 23) {  
-    date_time <- paste0(format(Sys.time() - (60 * 60 * 24), tz="GMT", "%Y%m%d"), time)
+    date_time <- paste0(format(Sys.time() - (60 * 60 * 24), tz = "GMT", "%Y%m%d"), time)
 } else {
-  date_time <- paste0(format(Sys.time(), tz="GMT", "%Y%m%d"), time)
+  date_time <- paste0(format(Sys.time(), tz = "GMT", "%Y%m%d"), time)
 }
 
  #airnow_link <- paste0('ftp://', credentials$user, ':', credentials$pwd, 
@@ -143,143 +145,30 @@ breaks_aqi <- read_csv("data-raw/aqi_breakpoints.csv", col_types=c('cccccccc'))
 names(breaks_aqi) <- c("Rating", "Breakpoints", "OZONE", 
                        "PM25", "SO2", "CO", "NO2", "PM10")
 
-# Define concentration to AQI function
-conc2aqi <- function(conc, param) {
-  
-  if(is.na(conc) || is.na(param)) return(NA)
-  
-  aqi_value <- breaks_aqi[ , c(param, "Breakpoints", "Rating")]
-  
-  names(aqi_value)[1] <- "Conc_cutoffs"
-  
-  aqi_value <- mutate(aqi_value, 
-                      Breakpoints  = str_split(Breakpoints, ","),
-                      Conc_cutoffs = str_split(Conc_cutoffs, ","))
-  
-  aqi_value <- group_by(aqi_value, Rating) %>%
-               mutate(Low_break  = as.numeric(unlist(Breakpoints)[1]),
-                      High_break = as.numeric(unlist(Breakpoints)[2]),
-                      Low_conc   = as.numeric(unlist(Conc_cutoffs)[1]),
-                      High_conc  = as.numeric(unlist(Conc_cutoffs)[2]))
-  
-  aqi_value <- filter(aqi_value, High_conc > conc)[1, ]
-
-  with(aqi_value, 
-       Low_break + (conc - Low_conc) * (High_break - Low_break)/(High_conc - Low_conc))
-
-}
-
-# Define AQI to concentration function
-aqi2conc <- function(aqi, param){
-  
-  aqi_value <- breaks_aqi[ , c(param, "Breakpoints", "Rating")]
-  
-  names(aqi_value)[1] <- "Conc_cutoffs"
-  
-  aqi_value <- mutate(aqi_value, 
-                      Breakpoints = str_split(Breakpoints, ","),
-                      Conc_cutoffs = str_split(Conc_cutoffs, ","))
-  
-  aqi_value <- group_by(aqi_value, Rating) %>%
-    mutate(Low_break  = as.numeric(unlist(Breakpoints)[1]),
-           High_break = as.numeric(unlist(Breakpoints)[2]),
-           Low_conc   = as.numeric(unlist(Conc_cutoffs)[1]),
-           High_conc  = as.numeric(unlist(Conc_cutoffs)[2]))
-  
-  aqi_value <- filter(aqi_value, High_break > aqi)[1, ]
-  
-  with(aqi_value, 
-       Low_conc + (aqi - Low_break) * (High_conc - Low_conc) / (High_break - Low_break)) 
-  
-}
-
-
 aqi <- group_by(aqi, AqsID, Parameter) %>% mutate(AQI_Value = round(conc2aqi(Concentration, Parameter)))
 
 
-# Define function to grab concentrations for Canada sites from China's aqicn.org site
-grab_aqicn <- function(country="usa", state="north-dakota", city="fargo-nw", param="pm25") {
-  
-  data <- try(readLines(paste0("http://aqicn.org/city/", 
-                               country,"/", 
-                               state, "/", 
-                               city, "/")),
-                               silent=TRUE)
-  
-  if(class(data) == "try-error" || (length(data) < 5)) return(data_frame())
-  
-  data <- data[grep(paste0("id='cur_", param, "'"), data)]
-  
-  data_aqi <- str_split(data, paste0("id='cur_", param, "'"))[[1]][2]
-    
-  data_aqi <- str_split(data_aqi, "align=center>")[[1]][2] %>% 
-              substring(1, 2)
-  
-  data_aqi <- gsub("<", "", data_aqi)
-  
-  data <- str_split(data, "Updated on ")[[1]][2]
-  
-  data_time <- str_split(data, " ")[[1]][2]
-  
-  data_time <- as.numeric(gsub(":", "", substring(data_time, 1, 2))) %% 24
-  
-  data_time <- ifelse(state == "ontario", data_time - 2 + daylight_savings, data_time)
-  
-  data_time <- ifelse(state == "north-dakota", data_time - 1 + daylight_savings, data_time)
-  
-  data_time <- ifelse(state == "minnesota", data_time - 1 + daylight_savings, data_time)
-  
-  data_day <- str_split(data, " ")[[1]][1] %>% substring(1, 3)
-  
-  data_date <- c(format(Sys.Date() - as.numeric(!identical(data_day, format(Sys.Date(), "%a"))), "%m/%d/%Y"))
-  
-  aqsid <- switch(city, "fargo-nw" = "380171004", 
-                        "red-lake-nation" = "Red Lake", 
-                        "winnipeg-ellen-st." = '000070119',
-                        "winnipeg-scotia-st." = '000070118',
-                        "thunder-bay" = "thunder-bay")
-  
-  units <- ifelse(param=="o3", "PPB", "UG/M3")
-  
-  param <- ifelse(param=="o3", "OZONE", toupper(param))
-  
-  data_conc <- round(aqi2conc(as.numeric(data_aqi), param), 1)
+#-- Get missing sites from China Air Quality site - aqicn.org
+source("../R/get_aqicn.R")
 
-  data <- data.frame(data_date, 
-                     paste0(data_time, ":00"), 
-                     aqsid, 
-                     toupper(city), 
-                     NaN,
-                     param, 
-                     units, 
-                     data_conc, 
-                     x=paste(toupper(state), "Department of Health"), 
-                     as.numeric(data_aqi), 
-                     stringsAsFactors = F)
-  
-  names(data) <- names(aqi)[1:10]
-  
-  return(data)
-}
+#-- Grab Fargo
+## fargo <- get_aqicn(country="usa", state="north-dakota", city="fargo-nw", param="pm25")
 
-# Grab Fargo
-## fargo <- grab_aqicn(country="usa", state="north-dakota", city="fargo-nw", param="pm25")
+#-- Grab Red Lake
+## red_lake <- get_aqicn(country="usa", state="minnesota", city="red-lake-nation", param="pm25")
 
-# Grab Red Lake
-## red_lake <- grab_aqicn(country="usa", state="minnesota", city="red-lake-nation", param="pm25")
+#-- Canada
+winnipeg_ellen_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="pm25")
+#winnipeg_ellen_03 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="o3")
 
-# Grab Canada
-winnipeg_ellen_pm25 <- grab_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="pm25")
-#winnipeg_ellen_03 <- grab_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="o3")
+winnipeg_scotia_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="pm25")
+##winnipeg_scotia_03 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="o3")
 
-winnipeg_scotia_pm25 <- grab_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="pm25")
-##winnipeg_scotia_03 <- grab_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="o3")
+##brandon_pm25 <- get_aqicn(country="canada", state="manitoba", city="brandon", param="pm25")
+##brandon_o3   <- get_aqicn(country="canada", state="manitoba", city="brandon", param="o3")
 
-##brandon_pm25 <- grab_aqicn(country="canada", state="manitoba", city="brandon", param="pm25")
-##brandon_o3 <- grab_aqicn(country="canada", state="manitoba", city="brandon", param="o3")
-
-thunder_pm25 <- grab_aqicn(country="canada", state="ontario", city="thunder-bay", param="pm25")
-thunder_o3 <- grab_aqicn(country="canada", state="ontario", city="thunder-bay", param="o3")
+thunder_pm25 <- get_aqicn(country="canada", state="ontario", city="thunder-bay", param="pm25")
+thunder_o3   <- get_aqicn(country="canada", state="ontario", city="thunder-bay", param="o3")
 
 # Combine all
 aqi <- bind_rows(aqi, 

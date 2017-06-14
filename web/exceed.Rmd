@@ -1,5 +1,5 @@
 ---
-title: "High sites (1-hr AQI)"
+title: "Monitors reporting a 1-hr AQI above 90"
 ---  
 
 <style>
@@ -15,7 +15,6 @@ title: "High sites (1-hr AQI)"
 
 <hr> 
 
-## Monitors reporting a 1-hr AQI above 90.
 
 <div class = "orange">
 ```{r kable_exceed, message=F, echo=F, results='asis', warning=F}

@@ -1,5 +1,5 @@
 ---
-title: "MN sites (1-hr AQI)"
+title: "Minnesota sites"
 ---
 
 
