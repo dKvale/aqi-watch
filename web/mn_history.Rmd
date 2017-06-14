@@ -58,7 +58,7 @@ if(nrow(data) > 0) {
   # Load history
   aqi_hist <- readRDS("../data/aqi_history.Rdata")
   
-  aqi_hist$Date        <- as.Date(aqi_hist$Date, format = '%m/%d/%Y')
+  #aqi_hist$Date        <- as.Date(aqi_hist$Date, format = '%m/%d/%Y')
   aqi_hist$Time        <- as.numeric(aqi_hist$Time)
   aqi_hist$AqsID       <- as.character(aqi_hist$AqsID)
   aqi_hist$`Site Name` <- as.character(aqi_hist$`Site Name`)
