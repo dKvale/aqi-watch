@@ -112,9 +112,9 @@ if(nrow(data) > 0) {
   
   
   #-- Save new history file
-  saveRDS(aqi_hist, "../data/aqi_history3.Rdata")
+  saveRDS(aqi_hist, "../data/aqi_history.Rdata")
   
-  aqi_hist <- readRDS("../data/aqi_history3.Rdata")
+  #aqi_hist <- readRDS("../data/aqi_history3.Rdata")
   
   # Calculate the NowCast and the
   #  - 8-hr avg concentration for Ozone
