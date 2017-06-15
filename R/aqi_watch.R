@@ -44,8 +44,9 @@ for(i in 0:2) {
 
 time <- paste0("0", (gmt_time - i) %% 24) %>% substring(nchar(.) - 1, nchar(.))
   
+# Adjust date when searching back to previous day's results
 if(((gmt_time < 2) && (time > 20)) | gmt_time == 23) {  
-    date_time <- paste0(format(Sys.time() - (60 * 60 * 24), tz = "GMT", "%Y%m%d"), time)
+  date_time <- paste0(format(Sys.time() - (60 * 60 * 24), tz = "GMT", "%Y%m%d"), time)
 } else {
   date_time <- paste0(format(Sys.time(), tz = "GMT", "%Y%m%d"), time)
 }
@@ -101,7 +102,7 @@ aqi$StateID <- substring(aqi$AqsID, 1, 2)
 
 # Filter to local results
 aqi <- filter(aqi, StateID %in% c('27', '19', '55', '38', '46') |
-                AqsID %in% c(border_sites, canada_sites))
+                   AqsID %in% c(border_sites, canada_sites))
 
 # Filter to Ozone and PM
 aqi <- filter(aqi, grepl('PM25', Parameter) |
@@ -128,12 +129,19 @@ if(nrow(aqi_all) < 1) return()
 
 aqi <- aqi_all[ , 1:9]
 
-# Adjust time to Central time
-aqi$Time <- (as.numeric(gsub(":00", "", aqi$Time)) - 6 + daylight_savings) %% 24
+# Adjust time to Central daylight time CDT
+aqi$local <- as.POSIXct(paste(aqi$Date, aqi$Time), tz="GMT", "%m/%d/%y %H:%M") %>% format(tz = "America/Chicago", usetz=TRUE)
+
+#aqi$Time <- (as.numeric(gsub(":00", "", aqi$Time)) - 6 + daylight_savings) %% 24
+
+aqi$Time <- as.POSIXlt(aqi$local, tz = "America/Chicago") %>% format(tz = "America/Chicago", format = "%H") %>% as.numeric()
 
 aqi$Time <- paste0(aqi$Time, ":00")
 
-aqi$Date <- format(Sys.Date() - ifelse(gmt_time == 5, 1, 0), "%m/%d/%Y")
+#aqi$Date <- format(Sys.Date() - ifelse(gmt_time == 5, 1, 0), "%m/%d/%Y")
+aqi$Date <-  as.POSIXlt(aqi$local, tz = "America/Chicago") %>% as.Date() %>% format("%m/%d/%Y")
+
+aqi$local <- NULL
 
 # Calculate AQI value using EPA breakpoints 
 # [www.pca.state.mn.us/index.php/air/air-quality-and-pollutants/general-air-quality/air-quality-index/air-quality-about-the-data.html]
