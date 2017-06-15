@@ -71,7 +71,11 @@ if(nrow(data) > 0) {
   
   max_hour <- max(data[data$Date == max_date, ]$Time, na.rm = T)
   
-  mode_hour <- table(data$Time) %>% sort(decreasing = T) %>% names() %>% as.numeric() %>% head(1)
+  mode_hour <- table(data$Time) %>% 
+               sort(decreasing = T) %>% 
+               names() %>% 
+               as.numeric() %>% 
+               head(1)
   
   
   #-- Add NA for missing site-parameter combinations
@@ -93,7 +97,7 @@ if(nrow(data) > 0) {
   aqi_hist <- arrange(aqi_hist, Date, Time, AqsID)
   
   if(!testing) {
-    aqi_hist <- filter(aqi_hist, as.Date(Date, format = '%m/%d/%Y') >= (max_date - 1))
+    aqi_hist <- filter(aqi_hist, Date >= (max_date - 1))
   }
   
   #-- Average concentrations for each hour in case of duplicate results
@@ -174,9 +178,9 @@ if(nrow(data) > 0) {
   
   #-- Filter to current date
   if(testing) {
-    aqi_hist <- filter(aqi_hist, as.Date(Date, format = '%m/%d/%Y') == as.Date(aqi_hist$Date, format = '%m/%d/%Y')[7])
+    aqi_hist <- filter(aqi_hist, Date == aqi_hist$Date[7])
   } else {
-    aqi_hist <- filter(aqi_hist, as.Date(Date, format = '%m/%d/%Y') == max_date)
+    aqi_hist <- filter(aqi_hist, Date == max_date)
   }
   
   #-- Select summary values for current hour
