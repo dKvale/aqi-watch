@@ -22,7 +22,7 @@
 }
 	
 table {
-  font-size: 100%;
+  font-size: 105%;
   overflow: auto;
   width: 99%;
 }
@@ -48,7 +48,7 @@ th {
 td {
   color: rgb(111, 111, 111);
   padding: 8px 6px !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
 }
 
 /*body {width: 99%; max-width: 99%;  } */

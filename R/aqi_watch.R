@@ -143,6 +143,7 @@ aqi$Date <-  as.POSIXlt(aqi$local, tz = "America/Chicago") %>% as.Date() %>% for
 
 aqi$local <- NULL
 
+
 # Calculate AQI value using EPA breakpoints 
 # [www.pca.state.mn.us/index.php/air/air-quality-and-pollutants/general-air-quality/air-quality-index/air-quality-about-the-data.html]
 # PM10 is here [http://www3.epa.gov/ttn/oarpg/t1/memoranda/rg701.pdf]
