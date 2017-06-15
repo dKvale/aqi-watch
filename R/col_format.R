@@ -3,8 +3,10 @@
 col_format <- function(i) {
   
   formatter("span", 
-            style = x ~ style("padding-left"  = "12px",
-                              "padding-right" = "12px",
+            style = x ~ style("padding-left"   = "12px",
+                              "padding-right"  = "12px",
+                              "padding-top"    = "4px",
+                              "padding-bottom" = "4px",
                               #"margin-right"  = paste0(i, "px"),
                               "font-weight"   = 400,
                               "background-color" = 
