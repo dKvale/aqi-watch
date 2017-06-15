@@ -25,3 +25,6 @@ web/_site/site_libs/*
 
 # produced html files
 web/_site/*.html
+
+# produced history files
+data/*
