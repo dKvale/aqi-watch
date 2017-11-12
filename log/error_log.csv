@@ -687,3 +687,59 @@
 "
 "2017011900","2017-01-18 19:18:58","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
 "
+"2017061603","2017-06-15 23:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062208","2017-06-22 04:39:02","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062209","2017-06-22 05:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062208","2017-06-22 05:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062210","2017-06-22 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062209","2017-06-22 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062208","2017-06-22 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062211","2017-06-22 07:39:02","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062210","2017-06-22 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062209","2017-06-22 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062212","2017-06-22 08:39:02","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062211","2017-06-22 08:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062210","2017-06-22 08:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062213","2017-06-22 09:39:02","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062212","2017-06-22 09:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017062211","2017-06-22 09:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017082915","2017-08-29 11:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017090800","2017-09-07 20:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017100906","2017-10-09 04:35:04","Failed","Error in open.connection(con, ""rb"") : HTTP error 500.
+"
+"2017101308","2017-10-13 04:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101309","2017-10-13 05:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101308","2017-10-13 05:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101310","2017-10-13 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101309","2017-10-13 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101308","2017-10-13 06:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101311","2017-10-13 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101310","2017-10-13 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"
+"2017101309","2017-10-13 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"

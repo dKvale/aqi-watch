@@ -170,7 +170,7 @@ source("R/get_aqicn.R")
 winnipeg_ellen_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="pm25")
 #winnipeg_ellen_03 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="o3")
 
-winnipeg_scotia_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="pm25")
+#winnipeg_scotia_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="pm25")
 ##winnipeg_scotia_03 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="o3")
 
 ##brandon_pm25 <- get_aqicn(country="canada", state="manitoba", city="brandon", param="pm25")
@@ -182,7 +182,7 @@ thunder_o3   <- get_aqicn(country="canada", state="ontario", city="thunder-bay",
 # Combine all
 aqi <- bind_rows(aqi, 
                  winnipeg_ellen_pm25, 
-                 winnipeg_scotia_pm25, 
+#                 winnipeg_scotia_pm25, 
                  thunder_pm25, 
                  thunder_o3)
 
@@ -194,9 +194,9 @@ names(aqi)[11] <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
 aqi <- filter(aqi, AQI_Value > -29)[ , -5]
 
 # Set negative AQIs & concentrations to zero
-aqi$AQI_Value <- ifelse(aqi$AQI_Value < 0, 0, aqi$AQI_Value)
+aqi$AQI_Value     <- ifelse(aqi$AQI_Value < 0, 0, aqi$AQI_Value)
 
-aqi$AQI_Value <- ifelse(aqi$Concentration < -5, 0, aqi$Concentration)
+aqi$Concentration <- ifelse(aqi$Concentration < -5, 0, aqi$Concentration)
 
 
 # Arrange from high to low
