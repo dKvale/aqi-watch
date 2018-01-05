@@ -220,7 +220,7 @@ if(nrow(data) > 0) {
                            align = c('l', 'l', rep('c', ncol(ozone_tbl) - 2)))
 
 
-
+}
 ```
 
 
@@ -257,7 +257,6 @@ Concentrations are in units of _ppb_. Hours are the monitoring start hour. <br>
   ozone_tbl 
   #kable(ozone_tbl, 'html',  align = paste0(c('l', 'l', rep('c', ncol(ozone_tbl) - 2)), collapse = ""))
   
-} 
 ```
 __Notes__  
 <div style = "margin-left: 1px; font-size: 0.7em;"> 
