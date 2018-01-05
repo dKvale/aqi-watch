@@ -23,9 +23,9 @@ title: Hourly monitoring data
 
 ##  {.tabset}
 
-### __Ozone data__  
-Concentrations are in units of _ppb_. Hours are the monitoring start hour. <br>  
-```{r kable_hist_ozone, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+### __PM2.5 data__  
+Concentrations in units of  _ug/m$^3$_. Hours are the monitoring start hour. <br>  
+```{r kable_hist, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
 library(knitr)
 library(dplyr)
 library(tidyr)
@@ -218,21 +218,12 @@ if(nrow(data) > 0) {
   ozone_tbl <- formattable(ozone_tbl,
                            list(`NowCast AQI`   = col_format(0)),
                            align = c('l', 'l', rep('c', ncol(ozone_tbl) - 2)))
-     
-  ozone_tbl 
-  #kable(ozone_tbl, 'html',  align = paste0(c('l', 'l', rep('c', ncol(ozone_tbl) - 2)), collapse = ""))
-  
-} 
-```
-__Notes__  
-<div style = "margin-left: 1px; font-size: 0.7em;"> 
-The _Daily Max 8-hr Average_ is the highest rolling 8-hr average for the day in ppb.   
-The _NowCast AQI_ is the most recent hour's NowCast value in AQI units.  
-</div>
-<br>  
 
-### __PM2.5 data__  
-Concentrations in units of  _ug/m$^3$_. Hours are the monitoring start hour. <br>  
+
+
+```
+
+
 ```{r kable_hist_PM25, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
 
 if(nrow(wide_tbl) > 0) {
@@ -250,9 +241,29 @@ if(nrow(wide_tbl) > 0) {
  
 }
 ```
+
 __Notes__  
 <div style = "margin-left: 1px; font-size: 0.7em;"> 
 The _Rolling 24-hr Average_ is the most recent rolling 24-hr average in $ug/m^3$.    
 The _NowCast AQI_ is the most recent hour's NowCast value in AQI units.   
 </div>
 <br>
+
+
+### __Ozone data__  
+Concentrations are in units of _ppb_. Hours are the monitoring start hour. <br>  
+```{r kable_hist_ozone, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+
+  ozone_tbl 
+  #kable(ozone_tbl, 'html',  align = paste0(c('l', 'l', rep('c', ncol(ozone_tbl) - 2)), collapse = ""))
+  
+} 
+```
+__Notes__  
+<div style = "margin-left: 1px; font-size: 0.7em;"> 
+The _Daily Max 8-hr Average_ is the highest rolling 8-hr average for the day in ppb.   
+The _NowCast AQI_ is the most recent hour's NowCast value in AQI units.  
+</div>
+<br>  
+
+
