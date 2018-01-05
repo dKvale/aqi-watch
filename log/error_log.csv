@@ -743,3 +743,11 @@
 "
 "2017101309","2017-10-13 07:39:03","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
 "
+"2017112117","2017-11-21 13:40:11","Failed","Error : Failure when receiving data from the peer
+"
+"2017112201","2017-11-21 22:35:20","Failed","Error in open.connection(con, ""rb"") : Timeout was reached
+"
+"2017112823","2017-11-28 19:40:09","Failed","Error : Failure when receiving data from the peer
+"
+"2017112901","2017-11-28 20:39:07","Failed","Error in open.connection(con, ""rb"") : HTTP error 404.
+"

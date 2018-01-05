@@ -350,7 +350,7 @@ if(nrow(aqi) > 0) {
                     "** for ", gsub("25","2&#46;5", max_site$Parameter), 
                     " was reported at **", max_site$'Site Name',
                     "** (", max_site$Agency, 
-                    ")&#46; For more details visit the <a href=http://dkvale&#46;github&#46;io/aqi-watch> AQI Watch</a>&#46; </br>",
+                    ")&#46; For more details visit the <a href=http://mpca-air&#46;github&#46;io/aqi-watch> AQI Watch</a>&#46; </br>",
                     "_", format(Sys.time(), "%h %d, %Y at %H:%M"), " CDT_ </br> </br>",
                     VIP_list)
   
