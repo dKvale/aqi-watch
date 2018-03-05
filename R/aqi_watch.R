@@ -19,6 +19,9 @@ source("R/conc2aqi.R")
 
 email_trigger <- 90
 
+# Email alert subscribers
+subscribers <- read_csv("data/subscribers.csv")
+
 # Fargo, Lacrosse, Voyageurs
 border_sites <- c('380171004', '271370034', '550630012')
 
@@ -330,12 +333,12 @@ if(nrow(aqi) > 0) {
   git <- "cd ~/aqi-watch & git "
     
   system(paste0(git, "config --global user.name dkvale"))
-  system(paste0(git, "config --global user.email ", credentials$email))
-    
- if(sum(unique(aqi$AqsID) %in% mn_sites$AqsID) < 1){
-    VIP_list <- "Attention:  &#64;rrobers "
+  system(paste0(git, "config --global user.email ", credentials$email))          
+            
+ if (sum(unique(aqi$AqsID) %in% mn_sites$AqsID) < 1) {
+    #VIP_list <- "Attention:  &#64;rrobers "
   } else {
-    VIP_list <- "Attention:  &#64;monikav21 &#64;rrobers &#64;Mr-Frank &#64;Rstrass &#64;krspalmer &#64;K-ander"
+    VIP_list <- paste("Attention:",  paste0("&#64;", subscribers$git_name, collapse = " "))
   }
   
   message_title <- paste0("1-hr AQI at ", max_site$AQI_Value, " for ", max_site$Parameter)
