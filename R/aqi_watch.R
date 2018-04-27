@@ -88,9 +88,9 @@ for (i in 0:2) {
     err_time <- as.character(format(Sys.time(), tz = "America/Chicago"))
     
     errs <- bind_rows(errs, data.frame(File    = date_time, 
-                                   Time    = err_time, 
-                                   Status  ="Failed", 
-                                   Message = paste0(aqi, collapse="")))
+                                       Time    = err_time, 
+                                       Status  = "Failed", 
+                                       Message = paste0(aqi, collapse = "")))
     
     write.csv(errs, "log/error_log.csv", row.names=F)
     
@@ -122,7 +122,7 @@ for (i in 0:2) {
 # Check for results
 #--------------------------------------------------------#
 
-if(nrow(aqi_all) < 1) return()
+if (nrow(aqi_all) < 1) return()
 
 #--------------------------------------------------------#
 
