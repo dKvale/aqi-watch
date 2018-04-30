@@ -9,9 +9,8 @@ The AQI watch monitors the state of Minnesota and nearby states for elevated AQI
 1. [ ] Navigate to the _aqi-watch_ Issues page at https://github.com/dKvale/aqi-watch/issues
 1. [ ] Click the ` Watch ` button at the top of the page.
 
-<br>
 
-- <img src=https://help.github.com/assets/images/help/notifications/watcher_picker.gif width="35%">
+> <img src=https://help.github.com/assets/images/help/notifications/watcher_picker.gif width="35%">
 
 <br>
 
