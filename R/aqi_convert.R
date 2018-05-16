@@ -7,7 +7,7 @@ library(dplyr)
 
 
 # Load breakpoints
-breaks_aqi <- read_csv("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff folders/Dorian/AQI/Web/aqi-watch/data-raw/aqi_breakpoints.csv", 
+breaks_aqi <- read_csv("https://raw.githubusercontent.com/dKvale/aqi-watch/master/data-raw/aqi_breakpoints.csv", 
                        col_types = c('cccccccc'))
 
 names(breaks_aqi) <- c("rating", "breakpoints", "ozone", 
