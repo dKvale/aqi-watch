@@ -167,7 +167,7 @@ source("R/get_aqicn.R")
 ## red_lake <- get_aqicn(country="usa", state="minnesota", city="red-lake-nation", param="pm25")
 
 #-- Canada
-winnipeg_ellen_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="pm25")
+#winnipeg_ellen_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="pm25")
 #winnipeg_ellen_03 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-ellen-st.", param="o3")
 
 #winnipeg_scotia_pm25 <- get_aqicn(country="canada", state="manitoba", city="winnipeg-scotia-st.", param="pm25")
@@ -181,8 +181,8 @@ thunder_o3   <- get_aqicn(country="canada", state="ontario", city="thunder-bay",
 
 # Combine all
 aqi <- bind_rows(aqi, 
-                 winnipeg_ellen_pm25, 
-                 #                 winnipeg_scotia_pm25, 
+                 #winnipeg_ellen_pm25, 
+                 #winnipeg_scotia_pm25, 
                  thunder_pm25, 
                  thunder_o3)
 
