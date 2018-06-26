@@ -176,15 +176,18 @@ source("R/get_aqicn.R")
 ##brandon_pm25 <- get_aqicn(country="canada", state="manitoba", city="brandon", param="pm25")
 ##brandon_o3   <- get_aqicn(country="canada", state="manitoba", city="brandon", param="o3")
 
-thunder_pm25 <- get_aqicn(country="canada", state="ontario", city="thunder-bay", param="pm25")
-thunder_o3   <- get_aqicn(country="canada", state="ontario", city="thunder-bay", param="o3")
+thunder_pm25 <-  tryCatch({get_aqicn(country="canada", state="ontario", city="thunder-bay", param="pm25")}, error = function(e) {NA})
+thunder_o3   <-  tryCatch({get_aqicn(country="canada", state="ontario", city="thunder-bay", param="o3")}, error = function(e) {NA})
 
 # Combine all
+if (!is.na(thunder_pm25) & !is.na(thunder_o3)) {
+          
 aqi <- bind_rows(aqi, 
                  #winnipeg_ellen_pm25, 
                  #winnipeg_scotia_pm25, 
                  thunder_pm25, 
                  thunder_o3)
+}
 
 # Add current time
 aqi$Time_CST   <- as.character(format(Sys.time() + 10, tz="America/Chicago"))
