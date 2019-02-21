@@ -1,7 +1,0 @@
-name: "AQI Watch"
-output:
-  html_document:
-    highlight: tango
-    keep_md: no
-    toc: no
-    css: flat_table.css
