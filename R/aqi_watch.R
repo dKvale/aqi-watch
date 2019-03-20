@@ -356,7 +356,16 @@ if(TRUE) {
   #rmarkdown::render("R/high_sites2.Rmd", output_file="../index.html")  
   setwd("web")
   
-  rmarkdown::render_site()
+  rmarkdown::render_site("index.Rmd")
+  rmarkdown::render_site("airnow_map.Rmd")
+  rmarkdown::render_site("mn_history.Rmd")
+  rmarkdown::render_site("mn_sites.Rmd")
+  rmarkdown::render_site("nearby_sites.Rmd")
+  rmarkdown::render_site("smogwatch.Rmd")
+  rmarkdown::render_site("exceed.Rmd")
+  rmarkdown::render_site("mn_pastweek.Rmd")
+  rmarkdown::render_site("model_perf.Rmd")
+  
   
   setwd("../")
   
