@@ -12,7 +12,7 @@ options(rstudio.markdownToHTML =
             markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
-setwd("../")
+#setwd("../")
 setwd("aqi-watch")
 source("R/aqi_convert.R")
 

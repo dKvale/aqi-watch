@@ -50,5 +50,5 @@ for (i in 7:1) {
 
 }
 
-saveRDS(data.frame(daily_history, stringsAsFactors = F, check.names = F), "data/daily_history.RData" )
+saveRDS(data.frame(daily_history, stringsAsFactors = F, check.names = F), "data/daily_history.Rdata" )
 
