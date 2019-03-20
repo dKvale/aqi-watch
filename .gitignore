@@ -28,4 +28,3 @@ web/_site/site_libs/*
 web/_site/*.html
 
 # produced history files
-data/*
