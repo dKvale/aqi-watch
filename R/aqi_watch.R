@@ -129,7 +129,6 @@ if (nrow(aqi_all) < 1) return()
 
 #--------------------------------------------------------#
 
-
 aqi <- aqi_all[ , 1:9]
 
 # Adjust time to Central daylight time CDT
@@ -210,7 +209,7 @@ aqi <- arrange(ungroup(aqi), -AQI_Value)
 
 # Load previous aqi table
 aqi_prev <- read_csv("data/aqi_previous.csv", col_types = c("ccccccdcdTT")) %>% 
-  filter(!is.na(AQI_Value))
+            filter(!is.na(AQI_Value))
 
 # Attach last AQI watch notification time
 aqi$last_notification <- NA
@@ -301,11 +300,11 @@ if (local_hr > 7) {
   }
 }
 
+
 ########################################################################
 #  AQI model performance -- Obtain AQI model performance data.  Updated
 #  once per day.
 ########################################################################
-
 aqi_models <- read.csv("https://raw.githubusercontent.com/dKvale/aircast/master/data/model_performance.csv",
                         stringsAsFactors = FALSE)
 aqi_models$forecast_date <- as.Date(aqi_models$forecast_date)

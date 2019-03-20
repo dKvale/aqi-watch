@@ -91,7 +91,7 @@ Concentrations are in units of _ppb_. <br>
 #Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_ozone <- filter(combined_data, Parameter=="OZONE")
 
-  o1 <- ggplot(data=combined_data_ozone, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
+  o1 <- ggplot(data = combined_data_ozone, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
         scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
         facet_grid(`Site Name` ~ Avg_Period,
                         scales = "free_x") +

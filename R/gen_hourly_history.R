@@ -11,6 +11,7 @@ source("R/col_format.R")
 locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
 
 site_params <- read.csv('data-raw/site_check.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
+
 site_params$Local_Time <- as.numeric(site_params$Local_Time)
 
 # Fargo, Lacrosse, Voyageurs
@@ -55,12 +56,17 @@ if (daylight_savings){
 start_date <- as.POSIXct(paste(as.Date(Sys.time()-24*60*60),"00", tz = "America/Chicago")) %>%
               format(tz = "GMT") %>% 
               as.POSIXct(tz = "GMT")
+
 end_date <- as.POSIXct(date_time, tz = "GMT", format = "%Y%m%d%H") - 3600
+
 all_dates <- seq(start_date,end_date,3600)
   
-for (i in seq(1:length(all_dates))){
+for (i in seq(1:length(all_dates))) {
+  
   ind_date <- format(all_dates[i], format = "%Y%m%d%H")
+  
   ind_mdy <- format(all_dates[i], format = "%m/%d/%y")
+  
   ind_hr <- format(all_dates[i], format = "%H:%M")
   
   airnow_link <- paste0("https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/",
@@ -106,7 +112,6 @@ for (i in seq(1:length(all_dates))){
   aqi_all <- bind_rows(aqi, aqi_all)
 }    
   
-
 
 #--------------------------------------------------------#
 # Check for results

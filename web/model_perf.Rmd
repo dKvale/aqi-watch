@@ -22,7 +22,11 @@ title: "Model Performance"
 ##  {.tabset}
 
 ### __PM2.5 data__  
-Observations and model forecasts are shown in AQI units. MPCA forecasts shown for Tuesday through Saturday have numeric values and are Day 1 forecasts. Sunday and Monday forecasts are typically only categorical and are Day 2 for Sunday and Day 3 for Monday. <br>
+
+Observations and model forecasts are shown in AQI units. MPCA forecasts shown for Tuesday through Saturday have numeric values and are Day 1 forecasts. Sunday and Monday forecasts are typically only categorical and are Day 2 for Sunday and Day 3 for Monday. 
+
+<br>
+
 ```{r model_perf_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=10, fig.height=30 }
 library(ggplot2)
 
@@ -81,7 +85,10 @@ mp1
 ```
 
 ### __Ozone data__  
-Observations and model forecasts are shown in AQI units. MPCA forecasts shown for Tuesday through Saturday have numeric values and are Day 1 forecasts. Sunday and Monday forecasts are typically only categorical and are Day 2 for Sunday and Day 3 for Monday. <br>
+Observations and model forecasts are shown in AQI units. MPCA forecasts shown for Tuesday through Saturday have numeric values and are Day 1 forecasts. Sunday and Monday forecasts are typically only categorical and are Day 2 for Sunday and Day 3 for Monday. 
+
+<br>
+
 ```{r model_perf_ozone, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=10, fig.height=25 }
 aqi_models_ozone <- filter(aqi_models, site_catid %in% forecast_sites_ozone$AqsID)
 
@@ -116,14 +123,14 @@ mo1 <- ggplot(data=aqi_models_ozone, aes(x=forecast_date)) +
        geom_rect(aes(xmin=forecast_date-0.25, xmax=forecast_date+0.25, ymin=fcst_ozone_aqi_cats_val-49, 
                      ymax=fcst_ozone_aqi_cats_val, colour="2"),
                      size=1.25,fill=NA) +
-       geom_text(aes(y=fcst_ozone_aqi_cats_val, label=fcst_ozone_aqi_cats_text, colour="2"),
+       geom_text(aes(y = fcst_ozone_aqi_cats_val, label=fcst_ozone_aqi_cats_text, colour="2"),
                  nudge_y = -5, nudge_x = -0.23, hjust = 0, vjust = 1, size = 2.5) +
   
-       geom_point(aes(y=obs_ozone_aqi, colour="1"), shape=17, size=4) +
+       geom_point(aes(y = obs_ozone_aqi, colour="1"), shape=17, size=4) +
        scale_colour_manual(values = model_colors, labels = model_labels, name = "Legend") +
        facet_grid(`Site Name` ~ .) +
        theme_bw() +
-       labs(x="Date",y="AQI Value")
+       labs(x = "Date", y = "AQI Value")
 
 mo1
        
