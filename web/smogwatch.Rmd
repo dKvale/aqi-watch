@@ -1,0 +1,28 @@
+---
+title: "EPA NowCast"
+---  
+
+<style>
+   body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+</style>
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+
+<hr> 
+
+## NowCast values  
+
+[_Smogwatch, Sonoma Technology_](http://www.smogwatch.com/minn/realtimedata.cfm)
+
+<div style="margin-left: -3%;">
+<iframe src="http://www.smogwatch.com/minn/realtimedata.cfm" overflow="visible" frameborder="0" scrolling="no" style="width: 1000px; height: 1100px;"> </iframe> 
+
+</div>
+
+
+
+<br>

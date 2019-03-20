@@ -1,0 +1,53 @@
+---
+title: "Nearby sites"
+---
+
+<style>
+   body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+  tr:nth-child(even){background-color: #e9e9e9;}
+  tr:nth-child(odd){background-color: #FFF;}
+</style>
+
+<hr> 
+
+```{r kable_nearby, message=F, echo=F, results='asis', warning=F}
+library(knitr)
+
+options(warn = -1)
+
+data <- filter(aqi_rank, !AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites))
+
+if(nrow(data) < 1) {
+  cat(" *The table is currently empty. ")
+} else {
+  data <- data[ , c(1:4,8,5,7,9)]
+
+  names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration", "1-hr AQI")
+
+  kable(data[ , c(4,5,1:2,6:8)], 'html', align = 'lllllcc')
+}
+ 
+```
+<br>
+
+<div class = "gray">
+## Missing parameters for nearby sites
+```{r miss_nearby, message=F, echo=F, results='asis', warning=F}
+
+missing_sites <- filter(site_params, !AqsID %in% c(mn_sites$AqsID, border_sites))
+
+if(length(missing_mn) < 1) {
+  cat(" *There were no missing sites or parameters.")
+} else {
+  missing_sites <- missing_sites[!missing_sites$Site_Param %in% paste(aqi$AqsID, aqi$Parameter, sep="_"), ]
+
+  aqi$Site_Param <- NULL
+
+  kable(arrange(missing_sites[ , c(1,4,3,2)], `Site Name`), 'html', align = 'llll')
+
+}
+```
+</div>
+
+
