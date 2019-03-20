@@ -1,0 +1,116 @@
+---
+title: "Past 7 days monitoring data"
+---
+
+<style>
+  body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+</style>
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+<hr> 
+
+<div style = "margin-left: 1px; margin-bottom: 12px; margin-top:-2px;"> 
+ _Last updated `r format(Sys.time(), " %B %d, %Y  %H:%M")` CDT_
+</div>
+
+<!-- ## {.tabset .tabset-pills} -->
+
+##  {.tabset}
+
+### __PM2.5 data__  
+Concentrations in units of  _ug/m^3^_. <br>  
+```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=12, fig.height=30 }
+library(ggplot2)
+
+source("../R/aqi_convert.R")
+
+#Get hourly data from previous day to current time from aqi_history.Rdata file
+hourly_history <- readRDS("../data/aqi_history.Rdata")
+hourly_history <- mutate(hourly_history, Avg_Period = 2)
+
+#Combine hourly data and daily data into single data frame.
+daily_history <- mutate(daily_history, Date = as.Date(Date, format = "%m/%d/%y"), Time = 0, Avg_Period = 1)
+
+combined_data <- bind_rows(hourly_history, daily_history)
+combined_data <- mutate(combined_data, 
+                        Date_Time = as.POSIXct(paste(combined_data$Date, combined_data$Time), format = "%Y-%m-%d %H"),
+                        aqi_ind = as.character(aqi2colind(AQI_Value)))
+combined_data$Avg_Period <- as.factor(combined_data$Avg_Period)
+
+days_of_week <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+dofwi_m7 <- as.numeric(format(max_date-7,format="%u"))
+dofw_m7 <- days_of_week[dofwi_m7]
+dofwi_m1 <- as.numeric(format(max_date-1,format="%u"))
+dofw_m1 <- days_of_week[dofwi_m1]
+daily_label <- paste0("Daily Average - ",dofw_m7," through ",dofw_m1)
+hourly_label <- paste0("Houly Average - ",dofw_m1," through current hour")
+levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
+
+#Filter PM2.5 parameter for plots on PM2.5 tab
+combined_data_pm25 <- filter(combined_data, Parameter=="PM25")
+
+  colors <- c("#53BF33","#FFEE00","#DB6B1A","#ff0000","#99004c")
+  aqi_labels <- c("Good","Moderate","Unhealthy for\nSensitive Groups","Unhealthy","Very Unhealthy")
+
+  p1 <- ggplot(data=combined_data_pm25, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
+        scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
+        facet_grid(`Site Name` ~ Avg_Period,
+                        scales = "free_x") +
+        theme_bw() +
+        labs(x = "Date/Time", y = "Conc (ug/m^3)")
+
+
+  p2 <- p1 + geom_col(data = subset(combined_data_pm25, Avg_Period == daily_label),
+                      colour = "black") +
+             geom_text(data = subset(combined_data_pm25, Avg_Period == daily_label),
+                       aes(label = Concentration), nudge_y = -3, size = 3)
+
+  p3 <- p2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
+                            colour = "grey") +
+             geom_col(data = subset(combined_data_pm25, Avg_Period == hourly_label),
+                      position = position_nudge(x = 1800),
+                      colour = "black") +
+             geom_text(data = subset(combined_data_pm25, Avg_Period == hourly_label),
+                       aes(label = Concentration), nudge_y = -3, nudge_x = 1800, size = 2)
+
+
+  p3
+  
+#}
+
+```
+
+### __Ozone data__  
+Concentrations are in units of _ppb_. <br> 
+```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=12, fig.height=25 }
+
+#Filter PM2.5 parameter for plots on PM2.5 tab
+combined_data_ozone <- filter(combined_data, Parameter=="OZONE")
+
+  o1 <- ggplot(data=combined_data_ozone, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
+        scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
+        facet_grid(`Site Name` ~ Avg_Period,
+                        scales = "free_x") +
+        theme_bw() +
+        labs(x = "Date/Time", y = "Conc (ppb)")
+
+
+  o2 <- o1 + geom_col(data = subset(combined_data_ozone, Avg_Period == daily_label),
+                      colour = "black") +
+             geom_text(data = subset(combined_data_ozone, Avg_Period == daily_label),
+                       aes(label = Concentration), nudge_y = -5, size = 3)
+        
+  o3 <- o2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
+                            colour = "grey") +
+             geom_col(data = subset(combined_data_ozone, Avg_Period == hourly_label),
+                      position = position_nudge(x = 1800),
+                      colour = "black") +
+             geom_text(data = subset(combined_data_ozone, Avg_Period == hourly_label),
+                       aes(label = Concentration), nudge_y = -5, nudge_x = 1800, size = 2)
+
+  o3
+```

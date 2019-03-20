@@ -40,6 +40,57 @@ kable(data[ , c(4,5,1:2,6:8)], 'html', align = 'lllllcc')
 
 <br> <hr>
 
+## Weekly AQI Summary
+#### PM2.5 Daily AQI Counts
+```{r, aqi_summ_pm25, message=F, echo=F, results='asis', warning=F}
+aqi_summary_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
+
+aqi_summary_pm25 <- group_by(aqi_summary_pm25, Date) %>% summarize(Green = sum(AQI_Value <= 50),
+                                                                   Yellow = sum(AQI_Value > 50 & AQI_Value <= 100),
+                                                                   Orange = sum(AQI_Value > 100 & AQI_Value <=150),
+                                                                   Red = sum(AQI_Value > 150 & AQI_Value <= 200),
+                                                                   Purple = sum(AQI_Value > 200)) %>% 
+                                                         arrange(desc(Date))
+kable(aqi_summary_pm25, 'html', align = 'lccccc')
+
+```
+
+#### Ozone Daily AQI Counts
+```{r, aqi_summ_ozone, message=F, echo=F, results='asis', warning=F}
+aqi_summary_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
+
+aqi_summary_ozone <- group_by(aqi_summary_ozone, Date) %>% summarize(Green = sum(AQI_Value <= 50),
+                                                                     Yellow = sum(AQI_Value > 50 & AQI_Value <= 100),
+                                                                     Orange = sum(AQI_Value > 100 & AQI_Value <=150),
+                                                                     Red = sum(AQI_Value > 150 & AQI_Value <= 200),
+                                                                     Purple = sum(AQI_Value > 200)) %>% 
+                                                           arrange(desc(Date))
+kable(aqi_summary_ozone, 'html', align = 'lccccc')
+
+```
+
+#### PM2.5 Daily Max Monitor
+```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F}
+max_mon_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
+
+max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) %>% arrange(desc(Date))
+
+kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
+
+```
+
+#### Ozone Daily Max Monitor
+```{r, max_mon_ozone, message=F, echo=F, results='asis', warning=F}
+max_mon_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
+
+max_mon_ozone <- group_by(max_mon_ozone, Date) %>% arrange(-AQI_Value) %>% slice(1) %>% arrange(desc(Date))
+
+kable(max_mon_ozone[,c(1,3,6,9)], 'html', align = 'llll')
+
+```
+
+<br> <hr>
+
 <div class = "gray">
 ## Missing parameters
 ```{r, miss_exceed, message=F, echo=F, results='asis', warning=F}

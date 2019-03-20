@@ -1,5 +1,5 @@
 ---
-title: Hourly monitoring data
+title: Today's hourly monitoring data
 ---
 
 <style>
@@ -16,7 +16,7 @@ title: Hourly monitoring data
 <hr> 
 
 <div style = "margin-left: 1px; margin-bottom: 12px; margin-top:-2px;"> 
- _Last updated `r format(Sys.time(), " %B %d, %Y  %H:%M")` CDT_
+ _Last updated `r format(Sys.time(), " %B %d, %Y  %H:%M %Z")`_
 </div>
 
 <!-- ## {.tabset .tabset-pills} -->
@@ -100,13 +100,13 @@ if(nrow(data) > 0) {
     aqi_hist <- filter(aqi_hist, Date >= (max_date - 1))
   }
   
-  #-- Average concentrations for each hour in case of duplicate results
+
+  #-- Remove duplicate measurements for each hour and monitor. Slice assumes concentrations for duplicate
+  #-- measurements are equal. Monitores shouldn't report different values for the same hour.
   aqi_hist <- aqi_hist %>%
               group_by(Date, Time, AqsID, `Site Name`, Agency, Parameter) %>%
-              summarize(Concentration = mean(Concentration, na.rm = T),
-                        AQI_Value     = conc2aqi(Concentration, Parameter))
-
-  
+              slice(1)
+ 
   #-- Impute missing values
   #
   #
@@ -150,7 +150,8 @@ if(nrow(data) > 0) {
                   row_id %in% (max(1, row - roll_hrs):row),
                   Parameter == param)$Concentration
     
-    aqi_hist[i, "obs_avg"] <- mean(obs, na.rm = T) %>% round()
+    dig <- ifelse(param == "OZONE", 0, 1)
+    aqi_hist[i, "obs_avg"] <- mean(obs, na.rm = T) %>% round(digits = dig)
     
     #-- Check for a minimum number of non-missing observations
     nvalid <- sum(!is.na(obs))
@@ -188,6 +189,7 @@ if(nrow(data) > 0) {
               group_by(Date, AqsID, `Site Name`, Parameter) %>%
               mutate(`Daily Max 8-hr Avg` = max(obs_avg, na.rm = T),
                      `Rolling 24-hr Avg`  = obs_avg[Time == max(Time, na.rm = T)],
+                     `Daily Average`      = round(mean(Concentration, na.rm = T), digits = 1),
                      `NowCast AQI`        = nowcast[Time == max(Time, na.rm = T)]) %>% 
               ungroup()
   
@@ -202,7 +204,7 @@ if(nrow(data) > 0) {
 
   #-- Re-attach summary columns
   wide_tbl <- left_join(wide_tbl, 
-                        select(aqi_hist[!duplicated(paste(aqi_hist$AqsID, aqi_hist$Parameter)), ], Date, `Site Name`, Parameter, `Daily Max 8-hr Avg`, `Rolling 24-hr Avg`, `NowCast AQI`))
+                        select(aqi_hist[!duplicated(paste(aqi_hist$AqsID, aqi_hist$Parameter)), ], Date, `Site Name`, Parameter, `Daily Max 8-hr Avg`, `Daily Average`, `Rolling 24-hr Avg`, `NowCast AQI`))
   
 
   # Blank out missing values
@@ -213,7 +215,7 @@ if(nrow(data) > 0) {
   #names(wide_tbl)[4:(ncol(wide_tbl) - 3)] <- as.numeric(names(wide_tbl)[4:(ncol(wide_tbl) - 3)])
   ozone_tbl <- filter(wide_tbl, Parameter == "OZONE") %>% 
                arrange(`Site Name`) %>% 
-               select(-Date, -`Rolling 24-hr Avg`)
+               select(-Date, -`Daily Average`, -`Rolling 24-hr Avg`)
                   
   ozone_tbl <- formattable(ozone_tbl,
                            list(`NowCast AQI`   = col_format(0)),

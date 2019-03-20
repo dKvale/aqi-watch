@@ -74,7 +74,7 @@ cat2color <- function(cat = NULL) {
   
 }
 
-# AQI category to color
+# AQI category to value
 cat2aqi <- function(cat = NULL) {
   
   cat <- tolower(cat)
@@ -87,6 +87,37 @@ cat2aqi <- function(cat = NULL) {
                   "purple")
   
   aqi_cuts   <- c(NA,35,70,120,200,300)
+  
+  get_conc <- function(x) {
+    ifelse(is.null(x), aqi_cuts[1],
+           ifelse(is.na(x), aqi_cuts[1],
+                  ifelse(x == "green", aqi_cuts[2], 
+                         ifelse(x == "yellow", aqi_cuts[3],
+                                ifelse(x == "orange", aqi_cuts[4], 
+                                       ifelse(x == "red", aqi_cuts[5], 
+                                              aqi_cuts[6]))))))
+  }
+  
+  concs <- sapply(cat, FUN = function(x) get_conc(x))
+  
+  names(concs) <- NULL
+  
+  return(concs)
+}
+
+# AQI category to value
+cat2aqimax <- function(cat = NULL) {
+  
+  cat <- tolower(cat)
+  
+  aqi_cats   <- c("white",
+                  "green",
+                  "yellow",
+                  "orange",
+                  "red",
+                  "purple")
+  
+  aqi_cuts   <- c(NA,50,100,150,200,300)
   
   get_conc <- function(x) {
     ifelse(is.null(x), aqi_cuts[1],
@@ -135,6 +166,31 @@ aqi2color <- function(aqi) {
   names(colors) <- NULL
   
   return(colors)
+  
+}
+
+# AQI value to AQI color index (for plotting)
+aqi2colind <- function(aqi) {
+  
+  if(is.null(aqi)) return(NA)
+  
+  aqi <- as.numeric(aqi)
+  
+  get_ind <- function(aqi) {
+    
+    ifelse(is.na(aqi), 1,
+           ifelse(aqi <= 50,  1, 
+                  ifelse(aqi <= 100, 2,
+                         ifelse(aqi <= 150, 3, 
+                                ifelse(aqi <= 200, 4, 
+                                       5)))))
+  }
+  
+  ind <- sapply(aqi, FUN = function(x) get_ind(x))
+  
+  names(ind) <- NULL
+  
+  return(ind)
   
 }
 

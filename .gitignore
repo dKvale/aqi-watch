@@ -7,8 +7,9 @@
 *-Ex.R
 
 # RStudio files
-.Rproj.user/
+.Rproj.user/*
 .Rproj
+.Rproj.user/*/*
 
 # produced vignettes
 vignettes/*.html

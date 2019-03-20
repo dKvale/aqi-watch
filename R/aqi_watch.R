@@ -13,9 +13,8 @@ options(rstudio.markdownToHTML =
           })
 
 #setwd("../")
-setwd("aqi-watch")
-source("R/aqi2conc.R")
-source("R/conc2aqi.R")
+#setwd("aqi-watch")
+source("R/aqi_convert.R")
 
 email_trigger <- 90
 pm10_trigger  <- 130
@@ -36,11 +35,14 @@ year <- format(Sys.Date(), "%Y")
 daylight_savings <- Sys.Date() > as.Date(paste0(year, "-03-12")) & Sys.Date() < as.Date(paste0(year, "-10-6"))
 
 # Load credentials
-credentials <- read_csv("../credentials.csv")
+#credentials <- read_csv("../credentials.csv")
 
 gmt_time <-  (as.numeric(format(Sys.time() - 195, tz="GMT", "%H")) - 1) %% 24
 #gmt_time <- paste0("0", gmt_time) %>% substring(nchar(.) - 1, nchar(.))
 
+#######################################################################
+# Hourly AQI data -- obtain the most recent hour of data
+#######################################################################
 aqi_all <- data.frame()
 
 # Loop through 3 hours of records and keep most recent
@@ -84,13 +86,14 @@ for (i in 0:2) {
   # Write to error log if AirNow data missing
   if (!is.data.frame(aqi) || (nrow(aqi) < 1)) {
     errs <- read.csv("log/error_log.csv", stringsAsFactors = F)
+    errs$File <- as.character(errs$File)
     
     err_time <- as.character(format(Sys.time(), tz = "America/Chicago"))
     
     errs <- bind_rows(errs, data.frame(File    = date_time, 
                                        Time    = err_time, 
                                        Status  = "Failed", 
-                                       Message = paste0(aqi, collapse = "")))
+                                       Message = paste0(aqi, collapse = ""),stringsAsFactors = F))
     
     write.csv(errs, "log/error_log.csv", row.names=F)
     
@@ -149,10 +152,10 @@ aqi$local <- NULL
 # PM10 is here [http://www3.epa.gov/ttn/oarpg/t1/memoranda/rg701.pdf]
 
 # Load breakpoints
-breaks_aqi <- read_csv("data-raw/aqi_breakpoints.csv", col_types = c('cccccccc'))
+#breaks_aqi <- read_csv("data-raw/aqi_breakpoints.csv", col_types = c('cccccccc'))
 
-names(breaks_aqi) <- c("Rating", "Breakpoints", "OZONE", 
-                       "PM25", "SO2", "CO", "NO2", "PM10")
+#names(breaks_aqi) <- c("Rating", "Breakpoints", "OZONE", 
+#                      "PM25", "SO2", "CO", "NO2", "PM10")
 
 aqi <- group_by(aqi, AqsID, Parameter) %>% mutate(AQI_Value = round(conc2aqi(Concentration, Parameter)))
 
@@ -214,6 +217,121 @@ aqi$last_notification <- NA
 
 names(aqi)[11] <- names(aqi_prev)[11]
 
+locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
+
+site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
+
+mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
+
+# List of forecast sites for plotting model performance only includes sites with a monitor for that pollutant.
+forecast_sites_pm25 <- filter(mn_sites, Parameter == "PM25")
+forecast_sites_ozone <- filter(mn_sites, Parameter == "OZONE", AqsID != "271370034")
+
+########################################################################
+#  Daily AQI data -- Obtain the previous day's data once per day and
+#  add to daily history.
+########################################################################
+
+# Load daily history
+daily_history <- readRDS("data/daily_history.Rdata")
+
+#If it's after 7 AM, check the most recent day and download yesterday's data if not in the history.
+local_hr <- as.numeric(format(Sys.time(), tz = "America/Chicago", "%H"))
+
+today_date <- as.Date(Sys.time(), tz = "America/Chicago")
+
+if (local_hr > 7) {
+  
+  yesterday_date <- today_date - 1
+
+  max_date <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
+
+  if (max_date < yesterday_date) {
+    
+    file_date <- format(yesterday_date, "%Y%m%d")
+    file_year <- format(yesterday_date, "%Y")
+    
+    airnow_link <- paste0("https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/",
+                           file_year,"/",
+                           file_date,
+                          "/daily_data.dat")
+
+    aqi_daily <- try(read_delim(airnow_link, "|", 
+                      col_names = F, 
+                      col_types = c('cccccdic')), 
+                      silent = T)
+    
+    if ( !is.data.frame(aqi_daily) || nrow(aqi_daily) < 1 ) {
+      errs <- read.csv("log/error_log.csv", stringsAsFactors = F)
+      
+      err_time <- as.character(format(Sys.time(), tz = "America/Chicago"))
+      
+      errs <- bind_rows(errs, data.frame(File    = paste0(file_date,"/daily_data.dat"), 
+                                         Time    = err_time, 
+                                         Status  = "Failed", 
+                                         Message = paste0(aqi, collapse = "")))
+      
+      write.csv(errs, "log/error_log.csv", row.names=F)
+      
+    } else {
+      
+      names(aqi_daily) <- c("Date", "AqsID", "Site Name", "Parameter", "Units", "Concentration","Averaging Period", "Agency")
+
+      aqi_daily$Parameter <- toupper(aqi_daily$Parameter)
+      data <- filter(aqi, 
+                     AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), 
+                     Parameter %in% c("OZONE", "PM25"))
+      
+      aqi_daily <- filter(aqi_daily, AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), Parameter %in% c("OZONE-8HR", "PM2.5-24HR"))
+
+      aqi_daily <- mutate(aqi_daily, Parameter = str_replace_all(Parameter, c("PM2.5.*" = "PM25", "OZONE.*" = "OZONE")))
+      
+      aqi_daily <- mutate(aqi_daily, AQI_Value = conc2aqi(Concentration,Parameter))
+      
+      daily_history <- rbind(daily_history, aqi_daily)
+
+    }
+    
+    # Remove any data older than one week.
+    weekold_date <- today_date - 7
+    
+    daily_history <- daily_history[as.Date(daily_history$Date, format = "%m/%d/%y") >= weekold_date,]
+    saveRDS(data.frame(daily_history, stringsAsFactors = F, check.names = F), "data/daily_history.RData" )
+    
+  }
+}
+
+########################################################################
+#  AQI model performance -- Obtain AQI model performance data.  Updated
+#  once per day.
+########################################################################
+
+aqi_models <- read.csv("https://raw.githubusercontent.com/dKvale/aircast/master/data/model_performance.csv",
+                        stringsAsFactors = FALSE)
+aqi_models$forecast_date <- as.Date(aqi_models$forecast_date)
+
+# Put category forecasts in new column and change numeric forecasts to integers.
+aqi_cat_colors <- c("green",
+                    "yellow",
+                    "orange",
+                    "red",
+                    "purple")
+
+aqi_models <- mutate(aqi_models, fcst_pm25_aqi_cats = ifelse(as.character(fcst_pm25_aqi) %in% aqi_cat_colors, as.character(fcst_pm25_aqi), NA), 
+                                 fcst_ozone_aqi_cats = ifelse(as.character(fcst_ozone_aqi) %in% aqi_cat_colors, as.character(fcst_ozone_aqi), NA),
+                                 fcst_pm25_aqi_cats_val = cat2aqimax(fcst_pm25_aqi_cats),
+                                 fcst_ozone_aqi_cats_val = cat2aqimax(fcst_ozone_aqi_cats),
+                                 fcst_pm25_aqi_cats_text = ifelse(!is.na(fcst_pm25_aqi_cats), paste0("Day ",forecast_day," fcst\n",fcst_pm25_aqi_cats), NA),
+                                 fcst_ozone_aqi_cats_text = ifelse(!is.na(fcst_ozone_aqi_cats), paste0("Day ",forecast_day," fcst\n",fcst_ozone_aqi_cats), NA))
+
+aqi_models$fcst_pm25_aqi <- as.integer(aqi_models$fcst_pm25_aqi)
+aqi_models$fcst_ozone_aqi <- as.integer(aqi_models$fcst_ozone_aqi)
+
+aqi_models <- mutate(aqi_models, site_catid = gsub('-','',site_catid))
+
+mn_sites_uniq <- mn_sites[,c("AqsID","Site Name")] %>% unique()
+
+aqi_models <- left_join(aqi_models, mn_sites_uniq, by = c("site_catid"="AqsID"))
 
 #--------------------------------------------------------#
 # Update web map and tables                              #
@@ -224,12 +342,6 @@ if(TRUE) {
   #if(!identical(aqi$AQI_Value, aqi_prev$AQI_Value) || 
   #   !identical(aqi$AqsID, aqi_prev$AqsID) || 
   #   as.numeric(difftime(names(aqi)[10], names(aqi_prev)[10], units="hours")) > 1.1) {
-  
-  locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
-  
-  site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
-  
-  mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
   
   aqi$Agency <- ifelse(grepl("Wisconsin", aqi$Agency), "Wisconsin DNR", aqi$Agency)
   

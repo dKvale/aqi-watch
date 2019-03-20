@@ -4,7 +4,7 @@ conc2aqi <- function(conc, param) {
   
   if(is.na(conc) || is.na(param)) return(NA)
   
-  conc      <- floor(conc)
+#  conc      <- floor(conc)
   
   aqi_value <- breaks_aqi[ , c(param, "Breakpoints", "Rating")]
   
@@ -20,7 +20,7 @@ conc2aqi <- function(conc, param) {
            Low_conc   = as.numeric(unlist(Conc_cutoffs)[1]),
            High_conc  = as.numeric(unlist(Conc_cutoffs)[2]))
   
-  aqi_value <- filter(aqi_value, High_conc > conc)[1, ]
+  aqi_value <- filter(aqi_value, High_conc >= conc)[1, ]
   
   aqi_value <- with(aqi_value, 
                     Low_break + (conc - Low_conc) * (High_break - Low_break)/(High_conc - Low_conc))

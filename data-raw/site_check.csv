@@ -1,0 +1,45 @@
+AqsID,Site Name,Local_Time,Parameter,Units,Agency,StateID,Site_Param
+191471002,"Emmetsburg, ILCC",-6,PM25,UG/M3,Iowa DNR,19,191471002_PM25
+270031001,East Bethel,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270031001_OZONE
+270031002,Blaine,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270031002_OZONE
+270031002,Blaine,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270031002_PM25
+270052013,Detroit Lakes,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270052013_OZONE
+270052013,Detroit Lakes,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270052013_PM25
+270072304,Red Lake Nation,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270072304_PM25
+270177417,Fond du Lac,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270177417_OZONE
+270177417,Fond du Lac,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270177417_PM25
+270213410,Leech Lake Nation: C,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270213410_PM25
+270317810,Grand Portage,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270317810_PM25
+270353204,Brainerd,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270353204_OZONE
+270353204,Brainerd,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270353204_PM25
+270370470,Apple Valley,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270370470_PM25
+270370480,Lakeville - Near Roa,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270370480_PM25
+270495302,Stanton,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270495302_OZONE
+270530962,Minneapolis-Near Roa,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270530962_OZONE
+270530962,Minneapolis-Near Roa,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270530962_PM25
+270530963,Minneapolis-Phillips,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270530963_PM25
+270750005,Ely,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270750005_OZONE
+270750005,Ely,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270750005_PM25
+270834210,Marshall,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270834210_OZONE
+270834210,Marshall,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,270834210_PM25
+270953051,Mille Lacs,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,270953051_OZONE
+271095008,Rochester,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271095008_PM25
+271230871,St. Paul-Harding H.S,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271230871_PM25
+271370034,Voyageurs NP,-6,OZONE,PPB,National Park Service,27,271370034_OZONE
+271377001,Virginia,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271377001_PM25
+271377550,Duluth-WDSE,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271377550_OZONE
+271377554,West Duluth,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271377554_PM25
+271390505,Shakopee,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271390505_OZONE
+271390505,Shakopee,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271390505_PM25
+271453052,St. Cloud,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271453052_OZONE
+271453052,St. Cloud,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271453052_PM25
+271636016,Marine on St. Croix,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271636016_OZONE
+271713201,St. Michael,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271713201_OZONE
+271713201,St. Michael,-6,PM25,UG/M3,Minnesota Pollution Control Agency,27,271713201_PM25
+380171004,Fargo NW,-6,OZONE,PPB,North Dakota Department of Health,38,380171004_OZONE
+380171004,Fargo NW,-6,PM25,UG/M3,North Dakota Department of Health,38,380171004_PM25
+460990008,Sioux Falls,-6,OZONE,PPB,South Dakota Department of Environmental and Natural Resources,46,460990008_OZONE
+460990008,Sioux Falls,-6,PM25,UG/M3,South Dakota Department of Environmental and Natural Resources,46,460990008_PM25
+550630012,LACROSSE DOT,-6,PM25,UG/M3,Wisconsin Dept. of Natural Resources,55,550630012_PM25
+550630012,LACROSSE DOT,-6,OZONE,PPB,Wisconsin Dept. of Natural Resources,55,550630012_OZONE
+271095008,Rochester,-6,OZONE,PPB,Minnesota Pollution Control Agency,27,271095008_OZONE

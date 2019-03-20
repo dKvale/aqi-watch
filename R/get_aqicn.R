@@ -7,9 +7,9 @@ get_aqicn <- function(country="usa", state="north-dakota", city="fargo-nw", para
                                country,"/", 
                                state, "/", 
                                city, "/")),
-              silent=TRUE)
+              silent = TRUE)
   
-  if(class(data) == "try-error" || (length(data) < 5)) return(data_frame())
+  if(class(data) == "try-error" || (length(data) < 5)) stop("No observations returned.")
   
   data <- data[grep(paste0("id='cur_", param, "'"), data)]
   
@@ -61,6 +61,8 @@ get_aqicn <- function(country="usa", state="north-dakota", city="fargo-nw", para
                      stringsAsFactors = F)
   
   names(data) <- names(aqi)[1:10]
+  
+  if(nrow(data) < 1) stop("No observations returned.")
   
   return(data)
 }
