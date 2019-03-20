@@ -12,11 +12,11 @@ options(rstudio.markdownToHTML =
             markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
-#setwd("../")
-#setwd("aqi-watch")
+setwd("../")
+setwd("aqi-watch")
 source("R/aqi_convert.R")
 
-email_trigger <- 90
+email_trigger <- 91
 pm10_trigger  <- 130
 
 # Email alert subscribers
