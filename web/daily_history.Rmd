@@ -56,8 +56,6 @@ dofw_m7  <- days_of_week[dofwi_m7]
 
 dofwi_m1 <- as.numeric(format(max_date - 1, format = "%u"))
 
-print("Pass check 1")
-
 dofw_m1  <- days_of_week[dofwi_m1]
 
 daily_label <- paste0("Daily Average - ", dofw_m7, " through ", dofw_m1)
@@ -68,11 +66,14 @@ levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
 
 combined_data$Avg_Period <- as.character(combined_data$Avg_Period)
 
+# Ensure horizontal line placement is in scope of data
+if (FALSE) {
 combined_data <- bind_rows(combined_data, 
                            data.frame(Date_Time  = c(day_break, day_break), 
                                       Parameter  = c("PM25", "OZONE"),
                                       Avg_Period = hourly_label,
                                       stringsAsFactors = FALSE))
+}
 
 # Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_pm25 <- filter(combined_data, Parameter == "PM25")
@@ -83,10 +84,9 @@ aqi_labels <- c("Good", "Moderate", "Unhealthy for\nSensitive Groups", "Unhealth
 
 p1 <- ggplot(data = combined_data_pm25, aes(x = Date_Time, y = Concentration, fill = aqi_ind)) +
         scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
-        facet_grid(`Site Name` ~ Avg_Period,
-                        scales = "free_x") +
         theme_bw() +
-        labs(x = "Date/Time", y = "Conc (ug/m^3)")
+        labs(x = "Date/Time", y = "Conc (ug/m^3)")  +
+        facet_grid(`Site Name` ~ Avg_Period, scales = "free_x")
 
 
 p2 <- p1 + geom_col(data = subset(combined_data_pm25, Avg_Period == daily_label),
@@ -101,7 +101,7 @@ p3 <- p2 + #geom_vline(aes(xintercept = day_break), colour = "grey") +
              geom_text(data = subset(combined_data_pm25, Avg_Period == hourly_label),
                        aes(label = Concentration), nudge_y = -3, nudge_x = 1800, size = 2)
 
-p3
+p3 
   
 #}
 
@@ -116,8 +116,7 @@ combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
 
   o1 <- ggplot(data = combined_data_ozone, aes(x = Date_Time, y = Concentration, fill = aqi_ind)) +
         scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
-        facet_grid(`Site Name` ~ Avg_Period,
-                        scales = "free_x") +
+        facet_grid(`Site Name` ~ Avg_Period, scales = "free_x") +
         theme_bw() +
         labs(x = "Date/Time", y = "Conc (ppb)")
 
