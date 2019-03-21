@@ -28,7 +28,9 @@ library(ggplot2)
 
 # source("../R/aqi_convert.R")
 
-max_date <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
+max_date  <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
+
+day_break <- as.POSIXct(paste(max_date, "01:00"), format = "%Y-%m-%d %H")
 
 # Get hourly data from previous day to current time from aqi_history.Rdata file
 hourly_history <- readRDS("../data/aqi_history.Rdata")
@@ -66,6 +68,11 @@ levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
 
 combined_data$Avg_Period <- as.character(combined_data$Avg_Period)
 
+combined_data <- bind_rows(combined_data, 
+                           tibble(Date_Time  = c(day_break, day_break), 
+                                  Parameter  = c("PM25", "OZONE"),
+                                  Avg_Period = hourly_label))
+
 # Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_pm25 <- filter(combined_data, Parameter == "PM25")
 
@@ -86,8 +93,7 @@ p2 <- p1 + geom_col(data = subset(combined_data_pm25, Avg_Period == daily_label)
              geom_text(data = subset(combined_data_pm25, Avg_Period == daily_label),
                        aes(label = Concentration), nudge_y = -3, size = 3)
 
-p3 <- p2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
-                            colour = "grey") +
+p3 <- p2 + #geom_vline(aes(xintercept = day_break), colour = "grey") +
              geom_col(data = subset(combined_data_pm25, Avg_Period == hourly_label),
                       position = position_nudge(x = 1800),
                       colour = "black") +
@@ -120,8 +126,7 @@ combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
              geom_text(data = subset(combined_data_ozone, Avg_Period == daily_label),
                        aes(label = Concentration), nudge_y = -5, size = 3)
         
-  o3 <- o2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
-                            colour = "grey") +
+  o3 <- o2 + #geom_vline(aes(xintercept = day_break), colour = "grey") +
              geom_col(data = subset(combined_data_ozone, Avg_Period == hourly_label),
                       position = position_nudge(x = 1800),
                       colour = "black") +
