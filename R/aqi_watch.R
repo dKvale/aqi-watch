@@ -366,8 +366,8 @@ if(TRUE) {
   setwd("web")
   
   rmarkdown::render_site("index.Rmd")
-  rmarkdown::render_site("mn_history.Rmd")
-  rmarkdown::render_site("exceed.Rmd")
+  rmarkdown::render_site("todays_obs.Rmd")
+  rmarkdown::render_site("week_review.Rmd")
   rmarkdown::render_site("mn_pastweek.Rmd")
   
   if (alert_time) {

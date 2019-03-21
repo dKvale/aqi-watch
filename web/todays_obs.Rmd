@@ -267,4 +267,22 @@ The _NowCast AQI_ is the most recent hour's NowCast value in AQI units.
 </div>
 <br>  
 
+##
 
+<br> <hr>
+
+<div class = "gray">
+
+## Missing parameters
+```{r, miss_exceed, message=F, echo=F, results='asis', warning=F}
+
+missing_sites <- site_params[!site_params$Site_Param %in% paste(aqi$AqsID, aqi$Parameter, sep="_"), ]
+
+if(length(missing_sites) < 1) {
+  cat(" *There were no missing sites or parameters.")
+} else {
+  kable(arrange(missing_sites[ , c(1,4,3,2)], AqsID), 'html', align = 'llll')
+}
+
+```
+</div>

@@ -1,0 +1,103 @@
+---
+title: "Monitors reporting a 1-hr AQI above 90"
+---  
+
+<style>
+  body {margin-left: 0px;}
+  .main-container {max-width: 1350px;}
+  tr:nth-child(even){background-color: #e9e9e9;}
+  tr:nth-child(odd){background-color: #FFF;}
+</style>
+
+<script type="text/JavaScript">
+  setTimeout(function() { window.location=window.location;}, 350000);
+</script>
+
+<hr> 
+
+
+<div class = "orange">
+```{r kable_exceed, message=F, echo=F, results='asis', warning=F}
+library(knitr)
+library(dplyr)
+
+data <- subset(aqi_rank, AQI_Value > email_trigger) 
+
+if(nrow(data) < 1) {
+  cat(" *The table is currently empty.  All sites are reporting concentrations at or below a 1-hr AQI of 90.")
+} else {
+
+data <- data[ , c(1:4,8,5,7,9)]
+
+names(data)[c(2,7,8)] <- c("Sampling Hour", "Concentration", "1-hr AQI")
+
+kable(data[ , c(4,5,1:2,6:8)], 'html', align = 'lllllcc')
+}
+ 
+```
+</div>
+
+
+<br> <hr>
+
+## Weekly AQI Summary
+#### PM2.5 Daily AQI Counts
+```{r, aqi_summ_pm25, message=F, echo=F, results='asis', warning=F}
+aqi_summary_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
+
+aqi_summary_pm25 <- group_by(aqi_summary_pm25, Date) %>% 
+                     summarize(Green  = sum(AQI_Value <= 50),
+                               Yellow = sum(AQI_Value > 50 & AQI_Value <= 100),
+                               Orange = sum(AQI_Value > 100 & AQI_Value <=150),
+                               Red    = sum(AQI_Value > 150 & AQI_Value <= 200),
+                               Purple = sum(AQI_Value > 200))
+
+aqi_summary_pm25 <- arrange(aqi_summary_pm25, desc(as.character(Date)))
+                                                         
+kable(aqi_summary_pm25, 'html', align = 'lccccc')
+
+```
+
+#### Ozone Daily AQI Counts
+```{r, aqi_summ_ozone, message=F, echo=F, results='asis', warning=F}
+aqi_summary_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
+
+aqi_summary_ozone <- group_by(aqi_summary_ozone, Date) %>% 
+                     summarize(Green  = sum(AQI_Value <= 50),
+                               Yellow = sum(AQI_Value > 50 & AQI_Value <= 100),
+                               Orange = sum(AQI_Value > 100 & AQI_Value <=150),
+                               Red    = sum(AQI_Value > 150 & AQI_Value <= 200),
+                               Purple = sum(AQI_Value > 200))
+
+aqi_summary_ozone <- arrange(aqi_summary_ozone, desc(as.character(Date)))
+
+kable(aqi_summary_ozone, 'html', align = 'lccccc')
+
+```
+
+#### PM2.5 Daily Max Monitor
+```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F}
+max_mon_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
+
+max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) 
+
+max_mon_pm25 <- arrange(ungroup(max_mon_pm25), desc(as.character(Date)))
+
+kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
+
+```
+
+#### Ozone Daily Max Monitor
+```{r, max_mon_ozone, message=F, echo=F, results='asis', warning=F}
+max_mon_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
+
+max_mon_ozone <- group_by(max_mon_ozone, Date) %>% arrange(-AQI_Value) %>% slice(1) 
+
+max_mon_pm25  <- arrange(ungroup(max_mon_pm25), desc(as.character(Date)))
+
+kable(max_mon_ozone[,c(1,3,6,9)], 'html', align = 'llll')
+
+```
+
+
+
