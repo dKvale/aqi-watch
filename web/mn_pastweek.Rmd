@@ -23,7 +23,7 @@ title: "Past 7 days monitoring data"
 
 ### __PM2.5 data__  
 Concentrations in units of  _ug/m^3^_. <br>  
-```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=12, fig.height=30 }
+```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28 }
 library(ggplot2)
 
 source("../R/aqi_convert.R")
@@ -100,7 +100,7 @@ p3
 
 ### __Ozone data__  
 Concentrations are in units of _ppb_. <br> 
-```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=12, fig.height=25 }
+```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24}
 
 #Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_ozone <- filter(combined_data, Parameter=="OZONE")
