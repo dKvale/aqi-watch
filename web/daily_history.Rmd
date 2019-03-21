@@ -23,18 +23,19 @@ title: "Past 7 days monitoring data"
 
 ### __PM2.5 data__  
 Concentrations in units of  _ug/m^3^_. <br>  
-```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28 }
+```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28}
 library(ggplot2)
 
-#source("../R/aqi_convert.R")
+# source("../R/aqi_convert.R")
 
 max_date <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
 
-#Get hourly data from previous day to current time from aqi_history.Rdata file
+# Get hourly data from previous day to current time from aqi_history.Rdata file
 hourly_history <- readRDS("../data/aqi_history.Rdata")
+
 hourly_history <- mutate(hourly_history, Avg_Period = 2)
 
-#Combine hourly data and daily data into single data frame.
+# Combine hourly data and daily data into single data frame
 daily_history <- mutate(daily_history, Date = as.Date(Date, format = "%m/%d/%y"), Time = 0, Avg_Period = 1)
 
 combined_data <- bind_rows(hourly_history, daily_history)
@@ -51,7 +52,6 @@ dofwi_m7 <- as.numeric(format(max_date, format = "%u"))
 
 dofw_m7  <- days_of_week[dofwi_m7]
 
-
 dofwi_m1 <- as.numeric(format(max_date - 1, format = "%u"))
 
 print("Pass check 1")
@@ -63,6 +63,8 @@ daily_label <- paste0("Daily Average - ", dofw_m7, " through ", dofw_m1)
 hourly_label <- paste0("Houly Average - ", dofw_m1, " through current hour")
 
 levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
+
+combined_data$Avg_Period <- as.character(combined_data$Avg_Period)
 
 # Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_pm25 <- filter(combined_data, Parameter == "PM25")
@@ -102,7 +104,7 @@ p3
 Concentrations are in units of _ppb_. <br> 
 ```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24, eval=F}
 
-#Filter PM2.5 parameter for plots on PM2.5 tab
+# Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
 
   o1 <- ggplot(data = combined_data_ozone, aes(x = Date_Time, y = Concentration, fill = aqi_ind)) +
