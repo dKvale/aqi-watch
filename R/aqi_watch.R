@@ -12,7 +12,7 @@ options(rstudio.markdownToHTML =
             markdownToHTML(inputFile, outputFile, stylesheet = 'R/flat_table.css')   
           })
 
-#setwd("../")
+setwd("../")
 setwd("aqi-watch")
 source("R/aqi_convert.R")
 
@@ -277,6 +277,7 @@ if (local_hr > 7) {
       names(aqi_daily) <- c("Date", "AqsID", "Site Name", "Parameter", "Units", "Concentration","Averaging Period", "Agency")
 
       aqi_daily$Parameter <- toupper(aqi_daily$Parameter)
+      
       data <- filter(aqi, 
                      AqsID %in% c(mn_sites$AqsID, border_sites, extra_sites), 
                      Parameter %in% c("OZONE", "PM25"))
@@ -294,7 +295,8 @@ if (local_hr > 7) {
     # Remove any data older than one week.
     weekold_date <- today_date - 7
     
-    daily_history <- daily_history[as.Date(daily_history$Date, format = "%m/%d/%y") >= weekold_date,]
+    daily_history <- daily_history[as.Date(daily_history$Date, format = "%m/%d/%y") >= weekold_date, ]
+    
     saveRDS(data.frame(daily_history, stringsAsFactors = F, check.names = F), "data/daily_history.RData" )
     
   }
@@ -336,6 +338,8 @@ aqi_models <- left_join(aqi_models, mn_sites_uniq, by = c("site_catid"="AqsID"))
 # Update web map and tables                              #
 #--------------------------------------------------------#
 
+alert_time <- (as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 4)
+
 # If high sites table has changed update github repo
 if(TRUE) {
   #if(!identical(aqi$AQI_Value, aqi_prev$AQI_Value) || 
@@ -358,18 +362,20 @@ if(TRUE) {
   
   rmarkdown::render_site("index.Rmd")
   rmarkdown::render_site("mn_history.Rmd")
+  rmarkdown::render_site("exceed.Rmd")
+  rmarkdown::render_site("mn_pastweek.Rmd")
   
-  #rmarkdown::render_site("mn_pastweek.Rmd")
-  #rmarkdown::render_site("model_perf.Rmd")
-  
+  if (alert_time) {
+    
+  rmarkdown::render_site("model_perf.Rmd")
   rmarkdown::render_site("airnow_map.Rmd")
   rmarkdown::render_site("smogwatch.Rmd")
+  }
   
   #rmarkdown::render_site("mn_sites.Rmd")
   #rmarkdown::render_site("nearby_sites.Rmd")
-  #rmarkdown::render_site("exceed.Rmd")
-  
-  
+
+
   setwd("../")
   
   # Commit to github 
@@ -381,8 +387,6 @@ if(TRUE) {
   #system(paste0(git, "checkout --orphan gh-pages"))
   #system(paste0(git, "rm -rf ."))
   #system(paste0(git, "checkout --orphan new_branch"))
-  
-  
   
   ###!system(paste0(git, "add ."))
   
@@ -428,7 +432,7 @@ if(TRUE) {
 # Set issue notification to sleep from 10 pm to 4 am
 
 #if(FALSE) {
-if((as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 3)) { 
+if (alert_time) { 
   
   # Remove: low concentrations, and outstate monitors
   aqi <- filter(aqi, AQI_Value > email_trigger) 

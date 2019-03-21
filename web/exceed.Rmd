@@ -50,7 +50,7 @@ aqi_summary_pm25 <- group_by(aqi_summary_pm25, Date) %>% summarize(Green = sum(A
                                                                    Orange = sum(AQI_Value > 100 & AQI_Value <=150),
                                                                    Red = sum(AQI_Value > 150 & AQI_Value <= 200),
                                                                    Purple = sum(AQI_Value > 200)) %>% 
-                                                         arrange(desc(Date))
+                                                         arrange(desc(as.character(Date)))
 kable(aqi_summary_pm25, 'html', align = 'lccccc')
 
 ```
@@ -64,7 +64,7 @@ aqi_summary_ozone <- group_by(aqi_summary_ozone, Date) %>% summarize(Green = sum
                                                                      Orange = sum(AQI_Value > 100 & AQI_Value <=150),
                                                                      Red = sum(AQI_Value > 150 & AQI_Value <= 200),
                                                                      Purple = sum(AQI_Value > 200)) %>% 
-                                                           arrange(desc(Date))
+                                                           arrange(desc(as.character(Date)))
 kable(aqi_summary_ozone, 'html', align = 'lccccc')
 
 ```
@@ -75,7 +75,7 @@ max_mon_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2
 
 max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) 
 
-max_mon_pm25 <- arrange(ungroup(max_mon_pm25), desc(Date))
+max_mon_pm25 <- arrange(ungroup(max_mon_pm25), desc(as.character(Date)))
 
 kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
 
@@ -85,7 +85,7 @@ kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
 ```{r, max_mon_ozone, message=F, echo=F, results='asis', warning=F}
 max_mon_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
 
-max_mon_ozone <- group_by(max_mon_ozone, Date) %>% arrange(-AQI_Value) %>% slice(1) %>% arrange(desc(Date))
+max_mon_ozone <- group_by(max_mon_ozone, Date) %>% arrange(-AQI_Value) %>% slice(1) %>% arrange(desc(as.character(Date)))
 
 kable(max_mon_ozone[,c(1,3,6,9)], 'html', align = 'llll')
 
