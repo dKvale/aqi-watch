@@ -69,9 +69,10 @@ levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
 combined_data$Avg_Period <- as.character(combined_data$Avg_Period)
 
 combined_data <- bind_rows(combined_data, 
-                           tibble(Date_Time  = c(day_break, day_break), 
-                                  Parameter  = c("PM25", "OZONE"),
-                                  Avg_Period = hourly_label))
+                           data.frame(Date_Time  = c(day_break, day_break), 
+                                      Parameter  = c("PM25", "OZONE"),
+                                      Avg_Period = hourly_label,
+                                      stringsAsFactors = FALSE))
 
 # Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_pm25 <- filter(combined_data, Parameter == "PM25")
@@ -108,7 +109,7 @@ p3
 
 ### __Ozone data__  
 Concentrations are in units of _ppb_. <br> 
-```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24, eval=F}
+```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24}
 
 # Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
