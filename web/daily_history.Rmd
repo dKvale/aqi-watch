@@ -37,7 +37,7 @@ hourly_history <- mutate(hourly_history, Avg_Period = 2)
 #Combine hourly data and daily data into single data frame.
 daily_history <- mutate(daily_history, Date = as.Date(Date, format = "%m/%d/%y"), Time = 0, Avg_Period = 1)
 
-combined_data <- rbind(hourly_history, daily_history)
+combined_data <- bind_rows(hourly_history, daily_history)
 
 combined_data <- mutate(combined_data, 
                         Date_Time = as.POSIXct(paste(combined_data$Date, combined_data$Time), format = "%Y-%m-%d %H"),
@@ -45,7 +45,7 @@ combined_data <- mutate(combined_data,
 
 combined_data$Avg_Period <- as.factor(combined_data$Avg_Period)
 
-days_of_week <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+days_of_week <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 
 dofwi_m7 <- as.numeric(format(max_date, format = "%u"))
 
@@ -100,7 +100,7 @@ p3
 
 ### __Ozone data__  
 Concentrations are in units of _ppb_. <br> 
-```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24, eval = F}
+```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24, eval=F}
 
 #Filter PM2.5 parameter for plots on PM2.5 tab
 combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
