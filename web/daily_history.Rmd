@@ -26,7 +26,7 @@ Concentrations in units of  _ug/m^3^_. <br>
 ```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28 }
 library(ggplot2)
 
-source("../R/aqi_convert.R")
+#source("../R/aqi_convert.R")
 
 max_date <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
 
@@ -37,11 +37,11 @@ hourly_history <- mutate(hourly_history, Avg_Period = 2)
 #Combine hourly data and daily data into single data frame.
 daily_history <- mutate(daily_history, Date = as.Date(Date, format = "%m/%d/%y"), Time = 0, Avg_Period = 1)
 
-combined_data <- bind_rows(hourly_history, daily_history)
+combined_data <- rbind(hourly_history, daily_history)
 
 combined_data <- mutate(combined_data, 
                         Date_Time = as.POSIXct(paste(combined_data$Date, combined_data$Time), format = "%Y-%m-%d %H"),
-                        aqi_ind = as.character(aqi2colind(AQI_Value)))
+                        aqi_ind   = as.character(aqi2colind(AQI_Value)))
 
 combined_data$Avg_Period <- as.factor(combined_data$Avg_Period)
 
@@ -100,10 +100,10 @@ p3
 
 ### __Ozone data__  
 Concentrations are in units of _ppb_. <br> 
-```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24}
+```{r daily_history_o3, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=24, eval = F}
 
 #Filter PM2.5 parameter for plots on PM2.5 tab
-combined_data_ozone <- filter(combined_data, Parameter=="OZONE")
+combined_data_ozone <- filter(combined_data, Parameter == "OZONE")
 
   o1 <- ggplot(data = combined_data_ozone, aes(x = Date_Time, y = Concentration, fill = aqi_ind)) +
         scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +

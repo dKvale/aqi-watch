@@ -27,7 +27,7 @@ Observations and model forecasts are shown in AQI units. MPCA forecasts shown fo
 
 <br>
 
-```{r model_perf_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=10, fig.height=30 }
+```{r model_perf_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28}
 library(ggplot2)
 
 aqi_models_pm25 <- filter(aqi_models, site_catid %in% forecast_sites_pm25$AqsID)
@@ -39,45 +39,47 @@ model_labels <- c("OBS","MPCA Forecast","Random Forest","Ensemble",
                   "Gradient Boost","Ada Boost","Gen 1","Super Ensemble",
                   "CMAQ Production")
 
-mp1 <- ggplot(data=aqi_models_pm25, aes(x=forecast_date)) +
+mp1 <- ggplot(data = aqi_models_pm25, aes(x = forecast_date)) +
        geom_hline(yintercept = 50, colour = "#FFEE00") +
        geom_hline(yintercept = 100, colour = "#DB6B1A") +
   
-       geom_line(aes(y=cmaq_prod_pm_aqi, colour="9"), size=1, linetype="twodash") +
-       geom_point(aes(y=cmaq_prod_pm_aqi, colour="9"), size=3) +
+       geom_line(aes(y = cmaq_prod_pm_aqi, colour = "9"), size = 1, linetype = "twodash") +
+       geom_point(aes(y = cmaq_prod_pm_aqi, colour = "9"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_superens, colour="8"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_superens, colour="8"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_superens, colour = "8"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_superens, colour = "8"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_gen1, colour="7"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_gen1, colour="7"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_gen1, colour = "7"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_gen1, colour = "7"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_ab, colour="6"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_ab, colour="6"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_ab, colour = "6"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_ab, colour = "6"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_gb, colour="5"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_gb, colour="5"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_gb, colour = "5"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_gb, colour = "5"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_ens, colour="4"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_ens, colour="4"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_ens, colour = "4"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_ens, colour = "4"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_pm_rf, colour="3"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_pm_rf, colour="3"), size=3) +
+       geom_line(aes(y = mod_aqi_pm_rf, colour = "3"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_pm_rf, colour = "3"), size = 3) +
   
-       geom_line(aes(y=fcst_pm25_aqi, colour="2"), size=1.25) +
-       geom_point(aes(y=fcst_pm25_aqi, colour="2"), size=3) +
+       geom_line(aes(y = fcst_pm25_aqi, colour = "2"), size = 1.25) +
+       geom_point(aes(y = fcst_pm25_aqi, colour = "2"), size = 3) +
 
-       geom_rect(aes(xmin=forecast_date-0.25, xmax=forecast_date+0.25, ymin=fcst_pm25_aqi_cats_val-49, ymax=fcst_pm25_aqi_cats_val,
-                     colour="2"),
-                 size=1.25,fill=NA) +
-       geom_text(aes(y=fcst_pm25_aqi_cats_val, label=fcst_pm25_aqi_cats_text, colour="2"),
+       geom_rect(aes(xmin  = forecast_date - 0.25, 
+                     xmax  = forecast_date + 0.25, 
+                     ymin  = fcst_pm25_aqi_cats_val - 49, 
+                     ymax  = fcst_pm25_aqi_cats_val,
+                     color = "2"),
+                 size = 1, fill = NA) +
+       geom_text(aes(y = fcst_pm25_aqi_cats_val, label = fcst_pm25_aqi_cats_text, colour = "2"),
                  nudge_y = -5, nudge_x = -0.23, hjust = 0, vjust = 1, size = 2.5) +
-  
-       geom_point(aes(y=obs_pm25_aqi, colour="1"), shape=17, size=4) +
+       geom_point(aes(y = obs_pm25_aqi, colour = "1"), shape = 17, size = 4) +
        scale_colour_manual(values = model_colors, labels = model_labels, name = "Legend") +
        facet_grid(`Site Name` ~ .) +
        theme_bw() +
-       labs(x="Date",y="AQI Value")
+       labs(x = "Date",y = "AQI Value")
 
 mp1
        
@@ -89,42 +91,45 @@ Observations and model forecasts are shown in AQI units. MPCA forecasts shown fo
 
 <br>
 
-```{r model_perf_ozone, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=10, fig.height=25 }
+```{r model_perf_ozone, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=23}
 aqi_models_ozone <- filter(aqi_models, site_catid %in% forecast_sites_ozone$AqsID)
 
-mo1 <- ggplot(data=aqi_models_ozone, aes(x=forecast_date)) +
+mo1 <- ggplot(data = aqi_models_ozone, aes(x = forecast_date)) +
        geom_hline(yintercept = 50, colour = "#FFEE00") +
        geom_hline(yintercept = 100, colour = "#DB6B1A") +
   
-       geom_line(aes(y=cmaq_prod_o3_aqi, colour="9"), size=1, linetype="twodash") +
-       geom_point(aes(y=cmaq_prod_o3_aqi, colour="9"), size=3) +
+       geom_line(aes(y = cmaq_prod_o3_aqi, colour = "9"), size = 1, linetype = "twodash") +
+       geom_point(aes(y = cmaq_prod_o3_aqi, colour = "9"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_superens, colour="8"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_superens, colour="8"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_superens, colour = "8"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_superens, colour = "8"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_gen1, colour="7"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_gen1, colour="7"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_gen1, colour = "7"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_gen1, colour = "7"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_ab, colour="6"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_ab, colour="6"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_ab, colour = "6"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_ab, colour = "6"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_gb, colour="5"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_gb, colour="5"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_gb, colour = "5"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_gb, colour = "5"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_ens, colour="4"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_ens, colour="4"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_ens, colour = "4"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_ens, colour = "4"), size = 3) +
   
-       geom_line(aes(y=mod_aqi_o3_rf, colour="3"), size=1, linetype="longdash") +
-       geom_point(aes(y=mod_aqi_o3_rf, colour="3"), size=3) +
+       geom_line(aes(y = mod_aqi_o3_rf, colour = "3"), size = 1, linetype = "longdash") +
+       geom_point(aes(y = mod_aqi_o3_rf, colour = "3"), size = 3) +
   
-       geom_line(aes(y=fcst_ozone_aqi, colour="2"), size=1.25) +
-       geom_point(aes(y=fcst_ozone_aqi, colour="2"), size=3) +
+       geom_line(aes(y = fcst_ozone_aqi, colour = "2"), size = 1.25) +
+       geom_point(aes(y = fcst_ozone_aqi, colour = "2"), size = 3) +
 
-       geom_rect(aes(xmin=forecast_date-0.25, xmax=forecast_date+0.25, ymin=fcst_ozone_aqi_cats_val-49, 
-                     ymax=fcst_ozone_aqi_cats_val, colour="2"),
-                     size=1.25,fill=NA) +
-       geom_text(aes(y = fcst_ozone_aqi_cats_val, label=fcst_ozone_aqi_cats_text, colour="2"),
-                 nudge_y = -5, nudge_x = -0.23, hjust = 0, vjust = 1, size = 2.5) +
+       geom_rect(aes(xmin = forecast_date - 0.25, 
+                     xmax = forecast_date + 0.25, 
+                     ymin = fcst_ozone_aqi_cats_val-49, 
+                     ymax = fcst_ozone_aqi_cats_val, 
+                     colour = "2"),
+                     size = 1, fill = NA) +
+       geom_text(aes(y  =  fcst_ozone_aqi_cats_val, label = fcst_ozone_aqi_cats_text, colour = "2"),
+                 nudge_y= -5, nudge_x = -0.23, hjust =0, vjust = 1, size = 2.5) +
   
        geom_point(aes(y = obs_ozone_aqi, colour="1"), shape=17, size=4) +
        scale_colour_manual(values = model_colors, labels = model_labels, name = "Legend") +

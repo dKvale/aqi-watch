@@ -55,7 +55,7 @@ data$Long <- as.numeric(data$Long)
 data$Lat  <- as.numeric(data$Lat)
 
 map <- leaflet(na.omit(data[, c("aqi_color", "Popup", "Lat", "Long", "circle_scale")]), width = '99%') %>%
-       setView(lat = 46.33, lng= -95.2, zoom= 6) %>%
+       setView(lat = 46.33, lng = -95.2, zoom = 6) %>%
        addProviderTiles("CartoDB.Positron") %>%
        addCircleMarkers(~Long, ~Lat, 
                         popup     = ~Popup, 

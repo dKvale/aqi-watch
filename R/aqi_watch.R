@@ -367,15 +367,19 @@ if(TRUE) {
   
   rmarkdown::render_site("index.Rmd")
   rmarkdown::render_site("todays_obs.Rmd")
+  rmarkdown::render_site("daily_history.Rmd")
   rmarkdown::render_site("week_review.Rmd")
-  rmarkdown::render_site("mn_pastweek.Rmd")
   
   if (alert_time) {
-    
-  rmarkdown::render_site("model_perf.Rmd")
-  rmarkdown::render_site("airnow_map.Rmd")
-  rmarkdown::render_site("smogwatch.Rmd")
+    rmarkdown::render_site("model_perf.Rmd")
   }
+  
+  if (FALSE) {
+    rmarkdown::render_site("airnow_map.Rmd")
+    rmarkdown::render_site("smogwatch.Rmd")
+  }
+  
+  
   
   #rmarkdown::render_site("mn_sites.Rmd")
   #rmarkdown::render_site("nearby_sites.Rmd")
