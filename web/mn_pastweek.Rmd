@@ -28,6 +28,8 @@ library(ggplot2)
 
 source("../R/aqi_convert.R")
 
+max_date <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
+
 #Get hourly data from previous day to current time from aqi_history.Rdata file
 hourly_history <- readRDS("../data/aqi_history.Rdata")
 hourly_history <- mutate(hourly_history, Avg_Period = 2)
@@ -39,24 +41,26 @@ combined_data <- bind_rows(hourly_history, daily_history)
 combined_data <- mutate(combined_data, 
                         Date_Time = as.POSIXct(paste(combined_data$Date, combined_data$Time), format = "%Y-%m-%d %H"),
                         aqi_ind = as.character(aqi2colind(AQI_Value)))
+
 combined_data$Avg_Period <- as.factor(combined_data$Avg_Period)
 
 days_of_week <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
-dofwi_m7 <- as.numeric(format(max_date-7,format="%u"))
+dofwi_m7 <- as.numeric(format(max_date, format="%u"))
 dofw_m7 <- days_of_week[dofwi_m7]
-dofwi_m1 <- as.numeric(format(max_date-1,format="%u"))
+dofwi_m1 <- as.numeric(format(max_date-1, format="%u"))
 dofw_m1 <- days_of_week[dofwi_m1]
-daily_label <- paste0("Daily Average - ",dofw_m7," through ",dofw_m1)
-hourly_label <- paste0("Houly Average - ",dofw_m1," through current hour")
+daily_label <- paste0("Daily Average - ", dofw_m7, " through ", dofw_m1)
+hourly_label <- paste0("Houly Average - ", dofw_m1, " through current hour")
 levels(combined_data$Avg_Period) <- c(daily_label, hourly_label)
 
 #Filter PM2.5 parameter for plots on PM2.5 tab
-combined_data_pm25 <- filter(combined_data, Parameter=="PM25")
+combined_data_pm25 <- filter(combined_data, Parameter == "PM25")
 
-  colors <- c("#53BF33","#FFEE00","#DB6B1A","#ff0000","#99004c")
-  aqi_labels <- c("Good","Moderate","Unhealthy for\nSensitive Groups","Unhealthy","Very Unhealthy")
+colors <- c("#53BF33","#FFEE00","#DB6B1A","#ff0000","#99004c")
 
-  p1 <- ggplot(data=combined_data_pm25, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
+aqi_labels <- c("Good","Moderate","Unhealthy for\nSensitive Groups","Unhealthy","Very Unhealthy")
+
+p1 <- ggplot(data=combined_data_pm25, aes(x=Date_Time, y=Concentration, fill = aqi_ind)) +
         scale_fill_manual(values = colors, labels = aqi_labels, name = "AQI") +
         facet_grid(`Site Name` ~ Avg_Period,
                         scales = "free_x") +
@@ -64,12 +68,12 @@ combined_data_pm25 <- filter(combined_data, Parameter=="PM25")
         labs(x = "Date/Time", y = "Conc (ug/m^3)")
 
 
-  p2 <- p1 + geom_col(data = subset(combined_data_pm25, Avg_Period == daily_label),
+p2 <- p1 + geom_col(data = subset(combined_data_pm25, Avg_Period == daily_label),
                       colour = "black") +
              geom_text(data = subset(combined_data_pm25, Avg_Period == daily_label),
                        aes(label = Concentration), nudge_y = -3, size = 3)
 
-  p3 <- p2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
+p3 <- p2 + geom_vline(aes(xintercept = as.POSIXct(paste(max_date, "00:00"), format = "%Y-%m-%d %H")), 
                             colour = "grey") +
              geom_col(data = subset(combined_data_pm25, Avg_Period == hourly_label),
                       position = position_nudge(x = 1800),
@@ -77,8 +81,7 @@ combined_data_pm25 <- filter(combined_data, Parameter=="PM25")
              geom_text(data = subset(combined_data_pm25, Avg_Period == hourly_label),
                        aes(label = Concentration), nudge_y = -3, nudge_x = 1800, size = 2)
 
-
-  p3
+p3
   
 #}
 
