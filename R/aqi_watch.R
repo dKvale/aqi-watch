@@ -85,7 +85,9 @@ for (i in 0:2) {
   
   # Write to error log if AirNow data missing
   if (!is.data.frame(aqi) || (nrow(aqi) < 1)) {
+    
     errs <- read.csv("log/error_log.csv", stringsAsFactors = F)
+    
     errs$File <- as.character(errs$File)
     
     err_time <- as.character(format(Sys.time(), tz = "America/Chicago"))
@@ -93,7 +95,7 @@ for (i in 0:2) {
     errs <- bind_rows(errs, data.frame(File    = date_time, 
                                        Time    = err_time, 
                                        Status  = "Failed", 
-                                       Message = paste0(aqi, collapse = ""),stringsAsFactors = F))
+                                       Message = paste0(aqi, collapse = ""), stringsAsFactors = F))
     
     write.csv(errs, "log/error_log.csv", row.names=F)
     
@@ -261,6 +263,7 @@ if (local_hr > 7) {
                       silent = T)
     
     if ( !is.data.frame(aqi_daily) || nrow(aqi_daily) < 1 ) {
+      
       errs <- read.csv("log/error_log.csv", stringsAsFactors = F)
       
       err_time <- as.character(format(Sys.time(), tz = "America/Chicago"))
@@ -296,6 +299,8 @@ if (local_hr > 7) {
     weekold_date <- today_date - 7
     
     daily_history <- daily_history[as.Date(daily_history$Date, format = "%m/%d/%y") >= weekold_date, ]
+    
+    daily_history$Date <- as.character(daily_history$Date)
     
     saveRDS(data.frame(daily_history, stringsAsFactors = F, check.names = F), "data/daily_history.RData" )
     
