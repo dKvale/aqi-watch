@@ -362,7 +362,7 @@ if(TRUE) {
   rmarkdown::render_site("mn_sites.Rmd")
   rmarkdown::render_site("nearby_sites.Rmd")
   rmarkdown::render_site("smogwatch.Rmd")
-  rmarkdown::render_site("exceed.Rmd")
+  #rmarkdown::render_site("exceed.Rmd")
   rmarkdown::render_site("mn_pastweek.Rmd")
   rmarkdown::render_site("model_perf.Rmd")
   

@@ -73,7 +73,9 @@ kable(aqi_summary_ozone, 'html', align = 'lccccc')
 ```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F}
 max_mon_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
 
-max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) %>% arrange(desc(Date))
+max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) 
+
+max_mon_pm25 <- arrange(ungroup(max_mon_pm25), desc(Date))
 
 kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
 
