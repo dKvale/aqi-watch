@@ -21,6 +21,19 @@ title: "Monitors reporting a 1-hr AQI above 90"
 library(knitr)
 library(dplyr)
 
+tbl_options <- "style='width:50%; margin-left: 5%;'"
+
+testing <- F
+
+if (testing) {
+  library(tidyverse)
+  daily_history <- readRDS("../data/daily_history.Rdata")
+  aqi_rank <- readRDS("../data/aqi_rank.Rdata")
+  source("../R/aqi_convert.R")
+  email_trigger <- 90
+}
+
+
 data <- subset(aqi_rank, AQI_Value > email_trigger) 
 
 if(nrow(data) < 1) {
@@ -54,7 +67,7 @@ aqi_summary_pm25 <- group_by(aqi_summary_pm25, Date) %>%
 
 aqi_summary_pm25 <- arrange(aqi_summary_pm25, desc(as.character(Date)))
                                                          
-kable(aqi_summary_pm25, 'html', align = 'lccccc')
+kable(aqi_summary_pm25, 'html', align = 'lccccc', table.attr = tbl_options)
 
 ```
 
@@ -71,31 +84,31 @@ aqi_summary_ozone <- group_by(aqi_summary_ozone, Date) %>%
 
 aqi_summary_ozone <- arrange(aqi_summary_ozone, desc(as.character(Date)))
 
-kable(aqi_summary_ozone, 'html', align = 'lccccc')
+kable(aqi_summary_ozone, 'html', align = 'lccccc', table.attr = tbl_options)
 
 ```
 
 #### PM2.5 Daily Max Monitor
-```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F, fig.width=9}
+```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F, fig.width=6}
 max_mon_pm25 <- filter(daily_history, Parameter == "PM25", substring(AqsID, 1, 2) == '27')
 
 max_mon_pm25 <- group_by(max_mon_pm25, Date) %>% arrange(-AQI_Value) %>% slice(1) 
 
 max_mon_pm25 <- arrange(ungroup(max_mon_pm25), desc(as.character(Date)))
 
-kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll')
+kable(max_mon_pm25[,c(1,3,6,9)], 'html', align = 'llll', table.attr = tbl_options)
 
 ```
 
 #### Ozone Daily Max Monitor
-```{r, max_mon_ozone, message=F, echo=F, results='asis', warning=F, fig.width=9}
+```{r, max_mon_ozone, message=F, echo=F, results='asis', warning=F, fig.width=6}
 max_mon_ozone <- filter(daily_history, Parameter == "OZONE", substring(AqsID, 1, 2) == '27')
 
 max_mon_ozone <- group_by(max_mon_ozone, Date) %>% arrange(-AQI_Value) %>% slice(1) 
 
-max_mon_ozone  <- arrange(ungroup(max_mon_ozone), desc(as.character(Date)))
+max_mon_ozone <- arrange(ungroup(max_mon_ozone), desc(as.character(Date)))
 
-kable(max_mon_ozone[,c(1,3,6,9)], 'html', align = 'llll')
+kable(max_mon_ozone[,c(1,3,6,9)], 'html', align = 'llll', table.attr = tbl_options)
 
 ```
 
