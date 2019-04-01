@@ -37,7 +37,7 @@ if (testing) {
 data <- subset(aqi_rank, AQI_Value > email_trigger) 
 
 if(nrow(data) < 1) {
-  cat(" *The table is currently empty.  All sites are reporting concentrations at or below a 1-hr AQI of 90.")
+  cat("\n *The table is currently empty.  All sites reporting concentrations at or below a 1-hr AQI of 90.")
 } else {
 
 data <- data[ , c(1:4,8,5,7,9)]
@@ -87,6 +87,9 @@ aqi_summary_ozone <- arrange(aqi_summary_ozone, desc(as.character(Date)))
 kable(aqi_summary_ozone, 'html', align = 'lccccc', table.attr = tbl_options)
 
 ```
+
+
+<br>
 
 #### PM2.5 Daily Max Monitor
 ```{r, max_mon_pm25, message=F, echo=F, results='asis', warning=F, fig.width=6}

@@ -26,7 +26,13 @@ Concentrations in units of  _ug/m^3^_. <br>
 ```{r daily_history_pm25, message=FALSE, echo=FALSE, results='asis', warning=FALSE, fig.width=14, fig.height=28}
 library(ggplot2)
 
-# source("../R/aqi_convert.R")
+testing <- F
+
+if (testing) {
+  library(tidyverse)
+  daily_history <- readRDS("../data/daily_history.Rdata")
+  source("../R/aqi_convert.R")
+}
 
 max_date  <- max(as.Date(daily_history$Date, format = "%m/%d/%y"))
 
