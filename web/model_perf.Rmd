@@ -86,7 +86,7 @@ mp1 <- mp1 +
        theme_bw() +
        labs(x = "Date",y = "AQI Value")
 
-mp1
+try(mp1, silent = TRUE)
        
 
 ```
@@ -148,7 +148,7 @@ mo1 <- mo1 +
        theme_bw() +
        labs(x = "Date", y = "AQI Value")
 
-mo1
+try(mo1, silent = TRUE)
        
 
 ```
