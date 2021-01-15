@@ -20,7 +20,7 @@ email_trigger <- 91
 pm10_trigger  <- 130
 
 # Email alert subscribers
-subscribers <- read_csv("data/subscribers.csv")
+subscribers <- read_csv("https://raw.githubusercontent.com/dKvale/aqi-watch/master/data/subscribers.csv")
 
 # Fargo, Lacrosse, Voyageurs
 border_sites <- c('380171004', '271370034', '550630012')
