@@ -14,19 +14,20 @@ options(rstudio.markdownToHTML =
 
 #setwd("../")
 setwd("aqi-watch")
+
 source("R/aqi_convert.R")
 
 email_trigger <- 91
 pm10_trigger  <- 130
 
 # Email alert subscribers
-subscribers <- read_csv("data/subscribers.csv")
+subscribers <- try(read_csv("https://raw.githubusercontent.com/dKvale/aqi-watch/master/data/subscribers.csv"))
 
 # Fargo, Lacrosse, Voyageurs
 border_sites <- c('380171004', '271370034', '550630012')
 
-# Sioux Falls, Emmetsburg
-extra_sites  <- c('191471002', '460990008')
+# Sioux Falls, Emmetsburg, Aberdeen
+extra_sites  <- c('191471002', '460990008', '840460990009', '840460130004')
 
 canada_sites <- c('000070118', '000070119', '000070203', '000064001')
 
@@ -107,7 +108,7 @@ for (i in 0:2) {
     aqi$StateID <- substring(aqi$AqsID, 1, 2) 
     
     # Filter to local results
-    aqi <- filter(aqi, StateID %in% c('27', '19', '55', '38', '46') |
+    aqi <- filter(aqi, StateID %in% c('27', '19', '55', '38', '46', '84') |
                     AqsID %in% c(border_sites, canada_sites))
     
     # Keep all criteria pollutants
@@ -215,6 +216,44 @@ names(aqi)[11] <- names(aqi_prev)[11]
 
 locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
 
+#new_locations <- read_delim("https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/2021/20210716/monitoring_site_locations.dat",
+#                            "|", 
+#                            col_names = F)
+
+# Update Sioux Falls & Aberdeen, Milwaukee, Madison
+locations <- locations %>%
+             bind_rows(tibble(AqsID = c("840380250004",
+                                            "840460990009",
+                                            "840550250047",
+                                            "840550790068",
+                                            "840551270006",
+                                            "840460130004"
+                                            
+                                            ), 
+                                  "Site Name" = c("Lake Ilo",
+                                                  "SF-USD",
+                                                  "Madison University Ave",
+                                                  "Milwaukee-UWM UPark", 
+                                                  "Elkhorn",
+                                                  "Aberdeen"
+                                                  
+                                                  ),
+                                  Lat   = c("47.34259",
+                                            "43.59901",
+                                            "43.07378",
+                                            "43.09455",
+                                            "42.66218",
+                                            "45.4686"
+                                            ),
+                                  Long  = c("-102.646",
+                                            " -96.78331",
+                                            "-89.43595",
+                                            " -87.90145",
+                                            "-88.48703",
+                                            "-98.49406"
+                                             )))
+
+# Get MN site info
 site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
 
 mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
@@ -344,6 +383,7 @@ aqi_models <- left_join(aqi_models, mn_sites_uniq, by = c("site_catid"="AqsID"))
 
 # Set issue notification to sleep from 10 pm to 4 am
 watch_time <- (as.numeric(format(Sys.time(), "%H")) < 22) && (as.numeric(format(Sys.time(), "%H")) > 4)
+
 
 if(watch_time) { 
   
