@@ -222,7 +222,7 @@ locations <- read.csv('data-raw/locations.csv', stringsAsFactors = F,  check.nam
 
 # Update Sioux Falls & Aberdeen, Milwaukee, Madison
 locations <- locations %>%
-             bind_rows(tibble(AqsID = c("840380250004",
+             bind_rows(data.frame(AqsID = c("840380250004",
                                             "840460990009",
                                             "840550250047",
                                             "840550790068",
@@ -251,7 +251,9 @@ locations <- locations %>%
                                             " -87.90145",
                                             "-88.48703",
                                             "-98.49406"
-                                             )))
+                                             ),
+                                  stringsAsFactors = F,
+                                  check.names = F))
 
 # Get MN site info
 site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F, check.names = F, colClasses = 'character')  
