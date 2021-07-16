@@ -254,7 +254,7 @@ locations <- locations %>%
                                              )))
 
 # Get MN site info
-site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F,  check.names=F, colClasses = 'character')  
+site_params <- read.csv('data-raw/site_params.csv', stringsAsFactors = F, check.names = F, colClasses = 'character')  
 
 mn_sites <- filter(site_params, substring(AqsID, 1, 2) == '27' | AqsID %in% border_sites)
 

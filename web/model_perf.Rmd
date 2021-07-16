@@ -91,6 +91,7 @@ try(mp1, silent = TRUE)
 
 ```
 
+
 ### __Ozone data__  
 Observations and model forecasts are shown in AQI units. MPCA forecasts shown for Tuesday through Saturday have numeric values and are Day 1 forecasts. Sunday and Monday forecasts are typically only categorical and are Day 2 for Sunday and Day 3 for Monday. 
 

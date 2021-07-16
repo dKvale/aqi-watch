@@ -67,6 +67,7 @@ map <- leaflet(na.omit(data[, c("aqi_color", "Popup", "Lat", "Long", "circle_sca
                         opacity   = 0.5)
 
 map 
+
 ```
 </div>
 <br>

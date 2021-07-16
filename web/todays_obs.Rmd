@@ -208,6 +208,9 @@ if(nrow(data) > 0) {
   
 
   # Blank out missing values
+  wide_tbl <- wide_tbl %>%
+              mutate_all(as.character)
+  
   wide_tbl[is.na(wide_tbl)] <- "."
   
   
